@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaFu Brothers Leak Tester - Provider of High-Precision Airtightness Testing Solutions</title>
+    <meta name="description"
+        content="WaFu Brothers specializes in providing high-precision airtightness testers with detection accuracy up to 0.1Pa, widely used in electronics, automotive parts, medical devices, and other industries. We offer fast, precise, and reliable airtightness testing solutions to help you improve product quality and reduce after-sales costs.">
+    <meta name="keywords"
+        content="airtightness tester, airtightness testing equipment, high-precision airtightness testing, waterproof testing equipment, WaFu Brothers, airtightness testing solutions">
+    <script src="./js/tailwind.js"></script>
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link href="./font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/font.css" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17263391868"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-17263391868');
+    </script>
+
+    <!-- Event snippet for 气密性检测仪 conversion page -->
+    <script>
+        window.addEventListener('load', function (event) {
+            document.querySelectorAll('button[type="submit"]').forEach(function (i) {
+                i.addEventListener('click', function () {
+                    var email = document.querySelector('input[type="email"]').value;
+                    if (email !== '') {
+                        gtag('set', 'user_data', { "email": email });
+                        gtag('event', 'click_send', { 'send_to': 'AW-17263391868' });
+                    }
+                });
+            });
+            if (window.location.href.includes("/thank-you")) {
+                gtag('event', 'conversion', { 'send_to': 'AW-17263391868/XHqFCLT1kfgaEPzo6adA' });
+            }
+
+        });
+    </script>
+
+    <!-- Tailwind 配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1D2939',
+                        secondary: '#F9FAFB',
+                        accent: '#165DFF',
+                        dark: '#1D2939',
+                        'dark-gray': '#4B5563',
+                        'light-gray': '#F9FAFB'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+            }
+            .btn-primary {
+                @apply bg-accent hover:bg-accent/90 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent/50;
+            }
+            .section-padding {
+                @apply py-12 md:py-16;
+            }
+            .input-field {
+                @apply w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300;
+            }
+            .benefit-card {
+                @apply bg-white rounded-xl p-6 shadow-md card-hover;
+            }
+            .stats-card {
+                @apply bg-white rounded-xl p-6 shadow-md text-center;
+            }
+            .chat-widget {
+                @apply fixed bottom-20 right-6 z-50 flex flex-col items-end space-y-3;
+            }
+            .chat-btn {
+                @apply w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110;
+            }
+            .chat-header {
+                @apply bg-primary text-white p-4 rounded-t-xl flex justify-between items-center;
+            }
+           
+            .chat-footer {
+                @apply p-4 border-t border-gray-200;
+            }
+            .message {
+                @apply mb-3 p-3 rounded-lg max-w-[80%];
+            }
+            .message-bot {
+                @apply bg-light-gray text-dark self-start;
+            }
+            .message-user {
+                @apply bg-primary/10 text-dark self-end;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-inter text-dark bg-light-gray">
+    <!-- Navigation Bar -->
+    <header id="navbar"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+            <!-- Logo区域 -->
+            <a href="./index.html" class="flex items-center gap-2 group">
+                <img src="./images/logo-inverse.png" alt="WaFu Brothers Leak Tester"
+                    class="h-10 sm:h-12 transition-transform duration-300 group-hover:scale-105">
+                <span class="text-xl font-bold text-primary">WaFu Brothers</span>
+            </a>
+
+            <!-- 桌面导航 -->
+            <nav class="hidden md:flex items-center gap-6">
+                <a href="#features"
+                    class="text-gray-800 hover:text-accent transition-colors duration-200 font-medium">Product
+                    Features</a>
+                <a href="#benefits"
+                    class="text-gray-800 hover:text-accent transition-colors duration-200 font-medium">Technical
+                    Advantages</a>
+                <a href="#applications"
+                    class="text-gray-800 hover:text-accent transition-colors duration-200 font-medium">Applications</a>
+                <a href="#testimonials"
+                    class="text-gray-800 hover:text-accent transition-colors duration-200 font-medium">Customer
+                    Reviews</a>
+                <a href="#models"
+                    class="text-gray-800 hover:text-accent transition-colors duration-200 font-medium">Product
+                    Models</a>
+
+                <!-- 语言选择器 -->
+                <div class="relative group">
+                    <button
+                        class="flex items-center gap-1 text-gray-800 font-medium hover:text-primary transition-colors px-2 py-1">
+                        Languages
+                        <i
+                            class="fa fa-angle-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div
+                        class="absolute left-0 mt-1 w-40 bg-white shadow-lg rounded-md ring-1 ring-gray-200 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50">
+                        <a href="https://www.wafubrother.com/leaktest.html"
+                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-colors">
+                            🇺🇸 English
+                        </a>
+                        <a href="https://www.wafubrother.cn/"
+                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-colors">
+                            🇨🇳 中文
+                        </a>
+                        <a href="https://www.wafuvn.com/leaktest.html"
+                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-colors">
+                            🇻🇳 Tiếng Việt
+                        </a>
+                        <a href="https://www.wafuth.com/leaktest.html"
+                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-colors">
+                            🇹🇭 ไทย
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 联系按钮 -->
+                <a href="#contact"
+                    class="bg-primary hover:bg-primary/90 text-white py-2 px-4 text-sm font-medium rounded-md transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                    Get in Touch
+                </a>
+            </nav>
+
+            <!-- 移动端菜单按钮 -->
+            <button id="menu-toggle"
+                class="md:hidden text-primary text-2xl focus:outline-none focus:ring-2 focus:ring-primary/20 p-1 rounded-md transition-colors">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white shadow-lg absolute w-full border-t border-gray-100 animate-fade-down">
+            <div class="container mx-auto px-4 py-3 flex flex-col gap-3">
+                <a href="#features"
+                    class="text-gray-800 hover:text-accent transition-colors py-2 px-3 rounded-md hover:bg-gray-50 flex items-center">
+                    <i class="fa fa-cube mr-3 w-5 text-center"></i> Product Features
+                </a>
+                <a href="#benefits"
+                    class="text-gray-800 hover:text-accent transition-colors py-2 px-3 rounded-md hover:bg-gray-50 flex items-center">
+                    <i class="fa fa-thumbs-up mr-3 w-5 text-center"></i> Technical Advantages
+                </a>
+                <a href="#applications"
+                    class="text-gray-800 hover:text-accent transition-colors py-2 px-3 rounded-md hover:bg-gray-50 flex items-center">
+                    <i class="fa fa-cogs mr-3 w-5 text-center"></i> Applications
+                </a>
+                <a href="#testimonials"
+                    class="text-gray-800 hover:text-accent transition-colors py-2 px-3 rounded-md hover:bg-gray-50 flex items-center">
+                    <i class="fa fa-comments mr-3 w-5 text-center"></i> Customer Reviews
+                </a>
+                <a href="#models"
+                    class="text-gray-800 hover:text-accent transition-colors py-2 px-3 rounded-md hover:bg-gray-50 flex items-center">
+                    <i class="fa fa-list mr-3 w-5 text-center"></i> Product Models
+                </a>
+
+                <!-- 移动端语言选择 -->
+                <div class="py-2 px-3">
+                    <p class="text-sm text-gray-500 mb-1">Languages</p>
+                    <div class="grid grid-cols-2 gap-2">
+                        <a href="https://www.wafubrother.com/leaktest.html"
+                            class="text-sm text-gray-700 hover:text-primary transition-colors">🇺🇸 English</a>
+                        <a href="https://www.wafubrother.cn/"
+                            class="text-sm text-gray-700 hover:text-primary transition-colors"> 🇨🇳 中文</a>
+                        <a href="https://www.wafuvn.com/leaktest.html"
+                            class="text-sm text-gray-700 hover:text-primary transition-colors">🇻🇳 Tiếng Việt</a>
+                        <a href="https://www.wafuth.com/leaktest.html"
+                            class="text-sm text-gray-700 hover:text-primary transition-colors">🇹🇭 ไทย</a>
+                    </div>
+                </div>
+
+                <a href="#contact"
+                    class="bg-primary hover:bg-primary/90 text-white text-center py-2.5 px-4 rounded-md transition-colors font-medium mt-2">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section
+        class="pt-24 pb-12 md:pt-32 md:pb-20 bg-gradient-to-br from-primary to-primary/90 text-white relative overflow-hidden">
+        <!-- Background Decorations -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute w-64 h-64 rounded-full bg-white top-1/4 -left-20"></div>
+            <div class="absolute w-96 h-96 rounded-full bg-white bottom-1/4 -right-32"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="space-y-6">
+                    <h1 class="text-[clamp(2rem,5vw,3rem)] font-bold leading-tight text-shadow">
+                        High-Precision Leak Testing<br>
+                        <span class="text-accent">Enhance Product Quality</span>
+                    </h1>
+                    <p class="text-xl text-white/90">
+                        WaFu Brothers Leak Tester features 0.1Pa ultra-high precision, quickly and accurately locating
+                        leaks to help you enhance quality and reduce after-sales costs!
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#contact" class="btn-primary bg-accent hover:bg-accent/90 shadow-lg">
+                            Get a Free Solution
+                        </a>
+                        <a href="./digital.html"
+                            class="bg-white/10 hover:bg-white/20 text-white font-medium py-3 px-6 rounded-lg backdrop-blur-sm transition-all duration-300">
+                            <i class="fa fa-play-circle mr-2"></i> Watch Demo
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-6 pt-6">
+                        <div class="flex -space-x-2">
+                            <img src="./images/about/pingguo.jpg" alt="Customer Avatar"
+                                class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="./images/about/aodi.jpg" alt="Customer Avatar"
+                                class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="./images/about/benchi.png" alt="Customer Avatar"
+                                class="w-10 h-10 rounded-full border-2 border-white">
+                        </div>
+                        <div>
+                            <div class="flex text-yellow-400">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <p class="text-sm text-white/80">Trusted by over 8000+ companies</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div
+                        class="rounded-2xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-all duration-500">
+                        <img src="./images/about/slider-slide-5.jpg" alt="WaFu Brothers Leak Tester"
+                            class="w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Key Metrics -->
+    <section class="py-10 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="stats-card">
+                    <p class="text-4xl font-bold text-accent mb-2">0.1Pa</p>
+                    <p class="text-dark-gray">Detection Accuracy</p>
+                </div>
+                <div class="stats-card">
+                    <p class="text-4xl font-bold text-accent mb-2">3–5s</p>
+                    <p class="text-dark-gray">Detection Speed</p>
+                </div>
+                <div class="stats-card">
+                    <p class="text-4xl font-bold text-accent mb-2">99.9%</p>
+                    <p class="text-dark-gray">Detection Accuracy Rate</p>
+                </div>
+                <div class="stats-card">
+                    <p class="text-4xl font-bold text-accent mb-2">8000+</p>
+                    <p class="text-dark-gray">Enterprise Clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Features -->
+    <section id="features" class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold mb-4">Core Product Features</h2>
+                <p class="text-dark-gray text-lg">WaFu Brothers' leak testers integrate multiple patented technologies
+                    to provide precise, reliable, and efficient airtightness testing solutions.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Feature Card 1 -->
+                <div class="benefit-card">
+                    <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-4">
+                        <i class="fa fa-flask text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">High-Precision Testing</h3>
+                    <p class="text-dark-gray">Equipped with imported high-precision sensors, offering accuracy up to 0.1
+                        Pa to meet the needs of precision product testing.</p>
+                </div>
+
+                <!-- Feature Card 2 -->
+                <div class="benefit-card">
+                    <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-4">
+                        <i class="fa fa-bolt text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Fast Testing</h3>
+                    <p class="text-dark-gray">Testing cycle as short as 3–5 seconds, significantly improving production
+                        efficiency and reducing inspection costs.</p>
+                </div>
+
+                <!-- Feature Card 3 -->
+                <div class="benefit-card">
+                    <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-4">
+                        <i class="fa fa-laptop text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Smart Operating System</h3>
+                    <p class="text-dark-gray">7-inch color touch screen with a user-friendly interface, supporting both
+                        Chinese and English for easy and convenient operation.</p>
+                </div>
+
+                <!-- Feature Card 4 -->
+                <div class="benefit-card">
+                    <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-4">
+                        <i class="fa fa-database text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Data Management System</h3>
+                    <p class="text-dark-gray">Supports data storage, search, and export functions. Test results are
+                        traceable and comply with ISO quality management standards.</p>
+                </div>
+
+                <!-- Feature Card 5 -->
+                <div class="benefit-card">
+                    <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-4">
+                        <i class="fa fa-cogs text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Multiple Testing Modes</h3>
+                    <p class="text-dark-gray">Supports various testing modes such as positive pressure, negative
+                        pressure, and differential pressure to meet diverse product requirements.</p>
+                </div>
+
+                <!-- Feature Card 6 -->
+                <div class="benefit-card">
+                    <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-4">
+                        <i class="fa fa-plug text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Modular Design</h3>
+                    <p class="text-dark-gray">Modular design allows for easy maintenance and upgrades, reducing
+                        long-term operating costs for enterprises.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="benefits" class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Section Title -->
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-indigo-700">Our Technical Advantages</h2>
+                <p class="text-gray-600 text-lg mt-2">Higher precision, faster efficiency, more flexible service —
+                    Leading a new era of airtightness testing</p>
+            </div>
+            <!-- Technical Advantages Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Accuracy Card -->
+                <div class="bg-white shadow-sm rounded-lg p-6 text-center">
+                    <h5 class="text-xl font-semibold text-gray-800">Testing Accuracy</h5>
+                    <p class="text-green-600 font-bold text-3xl my-2">±0.1 Pa</p>
+                    <p class="text-gray-600">Far exceeding the average accuracy of industry airtightness testers</p>
+                    <hr class="my-4">
+                    <p class="text-sm text-gray-500"><strong>Traditional Methods:</strong> Large error margins, high
+                        missed detection rate</p>
+                </div>
+
+                <!-- Efficiency Card -->
+                <div class="bg-white shadow-sm rounded-lg p-6 text-center">
+                    <h5 class="text-xl font-semibold text-gray-800">Testing Efficiency</h5>
+                    <p class="text-green-600 font-bold text-3xl my-2">≤ 3 seconds</p>
+                    <p class="text-gray-600">Fast leak test response, perfectly compatible with automated production
+                        lines</p>
+                    <hr class="my-4">
+                    <p class="text-sm text-gray-500"><strong>Traditional Methods:</strong> Complicated operations, long
+                        testing cycles</p>
+                </div>
+
+                <!-- Customization Card -->
+                <div class="bg-white shadow-sm rounded-lg p-6 text-center">
+                    <h5 class="text-xl font-semibold text-gray-800">Customization Capability</h5>
+                    <p class="text-green-600 font-bold text-3xl my-2">8000+ Solutions</p>
+                    <p class="text-gray-600">Supports non-standard leak test customization to fit various complex
+                        conditions</p>
+                    <hr class="my-4">
+                    <p class="text-sm text-gray-500"><strong>Traditional Methods:</strong> Generic solutions hard to
+                        meet actual needs</p>
+                </div>
+            </div>
+            <!-- Honors & Certifications -->
+            <div class="bg-white rounded-lg shadow-sm p-6 mt-10">
+                <div class="flex flex-col md:flex-row md:items-center gap-6">
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold text-indigo-700 mb-3">Honors & Certifications</h3>
+                        <p class="text-gray-600 mb-4">
+                            Recognized as a national high-tech enterprise, with CE/FCC international certifications,
+                            dozens of patents, and strong technological and quality credentials.
+                        </p>
+                        <a href="/about.html#innovation"
+                            class="inline-block px-4 py-2 border border-indigo-600 text-indigo-600 rounded hover:bg-indigo-50 transition">
+                            View All Certificates
+                        </a>
+                    </div>
+                    <div class="md:w-1/2 grid grid-cols-3 gap-3">
+                        <img src="images/about/certificate/wf-gert_3.jpg" alt="Certificate 1" class="rounded shadow-sm"
+                            loading="lazy">
+                        <img src="images/about/certificate/wf-gert_16.jpg" alt="Certificate 2" class="rounded shadow-sm"
+                            loading="lazy">
+                        <img src="images/about/certificate/wf-gert_15.jpg" alt="Certificate 3" class="rounded shadow-sm"
+                            loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Scenarios -->
+    <section id="applications" class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold mb-4">Extensive Application Scenarios</h2>
+                <p class="text-dark-gray text-lg">WaFu Brothers’ leak testers are suitable for a wide range of
+                    industries, providing professional airtightness testing solutions for various products.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Application 1 -->
+                <div class="bg-light-gray rounded-xl overflow-hidden card-hover">
+                    <a href="./solu/solu-electronic.html">
+                        <img src="./images/applications/Electronics-industry.jpg" alt="Electronics Industry"
+                            class="w-full h-48 object-cover">
+                    </a>
+                    <div class="p-5">
+                        <a href="./solu/solu-electronic.html"
+                            class="text-gray-800 hover:text-blue-600 transition-colors">
+                            <h3 class="text-lg font-semibold mb-2">Electronics Industry</h3>
+                        </a>
+                        <p class="text-dark-gray text-sm">Suitable for waterproof testing of electronic products such as
+                            smartphones, tablets, smartwatches, and earphones, ensuring compliance with waterproof
+                            standards.</p>
+                    </div>
+                </div>
+
+                <!-- Application 2 -->
+                <div class="bg-light-gray rounded-xl overflow-hidden card-hover">
+                    <a href="./solu/solu-carparts.html">
+                        <img src="./images/applications/Automotive-industry.jpg" alt="Automotive Components Industry"
+                            class="w-full h-48 object-cover">
+                    </a>
+                    <div class="p-5">
+                        <a href="./solu/solu-carparts.html" class="text-gray-800 hover:text-blue-600 transition-colors">
+                            <h3 class="text-lg font-semibold mb-2">Automotive Components Industry</h3>
+                        </a>
+                        <p class="text-dark-gray text-sm">Applicable for airtightness testing of components like
+                            engines, transmissions, brake systems, and car lights, ensuring driving safety.</p>
+                    </div>
+                </div>
+
+                <!-- Application 3 -->
+                <div class="bg-light-gray rounded-xl overflow-hidden card-hover">
+                    <a href="./solu/solu-medical.html">
+                        <img src="./images/applications/Medical-industry.jpg" alt="Medical Devices Industry"
+                            class="w-full h-48 object-cover">
+                    </a>
+                    <div class="p-5">
+                        <a href="./solu/solu-medical.html" class="text-gray-800 hover:text-blue-600 transition-colors">
+                            <h3 class="text-lg font-semibold mb-2">Medical Devices Industry</h3>
+                        </a>
+                        <p class="text-dark-gray text-sm">Ideal for airtightness testing of medical devices such as
+                            syringes, infusion sets, and respirators, ensuring medical safety.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="./application.html"
+                    class="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent/50">
+                    <span>View More</span>
+                    <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials -->
+    <section id="testimonials" class="section-padding bg-light-gray">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold mb-4">Real Feedback from Our Clients</h2>
+                <p class="text-dark-gray text-lg">Hear what our customers have to say about the performance and service
+                    of WaFu Brothers' leak testers.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                    <div class="flex text-yellow-400 mb-3">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p class="text-dark-gray text-sm mb-4">After using WaFu Brothers' leak tester, our product defect
+                        rate dropped by 80%, and testing efficiency increased by 50%, saving us a significant amount of
+                        cost.</p>
+                    <div class="flex items-center">
+                        <img src="./images/about/aodi.jpg" alt="Client photo" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold text-sm">Malaysia</h4>
+                            <p class="text-xs text-dark-gray">Production Director, FAW-Audi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                    <div class="flex text-yellow-400 mb-3">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p class="text-dark-gray text-sm mb-4">WaFu Brothers' technical team is extremely professional. They
+                        provided us with a customized solution that solved our long-standing airtightness testing
+                        challenges.</p>
+                    <div class="flex items-center">
+                        <img src="./images/about/GAC.jpg" alt="GAC photo" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold text-sm">Guangzhou, China</h4>
+                            <p class="text-xs text-dark-gray">Quality Manager, GAC Group</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                    <div class="flex text-yellow-400 mb-3">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <p class="text-dark-gray text-sm mb-4">The equipment is easy to operate, highly stable, and the
+                        after-sales support is prompt. We've already purchased multiple leak testers from WaFu Brothers
+                        and are very satisfied.</p>
+                    <div class="flex items-center">
+                        <img src="./images/about/benchi.png" alt="Client photo" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold text-sm">Shenzhen, China</h4>
+                            <p class="text-xs text-dark-gray">Engineer, Mercedes-Benz</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Models -->
+    <section id="models" class="section-padding bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold mb-4">Automatic Leak Testing Machines</h2>
+                <p class="text-dark-gray text-lg">We offer a variety of leak testers tailored to different industries —
+                    there's always one that fits your needs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div
+                    class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
+                    <!-- Product Image (Zoomable) -->
+                    <div class="relative overflow-hidden flex-grow">
+                        <a href="./products/product-two.html" class="block h-full">
+                            <img src="./images/products/WF/max/product-2.png" alt="Multi-Channel Leak Tester"
+                                title="Multi-Channel Leak Tester"
+                                class="w-full h-full object-contain p-6 bg-gray-50 transition-transform duration-500 hover:scale-105"
+                                loading="lazy">
+                        </a>
+                        <div
+                            class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                            Best Seller
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <h5 class="text-xl font-semibold mb-3">
+                            <a href="./products/product-two.html"
+                                class="text-gray-800 hover:text-blue-600 transition-colors">
+                                Multi-Channel Leak Tester
+                            </a>
+                        </h5>
+                        <p class="text-gray-600 text-sm mb-6">
+                            <a href="./products/product-two.html" class="hover:text-blue-600 transition-colors">
+                                The 6th-generation WF multi-channel leak tester is a flagship product built by WaFu
+                                Brothers after 15 years of innovation, combining high efficiency, precision, and
+                                versatility...
+                            </a>
+                        </p>
+
+                        <div class="flex items-center justify-between pt-2 border-t border-gray-100">
+                            <span class="text-blue-600 font-bold text-lg">$1,120 <span
+                                    class="text-gray-400 text-sm font-normal">and up</span></span>
+                            <a href="./products/product-two.html"
+                                class="inline-flex items-center bg-blue-600 text-white text-sm font-medium px-5 py-2.5 rounded-full shadow hover:bg-blue-700 transform hover:scale-105 transition-all duration-300">
+                                <span>Details</span>
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div
+                    class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
+                    <!-- Product Image (Zoomable) -->
+                    <div class="relative overflow-hidden flex-grow">
+                        <a href="./products/product-three.html" class="block h-full">
+                            <img src="./images/products/HF/product-3.png" alt="Flow Leak Tester"
+                                title="HF Flow Leak Tester"
+                                class="w-full h-full object-contain p-6 bg-gray-50 transition-transform duration-500 hover:scale-105"
+                                loading="lazy">
+                        </a>
+                    </div>
+
+                    <div class="p-6">
+                        <h5 class="text-xl font-semibold mb-3">
+                            <a href="./products/product-three.html"
+                                class="text-gray-800 hover:text-blue-600 transition-colors">
+                                Flow Leak Tester
+                            </a>
+                        </h5>
+                        <p class="text-gray-600 text-sm mb-6">
+                            <a href="./products/product-three.html" class="hover:text-blue-600 transition-colors">
+                                The 6th generation HF series is a high-sensitivity leak tester that uses a precision
+                                flow sensor, specially designed for waterproof testing and ultra-low flow leakage
+                                detection...
+                            </a>
+                        </p>
+
+                        <div class="flex items-center justify-between pt-2 border-t border-gray-100">
+                            <span class="text-blue-600 font-bold text-lg">$1,120 <span
+                                    class="text-gray-400 text-sm font-normal">and up</span></span>
+                            <a href="./products/product-three.html"
+                                class="inline-flex items-center bg-blue-600 text-white text-sm font-medium px-5 py-2.5 rounded-full shadow hover:bg-blue-700 transform hover:scale-105 transition-all duration-300">
+                                <span>Details</span>
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div
+                    class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
+                    <!-- Product Image (Zoomable) -->
+                    <div class="relative overflow-hidden flex-grow">
+                        <a href="./products/product-seven.html" class="block h-full">
+                            <img src="./images/products/GJ/product-9.png" alt="Cabinet-Type Leak Tester"
+                                title="Cabinet-Type Leak Tester"
+                                class="w-full h-full object-contain p-6 bg-gray-50 transition-transform duration-500 hover:scale-105"
+                                loading="lazy">
+                        </a>
+                        <div
+                            class="absolute top-4 right-4 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                            New Arrival
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <h5 class="text-xl font-semibold mb-3">
+
+                            Cabinet-Type Leak Tester
+                            </a>
+                        </h5>
+                        <p class="text-gray-600 text-sm mb-6">
+                            <a href="./products/product-seven.html" class="hover:text-blue-600 transition-colors">
+                                The cabinet-type tester is a powerful solution for automotive hood airtightness testing,
+                                featuring integrated intelligent inspection, precise marking, and data management to
+                                ensure production quality and safety...
+                            </a>
+                        </p>
+
+                        <div class="flex items-center justify-between pt-2 border-t border-gray-100">
+                            <span class="text-blue-600 font-bold text-lg">$1,120 <span
+                                    class="text-gray-400 text-sm font-normal">and up</span></span>
+                            <a href="./products/product-seven.html"
+                                class="inline-flex items-center bg-blue-600 text-white text-sm font-medium px-5 py-2.5 rounded-full shadow hover:bg-blue-700 transform hover:scale-105 transition-all duration-300">
+                                <span>Details</span>
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="./products.html"
+                    class="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent/50">
+                    <span>View More</span>
+                    <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 联系咨询 -->
+    <section id="contact" class="section-padding bg-gradient-to-br from-primary to-primary/80 text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold mb-4">Contact Us for a Custom Solution</h2>
+                    <p class="text-white/90 text-lg mb-6">Fill out the form below, and our professional technical team
+                        will get in touch within 24 hours to provide you with a tailored airtightness testing solution.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div
+                                class="mt-1 mr-4 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white">
+                                <i class="fa fa-map-marker"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Address</h4>
+                                <p class="text-white/80">WaFu Brothers Automation Co., Ltd., Chuangxin Road, Baoan
+                                    District,
+                                    Shenzhen, Guangdong, China</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="mt-1 mr-4 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Phone</h4>
+                                <p class="text-white/80">+86 17376311087</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="mt-1 mr-4 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Email</h4>
+                                <p class="text-white/80">wafubrother@outlook.com</p>
+                                <p class="text-white/80">wafubrother@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 lg:p-8 text-dark">
+                    <h3 class="text-xl font-bold mb-6">Free Consultation</h3>
+                    <form id="contactForm" method="post" action="" class="space-y-6 text-gray-800">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Name / Company -->
+                            <div>
+                                <label for="contact-namecompany" class="block text-sm font-semibold text-gray-800 mb-1">
+                                    Name / Company <span class="text-red-600">*</span>
+                                </label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
+                                        <i class="fa fa-user"></i>
+                                    </span>
+                                    <input type="text" id="contact-namecompany" name="namecompany"
+                                        class="w-full pl-10 pr-4 py-3 rounded-md border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
+                                        placeholder="Please enter your name or company" required>
+                                </div>
+                                <p id="error-namecompany" class="text-red-600 text-sm mt-1 hidden"></p>
+                            </div>
+
+                            <!-- Phone -->
+                            <div>
+                                <label for="contact-phone" class="block text-sm font-semibold text-gray-800 mb-1">
+                                    Phone <span class="text-red-600">*</span>
+                                </label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
+                                        <i class="fa fa-phone"></i>
+                                    </span>
+                                    <input type="tel" id="contact-phone" name="phone"
+                                        class="w-full pl-10 pr-4 py-3 rounded-md border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
+                                        placeholder="Please enter your phone number" required>
+                                </div>
+                                <p id="error-phone" class="text-red-600 text-sm mt-1 hidden"></p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Email -->
+                            <div>
+                                <label for="contact-email" class="block text-sm font-semibold text-gray-800 mb-1">
+                                    Email <span class="text-red-600">*</span>
+                                </label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
+                                        <i class="fa fa-envelope"></i>
+                                    </span>
+                                    <input type="email" id="contact-email" name="email"
+                                        class="w-full pl-10 pr-4 py-3 rounded-md border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
+                                        placeholder="Please enter your email address" required>
+                                </div>
+                                <p id="error-email" class="text-red-600 text-sm mt-1 hidden"></p>
+                            </div>
+
+                            <!-- Product of Interest -->
+                            <div>
+                                <label for="contact-product" class="block text-sm font-semibold text-gray-800 mb-1">
+                                    Product of Interest <span class="text-red-600">*</span>
+                                </label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
+                                        <i class="fa fa-cube"></i>
+                                    </span>
+                                    <input type="text" id="contact-product" name="product"
+                                        class="w-full pl-10 pr-4 py-3 rounded-md border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
+                                        placeholder="Please enter product name" required>
+                                </div>
+                                <p id="error-product" class="text-red-600 text-sm mt-1 hidden"></p>
+                            </div>
+                        </div>
+
+                        <!-- Application / Use Case -->
+                        <div>
+                            <label for="contact-application" class="block text-sm font-semibold text-gray-800 mb-1">
+                                Application / Use Case <span class="text-red-600">*</span>
+                            </label>
+                            <div class="relative">
+                                <textarea id="contact-application" name="application" rows="3"
+                                    class="w-full pl-4 pr-4 py-3 rounded-md border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
+                                    placeholder="Briefly describe your application or usage scenario"
+                                    required></textarea>
+                            </div>
+                            <p id="error-application" class="text-red-600 text-sm mt-1 hidden"></p>
+                        </div>
+
+                        <!-- Message / Special Requirements -->
+                        <div>
+                            <label for="contact-message" class="block text-sm font-semibold text-gray-800 mb-1">
+                                Message / Special Requirements <span class="text-red-600">*</span>
+                            </label>
+                            <div class="relative">
+                                <textarea id="contact-message" name="message" rows="4"
+                                    class="w-full pl-4 pr-4 py-3 rounded-md border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
+                                    placeholder="Please enter your message..." required></textarea>
+                            </div>
+                            <p id="error-message" class="text-red-600 text-sm mt-1 hidden"></p>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="submit-button"
+                            class="w-full bg-gradient-to-r from-primary to-accent text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-all flex items-center justify-center group">
+                            <i class="fa fa-paper-plane mr-2 group-hover:translate-x-1 transition-transform"></i>
+                            Send Message
+                        </button>
+
+                        <div id="form-status" class="hidden p-4 rounded-lg text-center text-sm"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-white/70 text-sm mb-4 md:mb-0">© 2025 WAFU Brothers (Shenzhen) Automation Technology Co.,
+                    Ltd. All rights reserved.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/wafu_airleak/"
+                        class="text-white/70 hover:text-white transition-colors">
+                        <i class="fa fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61577985463179"
+                        class="text-white/70 hover:text-white transition-colors">
+                        <i class="fa fa-facebook text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/%E9%9B%84%E4%BC%9F-%E9%99%88-0443a0372/"
+                        class="text-white/70 hover:text-white transition-colors">
+                        <i class="fa fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@leaktesters"
+                        class="text-white/70 hover:text-white transition-colors">
+                        <i class="fa fa-youtube-play text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top"
+        class="fixed bottom-6 right-6 bg-accent text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transform transition-all duration-300 opacity-0 translate-y-10">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- 聊天软件对接 -->
+    <!-- <div class="chat-widget">
+        WhatsApp -->
+        <!-- <a href="whatsapp://send?phone=+8617376311087&text=Hello%20Wafu%20Brothers" target="_blank"
+            class="chat-btn bg-[#25D366]">
+            <i class="fa fa-whatsapp text-xl"></i>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61577985463179" target="_blank" class="chat-btn bg-[#0084FF]">
+            <i class="fa fa-facebook text-xl"></i>
+        </a> -->
+
+        <!-- Skype -->
+        <!-- <a href="https://teams.live.com/l/community/FBAEZe_85WEwg5VoQI" target="_blank" class="chat-btn bg-[#00AFF0]">
+            <i class="fa fa-skype text-xl"></i>
+        </a> -->
+
+        <!-- Telegram -->
+        <!-- <a href="https://x.com/wafu_Airleak" target="_blank" class="chat-btn bg-[#2CA5E0]">
+            <i class="fa fa-telegram text-xl"></i>
+        </a> -->
+    <!-- </div>  -->
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</body>
+
+</html>

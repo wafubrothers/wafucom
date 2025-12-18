@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Precision Airtightness Tester - Automated Sealing Test Solutions | WAFU Brothers</title>
+    <meta name="description" content="WAFU Brothers provides automated airtightness testers suitable for medical devices, consumer electronics, battery modules, and more, supporting differential pressure, helium leak, and flow testing methods."/>
+    <meta name="keywords" content="airtightness tester, automated testing instruments, leak detection, sealing test, differential pressure airtightness testing, airtightness testing equipment manufacturer"/>    
+    <script src="../js/tailwind.js"></script>
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link href="../css/font.css" rel="stylesheet">
+    <link href="../font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#0F3A8C',
+                        neutral: '#F5F7FA',
+                        dark: '#1D2129',
+                        light: '#FFFFFF',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'article': '0 4px 20px rgba(0, 0, 0, 0.05)',
+                        'card-hover': '0 10px 30px rgba(0, 0, 0, 0.1)',
+                    }
+                },
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-balance {
+                text-wrap: balance;
+            }
+            .reading-progress {
+                height: 3px;
+                background-color: theme('colors.primary');
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 0%;
+                z-index: 50;
+                transition: width 0.1s ease;
+            }
+            .fade-in {
+                animation: fadeIn 0.6s ease-in-out;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .markdown-content h2 {
+                @apply text-2xl font-semibold text-dark mt-8 mb-4 scroll-mt-20;
+            }
+            .markdown-content h3 {
+                @apply text-xl font-medium text-dark mt-6 mb-3 scroll-mt-20;
+            }
+            .markdown-content p {
+                @apply text-gray-700 mb-4 leading-relaxed;
+            }
+            .markdown-content ul {
+                @apply list-disc pl-5 mb-4 space-y-2;
+            }
+            .markdown-content ol {
+                @apply list-decimal pl-5 mb-4 space-y-2;
+            }
+            .markdown-content img {
+                @apply rounded-lg shadow-md max-w-full mx-auto my-6;
+            }
+            .markdown-content blockquote {
+                @apply border-l-4 border-primary pl-4 italic text-gray-600 my-4;
+            }
+            .markdown-content code {
+                @apply bg-neutral px-1 py-0.5 rounded text-sm font-mono;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-inter bg-white text-dark antialiased">
+    <header id="navbar" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Brand Logo -->
+                <a href="../index.html" class="flex items-center" aria-label="Wafu Brothers Homepage">
+                    <img src="../images/logo-inverse.png" alt="WaFu Brothers" class="h-10 md:h-12 object-contain">WAFU
+                </a>
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-1 md:space-x-8">
+                    <a href="../index.html"
+                        class="text-gray-800 font-medium hover:text-secondary transition-colors px-2 py-1">Home</a>
+
+                    <!-- Product Center Dropdown -->
+                    <div class="relative group">
+                        <a href="../products.html"
+                            class="text-gray-800 font-medium hover:text-primary transition-colors flex items-center tracking-wide px-2 py-1">
+                            Products <i
+                                class="fa fa-angle-down ml-1 text-xs transition-transform group-hover:rotate-180 duration-300"></i>
+                        </a>
+                        <!-- Optimized Dropdown -->
+                        <div
+                            class="absolute left-0 mt-1 w-64 rounded-lg shadow-xl bg-white ring-1 ring-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                                    transition-all duration-300 z-50 transform origin-top scale-95 group-hover:scale-100">
+                            <div class="py-2">
+                                <a href="../products.html#Leak_detector"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Full range of leak detectors</a>
+                            <a href="../products.html#Non-standard"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">
+                                Non-standard customized leak detector</a>
+                            <a href="../products.html#Tooling"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Leak Detection Fixtures and Fixtures</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Solutions Dropdown -->
+                    <div class="relative group">
+                        <a href="../application.html"
+                            class="text-gray-800 font-medium hover:text-primary transition-colors flex items-center tracking-wide px-2 py-1">
+                            Application Cases <i
+                                class="fa fa-angle-down ml-1 text-xs transition-transform group-hover:rotate-180 duration-300"></i>
+                        </a>
+                        <div
+                            class="absolute left-0 mt-1 w-64 rounded-lg shadow-xl bg-white ring-1 ring-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                                    transition-all duration-300 z-50 transform origin-top scale-95 group-hover:scale-100">
+                            <div class="py-2">
+                                <a href="../solu/solu-carparts.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Automotive
+                                    Parts Industry</a>
+                                <a href="../solu/solu-aerospace.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Aerospace
+                                    Industry</a>
+                                <a href="../solu/solu-medical.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Medical
+                                    Devices Industry</a>
+                                <a href="../solu/solu-battery.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Battery
+                                    Industry</a>
+                                <a href="../solu/solu-food.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Packaging
+                                    Industry</a>
+                                <a href="../solu/solu-kitchen.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Home
+                                    Appliance Industry</a>
+                                <a href="../solu/solu-electronic.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Electronics
+                                    Industry</a>
+                                <a href="../solu/solu-pipeline.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Pipeline
+                                    Industry</a>
+                                <a href="../solu/solu-hardware.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Hardware
+                                    & Die Casting</a>
+                                <a href="../solu/solu-lighting.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Security
+                                    & Lighting</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="../about.html"
+                        class="text-gray-800 font-medium hover:text-primary transition-colors tracking-wide px-2 py-1">About
+                        Us</a>
+
+                    <!-- Service Support Dropdown -->
+                    <div class="relative group">
+                        <a href="../services.html"
+                            class="text-primary font-medium hover:text-primary transition-colors flex items-center tracking-wide px-2 py-1">
+                            Service & Support <i
+                                class="fa fa-angle-down ml-1 text-xs transition-transform group-hover:rotate-180 duration-300"></i>
+                        </a>
+                        <div
+                            class="absolute left-0 mt-1 w-64 rounded-lg shadow-xl bg-white ring-1 ring-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                                    transition-all duration-300 z-50 transform origin-top scale-95 group-hover:scale-100">
+                            <div class="py-2">
+                                <a href="../resource.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Resource
+                                    Center</a>
+                                <a href="../Allquestions.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">FAQ</a>
+                                <a href="../test-case.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Case
+                                    Images</a>
+                                <a href="../digital.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Case
+                                    Videos</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Language Selector -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center text-gray-800 font-medium hover:text-primary transition-colors px-2 py-1">
+                            Language <i
+                                class="fa fa-angle-down ml-1 text-xs transition-transform group-hover:rotate-180 duration-300"></i>
+                        </button>
+                        <div
+                            class="absolute mt-1 w-40 bg-white shadow-lg rounded-md ring-1 ring-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="https://www.wafubrother.com/"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇺🇸
+                                English</a>
+                            <a href="https://www.wafubrother.cn/"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇨🇳
+                                中文</a>
+                            <a href="https://www.wafuvn.com/"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇻🇳
+                                Tiếng Việt</a>
+                            <a href="https://www.wafuth.com/"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇹🇭
+                                ไทย</a>
+                        </div>
+                    </div>
+                    <a href="../contact.html"
+                        class="bg-primary hover:bg-secondary text-white font-medium py-2 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Contact Us
+                    </a>
+
+
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-800 hover:text-primary focus:outline-none p-2">
+                    <i class="fa fa-bars text-xl transition-transform duration-300"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="container mx-auto px-4 py-3">
+                <nav class="flex flex-col space-y-1 py-2">
+                    <a href="../index.html"
+                        class="block py-3 px-4 text-primary font-medium hover:bg-gray-50 rounded-md transition-colors">Home</a>
+
+                    <!-- Product Dropdown Mobile -->
+                    <div class="mobile-dropdown">
+                        <button
+                            class="w-full flex justify-between items-center text-gray-800 font-medium hover:text-primary py-3 px-4 w-full text-left focus:outline-none">
+                            Products <i class="fa fa-plus text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden pl-6 mt-0 border-l-2 border-gray-100">
+                            <a href="../products.html#Leak_detector"
+                            class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Full range of leak detectors</a>
+                        <a href="../products.html#Non-standard"
+                            class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">
+                            Non-standard customized leak detector</a>
+                        <a href="../products.html#Tooling"
+                            class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Leak Detection Fixtures and Fixtures</a>
+                        </div>
+                    </div>
+
+                    <!-- Application Case Mobile -->
+                    <div class="mobile-dropdown">
+                        <button
+                            class="w-full flex justify-between items-center text-gray-800 font-medium hover:text-primary py-3 px-4 w-full text-left focus:outline-none">
+                            Application Cases <i class="fa fa-plus text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden pl-6 mt-0 border-l-2 border-gray-100">
+                            <a href="../solu/solu-carparts.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Automotive
+                                Parts Industry</a>
+                            <a href="../solu/solu-aerospace.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Aerospace
+                                Industry</a>
+                            <a href="../solu/solu-medical.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Medical
+                                Devices Industry</a>
+                            <a href="../solu/solu-battery.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Battery
+                                Industry</a>
+                            <a href="../solu/solu-food.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Packaging
+                                Industry</a>
+                            <a href="../solu/solu-kitchen.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Home
+                                Appliance Industry</a>
+                            <a href="../solu/solu-electronic.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Electronics
+                                Industry</a>
+                            <a href="../solu/solu-pipeline.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Pipeline
+                                Industry</a>
+                            <a href="../solu/solu-hardware.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Hardware
+                                & Die Casting</a>
+                            <a href="../solu/solu-lighting.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Security
+                                & Lighting</a>
+                        </div>
+                    </div>
+
+                    <a href="../about.html"
+                        class="block py-3 px-4 text-gray-800 hover:text-primary hover:bg-gray-50 rounded-md transition-colors">About
+                        Us</a>
+
+                    <!-- Service Support Mobile -->
+                    <div class="mobile-dropdown">
+                        <button
+                            class="w-full flex justify-between items-center text-gray-800 font-medium hover:text-primary py-3 px-4 w-full text-left focus:outline-none">
+                            Service & Support <i class="fa fa-plus text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden pl-6 mt-0 border-l-2 border-gray-100">
+                            <a href="../solu/solu-carparts.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Resource
+                                Center</a>
+                            <a href="../solu/solu-medical.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">FAQ</a>
+                            <a href="../solu/solu-battery.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Technical
+                                Articles</a>
+                        </div>
+                    </div>
+                    <!-- Mobile Language Selector -->
+                    <div class="mobile-dropdown">
+                        <button
+                            class="w-full flex justify-between items-center text-gray-800 font-medium hover:text-primary py-3 px-4 w-full text-left focus:outline-none">
+                            Language <i class="fa fa-plus text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden pl-6 mt-0 border-l-2 border-gray-100">
+                            <a href="https://www.wafubrother.com/"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇺🇸
+                                English</a>
+                            <a href="https://www.wafubrother.cn/"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇨🇳
+                                中文</a>
+                            <a href="https://www.wafuvn.com/"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇻🇳
+                                Tiếng Việt</a>
+                            <a href="https://www.wafuth.com/"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇹🇭
+                                ไทย</a>
+                        </div>
+                    </div>
+                    <a href="../contact.html"
+                        class="block py-3 px-4 mt-2 text-center bg-primary text-white rounded-md hover:bg-secondary transition-colors">Contact
+                        Us</a>
+
+
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <nav class="text-sm text-gray-500 mb-6">
+            <ol class="flex flex-wrap items-center">
+                <li><a href="/" class="hover:text-primary transition-colors duration-200">Home</a></li>
+                <li class="mx-2"><i class="fa fa-angle-right text-xs"></i></li>
+                <li><a href="../services.html" class="hover:text-primary transition-colors duration-200">Service Center</a></li>
+                <li class="mx-2"><i class="fa fa-angle-right text-xs"></i></li>
+                <li><a href="../resource.html" class="hover:text-primary transition-colors duration-200">Technical Articles</a></li>
+                <li class="mx-2"><i class="fa fa-angle-right text-xs"></i></li>
+                <li class="text-gray-700">Micro Leak Warning: Breakthroughs and Future Trends in High-Precision Airtightness Testing</li>
+            </ol>
+        </nav>
+        
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <article class="w-full lg:w-2/3 bg-white rounded-xl shadow-article p-6 md:p-8 fade-in">
+                <header class="mb-8">
+                    <h1 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-dark leading-tight text-balance mb-4">
+                        Micro Leak Warning: Breakthroughs and Future Trends in High-Precision Airtightness Testing Instruments
+                    </h1>
+                    <div class="flex flex-wrap items-center text-sm text-gray-500 space-x-4">
+                        <span><i class="fa fa-calendar-o mr-1"></i> July 15, 2025</span>
+                        <span><i class="fa fa-user-o mr-1"></i> WaFubrother</span>
+                        <span><i class="fa fa-tag mr-1"></i> Airtightness Testing Equipment, Direct Pressure Devices, Differential Pressure Devices, Flow Devices</span>
+                    </div>
+                </header>
+                
+
+                <div class="markdown-content">
+
+                    <p>In modern manufacturing, airtightness testing has evolved from a mere "pass/fail judgment" to a core part of "quality traceability." With increasing sealing requirements in fields such as consumer electronics, new energy, and medical devices (some products requiring leakage rates below 1×10⁻⁶ Pa·m³/s), high-precision airtightness testers have become the "quality gatekeepers" of high-end manufacturing. This article deeply analyzes their breakthrough applications in key industries and forecasts future technological trends.</p>
+                
+                    <h2>1. Core Application Scenarios of High-Precision Airtightness Testing</h2>
+                
+                    <p>The use of high-precision airtightness testers (leakage detection limit ≤1×10⁻⁵ Pa·m³/s) has penetrated industries with strict sealing requirements, addressing the shortcomings of traditional equipment such as missed detections and false judgments.</p>
+                
+                    <h3>1. New Energy Vehicles: The Last Line of Defense for Battery Safety</h3>
+                    <p>In the new energy vehicle sector, the sealing of battery packs directly impacts safety performance. Testing data from a leading automaker shows that when the battery pack leakage rate exceeds 5×10⁻⁵ Pa·m³/s, the risk of short circuit after water exposure increases by 300%. High-precision airtightness testers achieve precise control through the following technologies:</p>
+                    <ul>
+                        <li>Adopting a combined differential pressure and flow detection mode, able to detect micro leaks of 0.001mL/min under 0.15MPa pressure;</li>
+                        <li>Integrating temperature compensation algorithms to eliminate detection errors caused by battery pack shell temperature differences (±2℃);</li>
+                        <li>After application by an automaker, the pass rate for water exposure tests of battery packs increased from 89% to 99.7%, reducing annual after-sales claims costs by over 20 million RMB.</li>
+                    </ul>
+                
+                    <h3>2. Medical Devices: Precise Guarantee for Life Safety</h3>
+                    <p>Medical devices demand "almost rigorous" sealing requirements. For example, infusion sets must maintain leakage rates below 1×10⁻⁶ Pa·m³/s to prevent liquid contamination. The use of high-precision testers in this field has three main features:</p>
+                    <ul>
+                        <li>Sterile test chamber design to avoid cross-contamination;</li>
+                        <li>Introduction of negative pressure detection mode (-0.08MPa) to simulate physiological sealing conditions;</li>
+                        <li>After adoption by a medical device manufacturer, leakage detection accuracy of anesthesia machine breathing circuits improved tenfold, passing ISO 80369 international standards certification.</li>
+                    </ul>
+                
+                    <h3>3. Aerospace: Reliability Verification Under Extreme Conditions</h3>
+                    <p>In aerospace, components must withstand temperature fluctuations from -50℃ to 150℃ and pressure shocks above 0.5MPa. Breakthroughs in high-precision airtightness testing include:</p>
+                    <ul>
+                        <li>Equipped with high and low temperature simulation chambers (-40℃~120℃) to perform dynamic leakage monitoring under temperature cycling;</li>
+                        <li>Combining helium mass spectrometry leak detection with pressure decay methods, achieving detection accuracy of 1×10⁻⁹ Pa·m³/s for aerospace engine pipelines;</li>
+                        <li>After use by an aerospace research institute, leak fault diagnosis time of spacecraft fuel pipelines was reduced from 72 hours to 4 hours.</li>
+                    </ul>
+                
+                    <h3>4. Consumer Electronics: Quantitative Measure of Waterproof Performance</h3>
+                    <p>With waterproof ratings of smartphones and smartwatches commonly reaching IP68 (water depth 2m for 30 minutes without ingress), high-precision testing has become essential:</p>
+                    <ul>
+                        <li>Using micro gas flow sensors to directly measure leakage volumes as low as 0.0001mL/min;</li>
+                        <li>Developing a "stepwise pressure testing program" gradually increasing from 0.05MPa to 0.2MPa to avoid product damage from sudden high pressure;</li>
+                        <li>After application by a phone manufacturer, waterproof test rework rates dropped from 15% to 1.2%, saving 3.5 million RMB annually in material losses.</li>
+                    </ul>
+                
+                    <h2>2. Breakthrough Directions in High-Precision Airtightness Testing Technology</h2>
+                
+                    <p>In recent years, breakthroughs in sensors, algorithms, and integration have driven multi-dimensional upgrades in high-precision airtightness testing capabilities.</p>
+                
+                    <h3>1. Sensor Technology: From "Accuracy Competition" to "Stability Competition"</h3>
+                    <p>Traditional high-precision testing relies on imported sensors (e.g., Swiss KELLER, Japanese Yokogawa), but domestic equipment has achieved technological breakthroughs:</p>
+                    <ul>
+                        <li>Response time of MEMS micro-flow sensors shortened from 50ms to 10ms, capturing instant micro leaks;</li>
+                        <li>Pressure sensors with sapphire substrates have drift ≤0.01%FS/℃ in the range of -40℃ to 125℃;</li>
+                        <li>The lifespan of sensors from a domestic manufacturer increased from 100,000 tests to 500,000, approaching top international levels.</li>
+                    </ul>
+                
+                    <h3>2. Algorithm Innovation: AI-Enabled "Dynamic Detection"</h3>
+                    <p>The introduction of AI algorithms shifts testing from "static judgment" to "dynamic prediction":</p>
+                    <ul>
+                        <li>CNN models trained on over 100,000 historical data sets can identify "false leaks" (e.g., pressure changes due to temperature fluctuations), reducing false positive rates from 3.2% to 0.5%;</li>
+                        <li>Real-time self-learning systems optimize leakage thresholds automatically every 500 tests to adapt to process variations across batches;</li>
+                        <li>After application by a consumer electronics OEM, invalid rework caused by environmental interference decreased by 82%.</li>
+                    </ul>
+                
+                    <h3>3. Integrated Design: From "Standalone Testing" to "Production Line Connectivity"</h3>
+                    <p>High-precision equipment has evolved from standalone instruments to nodes of smart manufacturing:</p>
+                    <ul>
+                        <li>Equipped with industrial Ethernet interfaces to interact in real time with MES systems, linking detection data directly to product traceability codes;</li>
+                        <li>Multi-station parallel detection modules (supporting 8-channel synchronous testing) improve efficiency by 600%, with daily throughput exceeding 10,000 units per device;</li>
+                        <li>Integrated upgrades on a medical device production line reduced labor costs in the inspection phase by 70%.</li>
+                    </ul>
+                
+                    <h2>3. Future Technology Development Trends</h2>
+                
+                    <p>With deepening industrial digital transformation, high-precision airtightness testing technology is expected to develop in three main directions.</p>
+                
+                    <h3>1. "Multi-Physical Field Fusion" of Detection Dimensions</h3>
+                    <p>Single pressure parameter detection will upgrade to multidimensional analysis including pressure, temperature, and humidity:</p>
+                    <ul>
+                        <li>By 2025, testers equipped with infrared thermal imaging modules will simultaneously perform "leak location" and "leak rate quantification";</li>
+                        <li>Introduction of ultrasonic-assisted detection technology will identify leak locations within 0.3 seconds with ±1mm accuracy, greatly shortening fault diagnosis time.</li>
+                    </ul>
+                
+                    <h3>2. Miniaturization and Modularization of Equipment</h3>
+                    <p>To meet the needs of flexible production lines, devices will trend towards "lightweight and rapid changeover":</p>
+                    <ul>
+                        <li>Portable high-precision testers will reduce weight from 5kg to 2kg, supporting on-site spot checks (e.g., wind power equipment, pipeline projects);</li>
+                        <li>Modular design shortens changeover time from 30 minutes to 5 minutes, meeting the demands of multi-variety small batch production.</li>
+                    </ul>
+                
+                    <h3>3. Global Collaboration on Industry Standards</h3>
+                    <p>Currently, testing standards are fragmented across industries (e.g., automotive ISO 16750, medical ISO 10993), but future trends include:</p>
+                    <ul>
+                        <li>Development of cross-industry universal testing protocols (e.g., OPC UA-based data formats);</li>
+                        <li>Internationally recognized leakage rate calibration systems to resolve "result discrepancies among different testing institutions for the same product."</li>
+                    </ul>
+                
+                    <h2>Conclusion: From "Quality Compliance" to "Value Creation"</h2>
+                
+                    <p>The value of high-precision airtightness testers has surpassed mere "quality gatekeeping," becoming a "data engine" for process optimization. A new energy battery manufacturer analyzed detection data and found a positive correlation between leakage rates and welding temperature in a batch of cells. After adjusting process parameters accordingly, the pass rate improved by 2.3 percentage points, generating over 10 million RMB in annual benefits.</p>
+                
+                    <p>Looking forward, with the deepening of "Industry 4.0," high-precision airtightness testing will deeply integrate with digital twins and predictive maintenance, shifting from "passive detection" to "active prevention." For manufacturers, choosing detection equipment with upgrade potential (such as algorithm iteration and data interconnectivity support) will become a key decision for building quality competitiveness.</p>
+                
+                </div>
+                
+                <footer class="mt-12 pt-8 border-t border-gray-100">
+                    <div class="flex flex-wrap justify-between items-center mb-8">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-sm text-gray-500">Share this article:</span>
+                            <a href="https://service.weibo.com/share/share.php?url=https://www.wafubrother.com&title=This article is worth reading"
+                                target="_blank" rel="noopener noreferrer" aria-label="Share on Sina Weibo"
+                                class="w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center hover:bg-red-600 transition-colors duration-200">
+                                <i class="fa fa-weibo"></i>
+                            </a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.wafubrother.com"
+                                target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook"
+                                class="w-8 h-8 rounded-full bg-blue-700 text-white flex items-center justify-center hover:bg-blue-800 transition-colors duration-200">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="mailto:?subject=Recommended Reading: This Article Is Worth Reading&body=I found this article very valuable, come take a look:%0Ahttps://www.wafubrother.com"
+                                aria-label="Send via Email"
+                                class="w-8 h-8 rounded-full bg-gray-800 text-white flex items-center justify-center hover:bg-gray-900 transition-colors duration-200">
+                                <i class="fa fa-envelope-o"></i>
+                            </a>
+                        </div>
+                    </div>
+                
+                    <div class="flex flex-wrap gap-3 mb-8">
+                        <span
+                            class="px-4 py-2 bg-neutral rounded-full text-gray-700 hover:bg-gray-100 transition-colors duration-200 text-sm">Airtightness Testing</span>
+                        <span
+                            class="px-4 py-2 bg-neutral rounded-full text-gray-700 hover:bg-gray-100 transition-colors duration-200 text-sm">Sensor Technology</span>
+                        <span
+                            class="px-4 py-2 bg-neutral rounded-full text-gray-700 hover:bg-gray-100 transition-colors duration-200 text-sm">Industrial Testing Technology</span>
+                        <span
+                            class="px-4 py-2 bg-neutral rounded-full text-gray-700 hover:bg-gray-100 transition-colors duration-200 text-sm">Data Compensation Algorithm</span>
+                    </div>
+                
+                    <div class="flex flex-col sm:flex-row justify-between gap-6 mt-10">
+                        <a href="./T-art-10.html"
+                            class="flex items-center space-x-3 text-gray-700 hover:text-primary transition-colors duration-200">
+                            <i class="fa fa-angle-left"></i>
+                            <div>
+                                <p class="text-sm text-gray-500">Previous Article</p>
+                                <p class="font-medium">How Airtightness Testing Builds the Reliability Defense for Electronic Products</p>
+                            </div>
+                        </a>
+                        <a href="T-art-12.html"
+                            class="flex items-center space-x-3 text-gray-700 hover:text-primary transition-colors duration-200 justify-end">
+                            <div class="text-right">
+                                <p class="text-sm text-gray-500">Next Article</p>
+                                <p class="font-medium">Why Airtightness Testers Have Become the Core Tool for Quality Control in Industrial Manufacturing</p>
+                            </div>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </footer>
+                
+            </article>
+
+            <!-- 侧边栏 -->
+            <aside class="w-full lg:w-1/3 space-y-8">
+                <div class="bg-white rounded-xl shadow-article p-6 fade-in">
+                    <h3 class="text-lg font-semibold text-dark mb-4">About Wafu Brothers</h3>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="../images/we.jpg" alt="Wafu Brothers" class="w-16 h-16 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-medium text-dark">Wafu Brothers</h4>
+                            <p class="text-sm text-gray-500">Experts in Airtightness Testing Instruments</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 text-sm mb-4">
+                        With 16 years of experience in airtightness testing technology development, we focus on high-precision airtightness testing equipment and applications, serving industries such as automotive parts, new energy, and medical devices.
+                    </p>
+                    <a href="../resource.html"
+                        class="text-primary hover:text-primary/80 text-sm font-medium transition-colors duration-200">Read More Articles</a>
+                </div>
+                <div class="bg-white rounded-xl shadow-article p-6 fade-in" style="animation-delay: 0.1s">
+                    <h3 class="text-lg font-semibold text-dark mb-4">Related Articles</h3>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3">
+                            <img src="../images/logo-inverse.png" alt="New Energy Vehicle Battery Airtightness Testing Article Thumbnail"
+                                class="w-20 h-16 rounded-lg object-cover">
+                            <div>
+                                <a href="./T-art-2.html"
+                                    class="font-medium text-dark hover:text-primary transition-colors duration-200 line-clamp-2">Wafu Brothers All-Scenario Airtightness Testing Equipment Solution: Building a “Zero Leakage” Technical Defense for Manufacturing</a>
+                                <p class="text-xs text-gray-500 mt-1">2025-07-06</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-3">
+                            <img src="../images/services/faq/faq_4.jpg" alt="Wafu Brothers Engineer"
+                                class="w-20 h-16 rounded-lg object-cover">
+                            <div>
+                                <a href="./T-art-7.html"
+                                    class="font-medium text-dark hover:text-primary transition-colors duration-200 line-clamp-2">Frequent Rework in Seal Testing? The Root Cause May Lie in the Testing System Itself</a>
+                                <p class="text-xs text-gray-500 mt-1">2025-05-15</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-3">
+                            <img src="../images/solu/electronic/dianji.jpg" alt="Rolling Shutter Motor Waterproof Airtightness Testing Article Thumbnail"
+                                class="w-20 h-16 rounded-lg object-cover">
+                            <div>
+                                <a href="./T-art-9.html"
+                                    class="font-medium text-dark hover:text-primary transition-colors duration-200 line-clamp-2">Rolling Shutter Motor Waterproof Airtightness Testing: Understanding Causes and Solutions</a>
+                                <p class="text-xs text-gray-500 mt-1">2025-04-30</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            
+                <!-- Popular Tags -->
+                <div class="bg-white rounded-xl shadow-article p-6 fade-in" style="animation-delay: 0.2s">
+                    <h3 class="text-lg font-semibold text-dark mb-4">Popular Tags</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1.5 bg-neutral rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200 text-sm">Airtightness Testing Equipment</span>
+                        <span
+                            class="px-3 py-1.5 bg-neutral rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200 text-sm">Precision Instrument Manufacturing</span>
+                        <span
+                            class="px-3 py-1.5 bg-neutral rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200 text-sm">Intelligent Testing Equipment</span>
+                        <span
+                            class="px-3 py-1.5 bg-neutral rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200 text-sm">Automotive Manufacturing</span>
+                        <span
+                            class="px-3 py-1.5 bg-neutral rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200 text-sm">Medical Devices</span>
+                        <span
+                            class="px-3 py-1.5 bg-neutral rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200 text-sm">New Energy Vehicles</span>
+                        <span
+                            class="px-3 py-1.5 bg-neutral rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200 text-sm">Smart Sensing Systems</span>
+                        <span
+                            class="px-3 py-1.5 bg-neutral rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200 text-sm">Environmental Adaptability Technology</span>
+                        <span
+                            class="px-3 py-1.5 bg-neutral rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200 text-sm">Sensor Technology</span>
+                        <span
+                            class="px-3 py-1.5 bg-neutral rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors duration-200 text-sm">Instruments and Meters</span>
+                    </div>
+                </div>
+            
+                <!-- Contact Consultation -->
+                <div class="bg-gradient-to-br from-primary to-secondary text-white rounded-xl shadow-article p-6 fade-in"
+                    style="animation-delay: 0.3s">
+                    <h3 class="text-lg font-semibold mb-4">Need Professional Consultation?</h3>
+                    <p class="mb-6 text-white/90">
+                        Our technical experts are always ready to provide airtightness testing solutions and help you choose the most suitable testing equipment.
+                    </p>
+                    <a href="../contact.html"
+                        class="block w-full py-3 bg-white text-primary rounded-lg text-center font-medium hover:bg-gray-100 transition-colors duration-200">
+                        Consult Now
+                    </a>
+                    <div class="flex items-center justify-between mt-4 text-white/80 text-sm">
+                        <span><i class="fa fa-phone mr-1"></i>+86 17376311087</span>
+                        <span><i class="fa fa-envelope-o mr-1"></i>wafubrother@outlook.com</span>
+                    </div>
+                </div>
+            </aside>
+            
+        </div>
+    </main>
+    <footer class="bg-white border-t border-gray-200 text-gray-800 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="lg:col-span-4">
+                    <div class="flex items-center mb-6">
+                        <span class="text-2xl font-semibold text-primary tracking-tight">WaFu<span
+                                class="text-dark">Brothers</span></span>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-balance max-w-md">
+                        WaFu Brothers (Shenzhen) Automation Technology Co., Ltd., established in 2009, serves over 8,000
+                        domestic and international clients including Audi. As a global leader in leak tester
+                        manufacturing and solution provision, we have accumulated 16 years of experience in non-standard
+                        automation and sealing detection. With a spirit of innovation and bold breakthroughs, we guide
+                        clients with forward-thinking designs and deliver internationally competitive product solutions.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <!-- Weibo -->
+                        <a href="https://weibo.com/u/7907943947"
+                            class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#E6162D] hover:text-white transition-all duration-300"
+                            aria-label="Weibo">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                        <!-- YouTube -->
+                        <a href="https://www.youtube.com/@leaktesters"
+                            class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#FF0000] hover:text-white transition-all duration-300"
+                            aria-label="YouTube">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/wafu_airleak"
+                            class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#E1306C] hover:text-white transition-all duration-300"
+                            aria-label="Instagram">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                        <!-- Twitter -->
+                        <a href="https://x.com/wafu_Airleak"
+                            class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-black hover:text-white transition-all duration-300"
+                            aria-label="Twitter">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="lg:col-span-2">
+                    <h3 class="font-semibold text-lg mb-6 text-dark flex items-center">
+                        <i class="fa fa-link text-primary mr-2"></i>Quick Links
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="../index.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group">
+                                <i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs transform group-hover:translate-x-1 transition-transform"></i>Home</a>
+                        </li>
+                        <li><a href="../products.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group">
+                                <i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs transform group-hover:translate-x-1 transition-transform"></i>Products</a>
+                        </li>
+                        <li><a href="../application.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group">
+                                <i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs transform group-hover:translate-x-1 transition-transform"></i>Application
+                                Cases</a></li>
+                        <li><a href="../about.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group">
+                                <i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs transform group-hover:translate-x-1 transition-transform"></i>About
+                                Us</a></li>
+                        <li><a href="../services.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group">
+                                <i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs transform group-hover:translate-x-1 transition-transform"></i>Support</a>
+                        </li>
+                        <li><a href="../contact.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group">
+                                <i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs transform group-hover:translate-x-1 transition-transform"></i>Contact
+                                Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Product Categories -->
+                <div class="lg:col-span-3">
+                    <h3 class="font-semibold text-lg mb-6 text-dark flex items-center">
+                        <i class="fa fa-cube text-primary mr-2"></i>Product Categories
+                    </h3>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4">
+                        <li><a href="../products/product-one.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>Multi-function
+                                Leak Tester</a></li>
+                        <li><a href="../products/product-two.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>Multi-channel
+                                Leak Tester</a></li>
+                        <li><a href="../products/product-three.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>HF
+                                Flow Leak Tester</a></li>
+                        <li><a href="../products/product-four.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>Differential
+                                Pressure Leak Tester</a></li>
+                        <li><a href="../products/product-five.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>Direct
+                                Pressure Leak Tester</a></li>
+                        <li><a href="../products/product-six.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>Desktop
+                                Sealing Fixtures</a></li>
+                        <li><a href="../products/product-seven.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>Cabinet-type
+                                Leak Tester</a></li>
+                        <li><a href="../products/product-eight.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>Cabinet-type
+                                Fixtures</a></li>
+                        <li><a href="../products/product-nine.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>Customized
+                                Leak Tester</a></li>
+                        <li><a href="../products/leak-tester-allinone.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>All-in-One
+                                Leak Test System</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="lg:col-span-3">
+                    <h3 class="font-semibold text-lg mb-6 text-dark flex items-center">
+                        <i class="fa fa-map-marker text-primary mr-2"></i>Contact Information
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start"><i
+                                class="fa fa-map-marker text-primary mt-1 mr-3 w-4 text-center"></i><span
+                                class="text-gray-600">2F, Building 6, Shayi Environmental Industrial Park, No. 496
+                                Chuangcheng Road, Shajing Street, Bao'an District, Shenzhen</span></li>
+                        <li class="flex items-start"><i
+                                class="fa fa-phone text-primary mt-1 mr-3 w-4 text-center"></i><span
+                                class="text-gray-600">+86 17376311087</span></li>
+                        <li class="flex items-start"><i
+                                class="fa fa-envelope text-primary mt-1 mr-3 w-4 text-center"></i><span
+                                class="text-gray-600">wafubrother@outlook.com</span></li>
+                        <li class="flex items-start"><i
+                                class="fa fa-clock-o text-primary mt-1 mr-3 w-4 text-center"></i><span
+                                class="text-gray-600">Monday to Friday: 9:00 - 18:00</span></li>
+                    </ul>
+                    <br />
+                    <h3 class="font-semibold text-lg mb-4 text-dark flex items-center">
+                        <i class="fa fa-handshake-o text-primary mr-2"></i>Friendly Links
+                    </h3>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://www.west.cn/" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md text-sm transition-colors">
+                            <i class="fa fa-external-link mr-1.5 text-xs"></i>West.cn
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-200 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                        &copy; 2025 WaFu Brothers (Shenzhen) Automation Technology Co., Ltd. All rights reserved
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+                        <a href="../sitemap.html"
+                            class="text-gray-500 hover:text-primary text-sm transition-colors">Sitemap</a>
+                        <a href="../contact.html"
+                            class="text-gray-500 hover:text-primary text-sm transition-colors">Technical
+                            Support</a>
+                        <a href="../faq/dual-channel-10inch-kunlun-screen-leak-tester-manual.pdf"
+                            class="text-gray-500 hover:text-primary text-sm transition-colors">User Manual</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <button id="back-to-top"
+        class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

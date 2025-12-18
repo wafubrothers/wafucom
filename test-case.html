@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Cases | Wafu Brothers</title>
+    <meta name="keywords"
+        content="Leak tester test cases, home appliance test cases, automotive industry test cases, battery industry test cases, consumer electronics test cases" />
+    <meta name="description"
+        content="Which industries can leak testers be applied to? Our product tests cover home appliances, automotive, battery industry, consumer electronics, medical devices, military supplies, outdoor products, valves, and fittings." />
+    <script src="./js/tailwind.js"></script>
+    <link href="./css/tailwindcss.css" rel="stylesheet">
+    <link href="./font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/font.css" rel="stylesheet">
+</head>
+
+<body class="bg-white text-gray-800 font-inter overflow-x-hidden">
+    <header id="navbar" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Brand Logo -->
+                <a href="./index.html" class="flex items-center" aria-label="Wafu Brothers Homepage">
+                    <img src="./images/logo-inverse.png" alt="WaFu Brothers" class="h-10 md:h-12 object-contain">WAFU
+                </a>
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-1 md:space-x-8">
+                    <a href="./index.html"
+                        class="text-gray-800 font-medium hover:text-secondary transition-colors px-2 py-1">Home</a>
+
+                    <!-- Product Center Dropdown -->
+                    <div class="relative group">
+                        <a href="./products.html"
+                            class="text-gray-800 font-medium hover:text-primary transition-colors flex items-center tracking-wide px-2 py-1">
+                            Products <i
+                                class="fa fa-angle-down ml-1 text-xs transition-transform group-hover:rotate-180 duration-300"></i>
+                        </a>
+                        <!-- Optimized Dropdown -->
+                        <div
+                            class="absolute left-0 mt-1 w-64 rounded-lg shadow-xl bg-white ring-1 ring-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                                    transition-all duration-300 z-50 transform origin-top scale-95 group-hover:scale-100">
+                            <div class="py-2">
+                                <a href="./products.html#Leak_detector"
+                                    class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Full range of leak detectors</a>
+                                <a href="./products.html#Non-standard"
+                                    class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">
+                                    Non-standard customized leak detector</a>
+                                <a href="./products.html#Tooling"
+                                    class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Leak Detection Fixtures and Fixtures</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Solutions Dropdown -->
+                    <div class="relative group">
+                        <a href="./application.html"
+                            class="text-gray-800 font-medium hover:text-primary transition-colors flex items-center tracking-wide px-2 py-1">
+                            Application Cases <i
+                                class="fa fa-angle-down ml-1 text-xs transition-transform group-hover:rotate-180 duration-300"></i>
+                        </a>
+                        <div
+                            class="absolute left-0 mt-1 w-64 rounded-lg shadow-xl bg-white ring-1 ring-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                                    transition-all duration-300 z-50 transform origin-top scale-95 group-hover:scale-100">
+                            <div class="py-2">
+                                <a href="solu/solu-carparts.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Automotive
+                                    Parts Industry</a>
+                                <a href="solu/solu-aerospace.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Aerospace
+                                    Industry</a>
+                                <a href="solu/solu-medical.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Medical
+                                    Devices Industry</a>
+                                <a href="solu/solu-battery.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Battery
+                                    Industry</a>
+                                <a href="solu/solu-food.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Packaging
+                                    Industry</a>
+                                <a href="solu/solu-kitchen.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Home
+                                    Appliance Industry</a>
+                                <a href="solu/solu-electronic.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Electronics
+                                    Industry</a>
+                                <a href="solu/solu-pipeline.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Pipeline
+                                    Industry</a>
+                                <a href="solu/solu-hardware.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Hardware
+                                    & Die Casting</a>
+                                <a href="solu/solu-lighting.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Security
+                                    & Lighting</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="./about.html"
+                        class="text-gray-800 font-medium hover:text-primary transition-colors tracking-wide px-2 py-1">About
+                        Us</a>
+
+                    <!-- Service Support Dropdown -->
+                    <div class="relative group">
+                        <a href="./services.html"
+                            class="text-primary font-medium hover:text-primary transition-colors flex items-center tracking-wide px-2 py-1">
+                            Service & Support <i
+                                class="fa fa-angle-down ml-1 text-xs transition-transform group-hover:rotate-180 duration-300"></i>
+                        </a>
+                        <div
+                            class="absolute left-0 mt-1 w-64 rounded-lg shadow-xl bg-white ring-1 ring-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                                    transition-all duration-300 z-50 transform origin-top scale-95 group-hover:scale-100">
+                            <div class="py-2">
+                                <a href="./resource.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Resource
+                                    Center</a>
+                                <a href="./Allquestions.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">FAQ</a>
+                                <a href="./test-case.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Case
+                                    Images</a>
+                                <a href="./digital.html"
+                                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Case
+                                    Videos</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Language Selector -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center text-gray-800 font-medium hover:text-primary transition-colors px-2 py-1">
+                            Language <i
+                                class="fa fa-angle-down ml-1 text-xs transition-transform group-hover:rotate-180 duration-300"></i>
+                        </button>
+                        <div
+                            class="absolute mt-1 w-40 bg-white shadow-lg rounded-md ring-1 ring-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="https://www.wafubrother.com/"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇺🇸
+                                English</a>
+                            <a href="https://www.wafubrother.cn/"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇨🇳
+                                中文</a>
+                            <a href="https://www.wafuvn.com/"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇻🇳
+                                Tiếng Việt</a>
+                            <a href="https://www.wafuth.com/"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇹🇭
+                                ไทย</a>
+                        </div>
+                    </div>
+                    <a href="./contact.html"
+                        class="bg-primary hover:bg-secondary text-white font-medium py-2 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Contact Us
+                    </a>
+
+
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-800 hover:text-primary focus:outline-none p-2">
+                    <i class="fa fa-bars text-xl transition-transform duration-300"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="container mx-auto px-4 py-3">
+                <nav class="flex flex-col space-y-1 py-2">
+                    <a href="./index.html"
+                        class="block py-3 px-4 text-primary font-medium hover:bg-gray-50 rounded-md transition-colors">Home</a>
+
+                    <!-- Product Dropdown Mobile -->
+                    <div class="mobile-dropdown">
+                        <button
+                            class="w-full flex justify-between items-center text-gray-800 font-medium hover:text-primary py-3 px-4 w-full text-left focus:outline-none">
+                            Products <i class="fa fa-plus text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden pl-6 mt-0 border-l-2 border-gray-100">
+                            <a href="./products.html#Leak_detector"
+                            class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Full range of leak detectors</a>
+                        <a href="./products.html#Non-standard"
+                            class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">
+                            Non-standard customized leak detector</a>
+                        <a href="./products.html#Tooling"
+                            class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Leak Detection Fixtures and Fixtures</a>
+                        </div>
+                    </div>
+
+                    <!-- Application Case Mobile -->
+                    <div class="mobile-dropdown">
+                        <button
+                            class="w-full flex justify-between items-center text-gray-800 font-medium hover:text-primary py-3 px-4 w-full text-left focus:outline-none">
+                            Application Cases <i class="fa fa-plus text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden pl-6 mt-0 border-l-2 border-gray-100">
+                            <a href="solu/solu-carparts.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Automotive
+                                Parts Industry</a>
+                            <a href="solu/solu-aerospace.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Aerospace
+                                Industry</a>
+                            <a href="solu/solu-medical.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Medical
+                                Devices Industry</a>
+                            <a href="solu/solu-battery.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Battery
+                                Industry</a>
+                            <a href="solu/solu-food.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Packaging
+                                Industry</a>
+                            <a href="solu/solu-kitchen.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Home
+                                Appliance Industry</a>
+                            <a href="solu/solu-electronic.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Electronics
+                                Industry</a>
+                            <a href="solu/solu-pipeline.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Pipeline
+                                Industry</a>
+                            <a href="solu/solu-hardware.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Hardware
+                                & Die Casting</a>
+                            <a href="solu/solu-lighting.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Security
+                                & Lighting</a>
+                        </div>
+                    </div>
+
+                    <a href="./about.html"
+                        class="block py-3 px-4 text-gray-800 hover:text-primary hover:bg-gray-50 rounded-md transition-colors">About
+                        Us</a>
+
+                    <!-- Service Support Mobile -->
+                    <div class="mobile-dropdown">
+                        <button
+                            class="w-full flex justify-between items-center text-gray-800 font-medium hover:text-primary py-3 px-4 w-full text-left focus:outline-none">
+                            Service & Support <i class="fa fa-plus text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden pl-6 mt-0 border-l-2 border-gray-100">
+                            <a href="./solu/solu-carparts.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Resource
+                                Center</a>
+                            <a href="./solu/solu-medical.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">FAQ</a>
+                            <a href="./solu/solu-battery.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Technical
+                                Articles</a>
+                        </div>
+                    </div>
+                    <!-- Mobile Language Selector -->
+                    <div class="mobile-dropdown">
+                        <button
+                            class="w-full flex justify-between items-center text-gray-800 font-medium hover:text-primary py-3 px-4 w-full text-left focus:outline-none">
+                            Language <i class="fa fa-plus text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden pl-6 mt-0 border-l-2 border-gray-100">
+                            <a href="https://www.wafubrother.com/"
+                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇺🇸
+                            English</a>
+                        <a href="https://www.wafubrother.cn/"
+                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇨🇳
+                            中文</a>
+                        <a href="https://www.wafuvn.com/"
+                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇻🇳
+                            Tiếng Việt</a>
+                        <a href="https://www.wafuth.com/"
+                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇹🇭
+                            ไทย</a>
+                        </div>
+                    </div>
+                    <a href="./contact.html"
+                        class="block py-3 px-4 mt-2 text-center bg-primary text-white rounded-md hover:bg-secondary transition-colors">Contact
+                        Us</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="flex-grow ">
+        <section class="relative h-[50vh] md:h-[60vh] bg-cover bg-center flex items-center justify-center"
+            style="background-image: url('./images/we.jpg');">
+            <div class="absolute inset-0 bg-dark/50"></div>
+            <div class="relative z-10 text-center px-4">
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-white mb-4">Case Gallery</h1>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 mb-6 md:mb-8">
+                <nav class="flex text-sm" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                        <!-- Home -->
+                        <li class="inline-flex items-center">
+                            <a href="./index.html"
+                                class="text-gray-500 hover:text-blue-600 transition-colors duration-200">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <svg class="w-4 h-4 mx-1.5 text-gray-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="inline-flex items-center">
+                            <a href="./services.html"
+                                class="text-gray-500 hover:text-blue-600 transition-colors duration-200">
+                                Service & Support
+                            </a>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <svg class="w-4 h-4 mx-1.5 text-gray-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </li>
+                        <li aria-current="page">
+                            <span class="text-blue-600 font-medium">Case
+                                Images</span>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <section class="py-8 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- 导航区域 - 改为锚链接 -->
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Industry Application Showcase</h2>
+
+                    <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-8">
+                        <a href="#life-appliances"
+                            class="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-md hover:bg-gray-200 transition-colors">Home
+                            Appliance Industry</a>
+                        <a href="#automobile-industry"
+                            class="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-md hover:bg-gray-200 transition-colors">Automotive
+                            Industry</a>
+                        <a href="#battery-industry"
+                            class="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-md hover:bg-gray-200 transition-colors">Energy
+                            Industry</a>
+                        <a href="#consumer-electronics"
+                            class="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-md hover:bg-gray-200 transition-colors">Electronics
+                            Industry</a>
+                        <a href="#medical-instruments"
+                            class="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-md hover:bg-gray-200 transition-colors">Medical
+                            Industry</a>
+                        <a href="#food"
+                            class="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-md hover:bg-gray-200 transition-colors">Food
+                            Packaging</a>
+                        <a href="#valve-pipe-fittings"
+                            class="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-md hover:bg-gray-200 transition-colors">Pipeline
+                            Industry</a>
+                        <a href="#aerospace"
+                            class="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-md hover:bg-gray-200 transition-colors">Aerospace</a>
+                    </div>
+                </div>
+
+
+                <!-- 图片展示区域 - 按行业分组 -->
+                <div class="space-y-12">
+                    <!-- Home Appliance Industry -->
+                    <section id="life-appliances">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Home Appliance Applications</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/kitchen/k_1.jpg" alt="Hot Water Tank Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Hot Water Tank Inspection</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/kitchen/k_2.jpg" alt="Wall Lamp Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Wall Lamp Inspection</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/kitchen/k_3.jpg" alt="Steamer Inner Tank"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Steamer Inner Tank</p>
+                            </div>
+
+                        </div>
+                    </section>
+
+
+                    <!-- Automotive Industry -->
+                    <section id="automobile-industry">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Automotive Applications</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/car/parts-testing_1.jpg" alt="Vehicle Camera Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Vehicle Camera Inspection</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/car/parts-testing_2.jpg" alt="Brake System Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Brake System Inspection</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/car/parts-testing_3.jpg" alt="Gearbox Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Gearbox Inspection</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/car/parts-testing_4.jpg" alt="EV Charging Gun Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">EV Charging Gun Inspection</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/car/parts-testing_5.jpg" alt="Reduction Gear Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Reduction Gear Inspection</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/car/parts-testing_6.jpg"
+                                    alt="Automotive Wiring Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Automotive Wiring Inspection</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/car/parts-testing_7.jpg" alt="Tail Light Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Tail Light Inspection</p>
+                            </div>
+
+                        </div>
+                    </section>
+
+
+                    <section id="battery-industry">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Energy Industry Applications</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/battery/battery-case_1.jpg" alt="Power Bank Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Power Bank Inspection</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/battery/battery-case_2.jpg"
+                                    alt="Automotive Battery Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Automotive Battery Inspection</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/battery/battery-case_3.jpg"
+                                    alt="New Energy Battery Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">New Energy Battery Inspection</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/battery/battery-case_4.jpg"
+                                    alt="Battery Module Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Battery Module Inspection</p>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <!-- 电子行业 -->
+                    <section id="consumer-electronics">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">电子行业应用</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_1.jpg" alt="Plug Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Plug Inspection</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_2.jpg" alt="Electric Toothbrush Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Electric Toothbrush Inspection</p>
+                            </div>
+
+                            <!-- Other consumer electronics images -->
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_3.jpg" alt="Smartwatch Phone Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Smartwatch Phone Inspection</p>
+                            </div>
+
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_4.jpg" alt="Telescope Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Telescope Inspection</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_5.jpg" alt="Data Cable Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Data Cable Inspection</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_6.jpg"
+                                    alt="Explosion-proof Lamp Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Explosion-proof Lamp Inspection
+                                </p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_7.jpg" alt="Camera Housing Inspection"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Camera Housing Inspection</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_8.jpg" alt="Stage Light Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Stage Light Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_9.png" alt="Mini Camera Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Mini Camera Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_10.jpg" alt="Diving Light Testing"
+                                    title="Diving Light Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Diving Light Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_11.jpg" alt="Dome Camera Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Dome Camera Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_12.jpg" alt="Square Camera Housing Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Square Camera Housing Testing</p>
+                            </div>
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_13.jpg" alt="Dome Camera Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Dome Camera Testing</p>
+                            </div>
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_14.jpg" alt="Round Lens Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Round Lens Testing</p>
+                            </div>
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_15.jpg"
+                                    alt="Fiber Optic Controller Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Fiber Optic Controller Testing</p>
+                            </div>
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_16.jpg" alt="Walkie-Talkie Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Walkie-Talkie Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_18.jpg"
+                                    alt="Bone Conduction Bluetooth Headset Testing"
+                                    title="Bone Conduction Bluetooth Headset Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Bone Conduction Bluetooth Headset
+                                    Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_19.jpg" alt="LiDAR Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">LiDAR Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_20.jpg" alt="Bluetooth Earphones Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Bluetooth Earphones Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_21.jpg" alt="Bluetooth Speaker Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Bluetooth Speaker Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_22.jpg" alt="Heatsink Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Heatsink Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_24.jpg" alt="Dental Irrigator Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Dental Irrigator Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_25.jpg" alt="Fire Alarm Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Fire Alarm Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_26.jpg" alt="Smart Card Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Smart Card Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_27.jpg" alt="Smartwatch Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Smartwatch Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/electronic/ele_28.jpg" alt="Smartphone Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Smartphone Testing</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Medical Industry -->
+                    <section id="medical-instruments">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Medical Industry Applications</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/medical/Device-testing_1.jpg"
+                                    alt="40-Station Blood Pressure Cuff Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">40-Station Blood Pressure Cuff
+                                    Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/medical/Device-testing_2.jpg" alt="Beauty Device Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Beauty Device Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/medical/Device-testing_3.jpg"
+                                    alt="Blood Pressure Cuff Leakage Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Blood Pressure Cuff Leakage
+                                    Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/medical/Device-testing_4.jpg"
+                                    alt="Medical Catheter Airtightness Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Medical Catheter Airtightness
+                                    Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/medical/Device-testing_4.jpg"
+                                    alt="Medical Catheter Airtightness Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Medical Catheter Airtightness
+                                    Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/medical/Device-testing_5.jpg"
+                                    alt="Blood Pressure Cuff Leakage Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Blood Pressure Cuff Leakage
+                                    Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/medical/Device-testing_7.jpg"
+                                    alt="Medical Nebulizer Airtightness Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Medical Nebulizer Airtightness
+                                    Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/medical/Device-testing_8.jpg"
+                                    alt="Pill Box Leakage Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Pill Box Leakage Testing</p>
+                            </div>
+
+                        </div>
+                    </section>
+
+
+                    <!-- Food Packaging -->
+                    <section id="food">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Packaging Applications</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/package/package-test_1.jpg"
+                                    alt="Flexible Packaging Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Flexible Packaging Testing</p>
+                            </div>
+
+                            <!-- Other Food Packaging Images -->
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/package/package-test_2.jpg"
+                                    alt="Bottle Seal Integrity Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Bottle Seal Integrity Testing</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Pipeline Industry -->
+                    <section id="valve-pipe-fittings">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Pipeline Industry Applications</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/valve/v_2.jpg" alt="Water Meter Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Water Meter Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/valve/v_1.jpg" alt="Water Bucket Soaking Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Water Bucket Soaking Testing</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Aerospace -->
+                    <section id="aerospace">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Aerospace Applications</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/aerospace/aerospace_1.jpg" alt="Aerospace GPS Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Aerospace GPS Testing</p>
+                            </div>
+
+                            <div
+                                class="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <img src="images/applications/aerospace/aerospace_2.jpg"
+                                    alt="Fiber Optic Connector Testing"
+                                    class="w-full h-64 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                                <p class="mt-3 text-center text-gray-700 font-medium">Fiber Optic Connector Testing</p>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </section>
+
+        <br />
+    </main>
+    <footer class="bg-white border-t border-gray-200 text-gray-800 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="lg:col-span-4">
+                    <div class="flex items-center mb-6">
+                        <span class="text-2xl font-semibold text-primary tracking-tight">WaFu<span
+                                class="text-dark">Brothers</span></span>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-balance max-w-md">
+                        WaFu Brothers (Shenzhen) Automation Technology Co., Ltd., established in 2009, serves over 8,000
+                        domestic and international clients including Audi. As a global leader in leak tester
+                        manufacturing and solution provision, we have accumulated 16 years of experience in non-standard
+                        automation and sealing detection. With a spirit of innovation and bold breakthroughs, we guide
+                        clients with forward-thinking designs and deliver internationally competitive product solutions.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <!-- Weibo -->
+                        <a href="https://weibo.com/u/7907943947"
+                            class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#E6162D] hover:text-white transition-all duration-300"
+                            aria-label="Weibo">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                        <!-- YouTube -->
+                        <a href="https://www.youtube.com/@leaktesters"
+                            class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#FF0000] hover:text-white transition-all duration-300"
+                            aria-label="YouTube">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/wafu_airleak"
+                            class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#E1306C] hover:text-white transition-all duration-300"
+                            aria-label="Instagram">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                        <!-- Twitter -->
+                        <a href="https://x.com/wafu_Airleak"
+                            class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-black hover:text-white transition-all duration-300"
+                            aria-label="Twitter">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="lg:col-span-2">
+                    <h3 class="font-semibold text-lg mb-6 text-dark flex items-center">
+                        <i class="fa fa-link text-primary mr-2"></i>Quick Links
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="./index.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group">
+                                <i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs transform group-hover:translate-x-1 transition-transform"></i>Home</a>
+                        </li>
+                        <li><a href="./products.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group">
+                                <i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs transform group-hover:translate-x-1 transition-transform"></i>Products</a>
+                        </li>
+                        <li><a href="./application.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group">
+                                <i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs transform group-hover:translate-x-1 transition-transform"></i>Application
+                                Cases</a></li>
+                        <li><a href="./about.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group">
+                                <i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs transform group-hover:translate-x-1 transition-transform"></i>About
+                                Us</a></li>
+                        <li><a href="./services.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group">
+                                <i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs transform group-hover:translate-x-1 transition-transform"></i>Support</a>
+                        </li>
+                        <li><a href="./contact.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group">
+                                <i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs transform group-hover:translate-x-1 transition-transform"></i>Contact
+                                Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Product Categories -->
+                <div class="lg:col-span-3">
+                    <h3 class="font-semibold text-lg mb-6 text-dark flex items-center">
+                        <i class="fa fa-cube text-primary mr-2"></i>Product Categories
+                    </h3>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4">
+                        <li><a href="./products/product-one.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>Multi-function
+                                Leak Tester</a></li>
+                        <li><a href="./products/product-two.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>Multi-channel
+                                Leak Tester</a></li>
+                        <li><a href="./products/product-three.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>HF
+                                Flow Leak Tester</a></li>
+                        <li><a href="./products/product-four.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>Differential
+                                Pressure Leak Tester</a></li>
+                        <li><a href="./products/product-five.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>Direct
+                                Pressure Leak Tester</a></li>
+                        <li><a href="./products/product-six.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>Desktop
+                                Sealing Fixtures</a></li>
+                        <li><a href="./products/product-seven.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>Cabinet-type
+                                Leak Tester</a></li>
+                        <li><a href="./products/product-eight.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>Cabinet-type
+                                Fixtures</a></li>
+                        <li><a href="./products/product-nine.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>Customized
+                                Leak Tester</a></li>
+                        <li><a href="./products/leak-tester-allinone.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center group"><i
+                                    class="fa fa-angle-right mr-2 text-primary text-xs group-hover:translate-x-1 transition-transform"></i>All-in-One
+                                Leak Test System</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="lg:col-span-3">
+                    <h3 class="font-semibold text-lg mb-6 text-dark flex items-center">
+                        <i class="fa fa-map-marker text-primary mr-2"></i>Contact Information
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start"><i
+                                class="fa fa-map-marker text-primary mt-1 mr-3 w-4 text-center"></i><span
+                                class="text-gray-600">2F, Building 6, Shayi Environmental Industrial Park, No. 496
+                                Chuangcheng Road, Shajing Street, Bao'an District, Shenzhen</span></li>
+                        <li class="flex items-start"><i
+                                class="fa fa-phone text-primary mt-1 mr-3 w-4 text-center"></i><span
+                                class="text-gray-600">+86 17376311087</span></li>
+                        <li class="flex items-start"><i
+                                class="fa fa-envelope text-primary mt-1 mr-3 w-4 text-center"></i><span
+                                class="text-gray-600">wafubrother@outlook.com</span></li>
+                        <li class="flex items-start"><i
+                                class="fa fa-clock-o text-primary mt-1 mr-3 w-4 text-center"></i><span
+                                class="text-gray-600">Monday to Friday: 9:00 - 18:00</span></li>
+                    </ul>
+                    <br />
+                    <h3 class="font-semibold text-lg mb-4 text-dark flex items-center">
+                        <i class="fa fa-handshake-o text-primary mr-2"></i>Friendly Links
+                    </h3>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://www.west.cn/" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md text-sm transition-colors">
+                            <i class="fa fa-external-link mr-1.5 text-xs"></i>West.cn
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-200 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                        &copy; 2025 WaFu Brothers (Shenzhen) Automation Technology Co., Ltd. All rights reserved
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+                        <a href="./sitemap.html"
+                            class="text-gray-500 hover:text-primary text-sm transition-colors">Sitemap</a>
+                        <a href="./contact.html"
+                            class="text-gray-500 hover:text-primary text-sm transition-colors">Technical Support</a>
+                        <a href="./faq/dual-channel-10inch-kunlun-screen-leak-tester-manual.pdf"
+                            class="text-gray-500 hover:text-primary text-sm transition-colors">User Manual</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top"
+        class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+    <script src="./js/tailwind.config.js"></script>
+    <script src="./js/script.js"></script>
+    <script>
+        // 平滑滚动到锚点位置
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // 滚动到目标位置
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // 减去导航栏高度
+                        behavior: 'smooth'
+                    });
+
+                    // 更新导航链接样式
+                    document.querySelectorAll('a[href^="#"]').forEach(link => {
+                        link.classList.remove('bg-primary', 'text-white');
+                        link.classList.add('bg-gray-100', 'text-gray-700');
+                    });
+
+                    this.classList.remove('bg-gray-100', 'text-gray-700');
+                    this.classList.add('bg-primary', 'text-white');
+                }
+            });
+        });
+
+        // 监听滚动，更新当前激活的导航链接
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPosition = window.pageYOffset + 100; // 添加偏移量
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    document.querySelectorAll('a[href^="#"]').forEach(link => {
+                        link.classList.remove('bg-primary', 'text-white');
+                        link.classList.add('bg-gray-100', 'text-gray-700');
+                    });
+
+                    const activeLink = document.querySelector(`a[href="#${sectionId}"]`);
+                    if (activeLink) {
+                        activeLink.classList.remove('bg-gray-100', 'text-gray-700');
+                        activeLink.classList.add('bg-primary', 'text-white');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

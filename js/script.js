@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600
 hover:from-yellow-500 hover:via-pink-600 hover:to-purple-700
 relative overflow-hidden group ">
-            <i class="fa fa-instagram text-xl flex items-center justify-center absolute transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] scale-110 group-hover:scale-0 will-change-transform"></i>
-            <i class="fa fa-instagram text-xl flex items-center justify-center absolute transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] scale-0 group-hover:scale-110 will-change-transform"></i>
+            <img src="/images/instagram.png" class="p-3 text-xl flex items-center justify-center absolute transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] scale-100 group-hover:scale-0 will-change-transform" />
+            <img src="/images/instagram.png" class="p-3 text-xl flex items-center justify-center absolute transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] scale-0 group-hover:scale-100 will-change-transform" />
           </button>
           <div class="absolute right-full mr-2 top-12 w-48 bg-white text-gray-800 shadow-lg rounded-md p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
             <img src="/images/wafu_airleak_qr.png" alt="Instagram QR Code" class="mb-1">

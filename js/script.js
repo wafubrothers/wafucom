@@ -54,6 +54,197 @@ relative overflow-hidden group ">
   document.body.insertAdjacentHTML("beforeend", buttonListHTML);
 });
 
+// 证书轮播图
+document.addEventListener("DOMContentLoaded", function () {
+  const certificates = [
+    {
+      img: "/images/about/certificate/wf-gert_16.jpg",
+      text: "FCC Certification"
+    },
+    {
+      img: "/images/about/certificate/wf-gert_15.jpg",
+      text: "CE Certification"
+    },
+    {
+      img: "/images/about/certificate/wf-gert_11.jpg",
+      text: "Integrity Enterprise Certification"
+    },
+    {
+      img: "/images/about/certificate/wf-gert_13.jpg",
+      text: "50+ Patents"
+    },
+    {
+      img: "/images/about/certificate/wf-gert_10.jpg",
+      text: "Supplier Rating Certification"
+    }
+  ];
+  // 2. 初始化变量
+  let currentIndex = 2; // 默认选中中间的第3张（索引从0开始）
+  const totalItems = certificates.length;
+  let autoPlayTimer = null;
+  const AUTO_PLAY_DELAY = 7000; // 自动滚动间隔（毫秒）
+
+  const container = document.getElementById('carouselItems');
+  const textDisplay = document.getElementById('textDisplay');
+
+  // 3. 生成 DOM 节点
+  function renderItems() {
+    container.innerHTML = '';
+    certificates.forEach((item, index) => {
+      const div = document.createElement('div');
+      // 设置基础样式和尺寸
+      div.className = 'carousel-item w-[160px] sm:w-[220px] md:w-[330px]';
+
+      // 图片结构
+      div.innerHTML = `
+            <div class="cert-border">
+                <img src="${item.img}" alt="荣誉证书" />
+            </div>
+        `;
+
+      // 点击切换到中间
+      div.addEventListener('click', () => {
+        if (index !== currentIndex) {
+          currentIndex = index;
+          updateCarousel();
+          resetAutoPlay();
+        }
+      });
+
+      container.appendChild(div);
+    });
+  }
+
+  // 4. 核心布局更新函数（实现循环和5张叠放）
+  function updateCarousel() {
+    const items = document.querySelectorAll('.carousel-item');
+    const isMobile = window.innerWidth < 768;
+
+    // 获取中间的索引范围，用于决定哪些图片显示，哪些隐藏
+    // 移动端只看 3 张：索引范围 currentIndex - 1 到 currentIndex + 1
+    // 桌面端看 5 张：索引范围 currentIndex - 2 到 currentIndex + 2
+
+    items.forEach((item, index) => {
+      // --- 核心循环算法 ---
+      // 计算两个索引在圆环上的最短距离。
+      let diff = index - currentIndex;
+      const half = Math.floor(totalItems / 2);
+
+      if (Math.abs(diff) > half) {
+        // 如果距离超过一半，说明另一条路更近（环状思维）
+        if (diff > 0) {
+          diff = diff - totalItems;
+        } else {
+          diff = diff + totalItems;
+        }
+      }
+      // --------------------
+
+      let translateX = 0;
+      let scale = 0.8;
+      let zIndex = 1;
+      let opacity = 0.3;
+      let display = 'block';
+
+      // 桌面端布局 (5张)
+      if (!isMobile) {
+        if (diff === 0) { // 正中间
+          translateX = 0;
+          scale = 1.0;
+          zIndex = 10;
+          opacity = 1;
+        } else if (Math.abs(diff) === 1) { // 左右第1张
+          translateX = diff * 190; // 间距
+          scale = 0.85;
+          zIndex = 5;
+          opacity = 0.9;
+        } else if (Math.abs(diff) === 2) { // 左右第2张
+          translateX = diff * 190; // 间距
+          scale = 0.7;
+          zIndex = 2;
+          opacity = 0.6;
+        } else {
+          display = 'none'; // 不显示超出范围
+        }
+      }
+      // 移动端布局 (3张)
+      else {
+        if (diff === 0) { // 正中间
+          translateX = 0;
+          scale = 1.0;
+          zIndex = 10;
+          opacity = 1;
+        } else if (Math.abs(diff) === 1) { // 左右第1张
+          translateX = diff * 110;
+          scale = 0.8;
+          zIndex = 5;
+          opacity = 0.8;
+        } else {
+          display = 'none'; // 隐藏超出范围
+        }
+      }
+
+      // 应用 CSS
+      item.style.transform = `translateX(${translateX}px) scale(${scale})`;
+      item.style.zIndex = zIndex;
+      item.style.opacity = opacity;
+      item.style.display = display;
+    });
+
+    // 更新底部文字
+    textDisplay.textContent = certificates[currentIndex].text;
+  }
+
+  // 5. 自动轮播与重置
+  function startAutoPlay() {
+    if (autoPlayTimer) clearInterval(autoPlayTimer);
+    autoPlayTimer = setInterval(() => {
+      // 循环到下一张
+      currentIndex = (currentIndex + 1) % totalItems;
+      updateCarousel();
+    }, AUTO_PLAY_DELAY);
+  }
+
+  function resetAutoPlay() {
+    if (autoPlayTimer) {
+      clearInterval(autoPlayTimer);
+      startAutoPlay();
+    }
+  }
+
+  // 6. 切换函数（用于按钮）
+  function goToPrev() {
+    // 循环到上一张
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    updateCarousel();
+    resetAutoPlay();
+  }
+
+  function goToNext() {
+    currentIndex = (currentIndex + 1) % totalItems;
+    updateCarousel();
+    resetAutoPlay();
+  }
+
+  // 7. 绑定事件
+  document.getElementById('prevBtn').addEventListener('click', goToPrev);
+  document.getElementById('nextBtn').addEventListener('click', goToNext);
+
+  // 8. 窗口变化自适应（防抖）
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      updateCarousel();
+    }, 100);
+  });
+
+  // 9. 启动
+  renderItems();
+  updateCarousel();
+  startAutoPlay();
+})
+
 
 // 移动端菜单切换
 document.addEventListener('DOMContentLoaded', function () {
@@ -867,3 +1058,42 @@ function changeMainImage(src, event) {
   }
 }
 /** */
+
+// 为什么选择我们电话号码复制功能
+document.addEventListener('DOMContentLoaded', function () {
+  const btn = document.getElementById('copyPhoneBtn');
+  const text = document.getElementById('phoneText');
+  const phone = btn.getAttribute('data-phone');
+
+  function setText(newText) {
+    text.classList.add('opacity-0');
+
+    setTimeout(() => {
+      text.innerText = newText;
+      text.classList.remove('opacity-0');
+    }, 150);
+  }
+
+  // hover
+  btn.addEventListener('mouseenter', () => {
+    setText('Click to Copy');
+  });
+
+  btn.addEventListener('mouseleave', () => {
+    setText(phone);
+  });
+
+  // click copy
+  btn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(phone);
+      setText('Copied ✔');
+
+      setTimeout(() => {
+        setText(phone);
+      }, 1500);
+    } catch (err) {
+      setText('Copy Failed');
+    }
+  });
+})

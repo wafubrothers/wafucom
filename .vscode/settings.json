@@ -1,5 +1,5 @@
 {
-    "liveServer.settings.port": 9586,
+    "liveServer.settings.port": 9589,
     "python.testing.unittestArgs": [
         "-v",
         "-s",

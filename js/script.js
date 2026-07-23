@@ -251,18 +251,29 @@ document.addEventListener('DOMContentLoaded', function () {
   // 移动端菜单切换
   const menuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
+  if (!menuBtn || !mobileMenu) return;
   const menuIcon = menuBtn.querySelector('i');
 
   menuBtn.addEventListener('click', function () {
     mobileMenu.classList.toggle('hidden');
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    menuBtn.setAttribute('aria-expanded', String(isOpen));
     // 切换图标（菜单/关闭）
-    if (mobileMenu.classList.contains('hidden')) {
+    if (!isOpen) {
       menuIcon.classList.remove('fa-times', 'rotate-90');
       menuIcon.classList.add('fa-bars');
     } else {
       menuIcon.classList.remove('fa-bars');
       menuIcon.classList.add('fa-times', 'rotate-90');
     }
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth < 1180 || mobileMenu.classList.contains('hidden')) return;
+    mobileMenu.classList.add('hidden');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuIcon.classList.remove('fa-times', 'rotate-90');
+    menuIcon.classList.add('fa-bars');
   });
 
   // 移动端下拉菜单交互

@@ -14,9 +14,7 @@
     <!-- 规范链接 -->
     <link rel="canonical" href="https://www.wafubrother.com/">
     
-    <script src="./js/tailwind.js"></script>
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
-    <link href="./css/tailwindcss.css" rel="stylesheet">
     <link href="./font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link href="./css/font.css" rel="stylesheet">
@@ -75,6 +73,7 @@
             }
         }
     </style>
+    <link href="./css/index.css" rel="stylesheet">
 
     <!-- 多语言声明 -->
     <link rel="alternate" hreflang="zh-CN" href="https://www.wafubrother.cn/index.html" />
@@ -101,14 +100,14 @@
 
 <body class="font-inter text-gray-800 bg-white">
     <header id="navbar" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between h-35 md:h-30">
+        <div class="container navbar-container mx-auto px-4">
+            <div class="navbar-row flex items-center justify-between">
                 <!-- Brand Logo -->
-                <a href="./index.html" class="flex items-center" aria-label="Wafu Brothers Homepage">
-                    <img src="./images/logo-inverse.png" alt="WaFu Brothers" class="h-35 md:h-30 object-cover">WAFU
+                <a href="./index.html" class="navbar-brand flex items-center" aria-label="Wafu Brothers Homepage">
+                    <img src="./images/logo-inverse.png" alt="WaFu Brothers" class="navbar-logo object-contain">
                 </a>
                 <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center space-x-1 md:space-x-8">
+                <nav class="desktop-nav hidden items-center space-x-1 md:space-x-8" aria-label="Primary navigation">
                     <a href="./index.html"
                         class="text-primary font-medium hover:text-secondary transition-colors px-2 py-1">Home</a>
 
@@ -243,13 +242,14 @@
                 </nav>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-gray-800 hover:text-primary focus:outline-none p-2">
+                <button id="mobile-menu-btn" class="mobile-menu-toggle text-gray-800 hover:text-primary focus:outline-none p-2"
+                    type="button" aria-label="Toggle navigation menu" aria-controls="mobile-menu" aria-expanded="false">
                     <i class="fa fa-bars text-xl transition-transform duration-300"></i>
                 </button>
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100 shadow-lg">
+        <div id="mobile-menu" class="mobile-nav hidden bg-white border-t border-gray-100 shadow-lg">
             <div class="container mx-auto px-4 py-3">
                 <nav class="flex flex-col space-y-1 py-2">
                     <a href="./index.html"
@@ -1614,6 +1614,37 @@
                             Testing Cases
                         </h3>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- 案例 3 -->
+                            <div class="bg-gray-50 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md
+                            flex flex-col h-[505px]">
+                               <a href="./solulist/tubing/EV-coolant-elbow-pipe.html">
+                                   <img src="images/solu/valve/EVCoolantElbowPipe/EV-coolant-elbow-pipe.jpg" alt="New Energy Vehicle Coolant Pipe Bend"
+                                       class="w-full h-48 object-cover rounded-t-xl transition-transform duration-700 hover:scale-105" loading="lazy">
+                               </a>
+                               <div class="p-6 flex flex-col justify-between flex-1">
+                                   <div>
+                                       <h4 class="font-bold text-xl text-gray-900 mb-3">
+                                           <a href="./solulist/tubing/EV-coolant-elbow-pipe.html" class="hover:text-primary transition-colors line-clamp-3" title='Micro-Crack Leakage and Batch Rework Caused by Misjudgment — How Leak Testing Machines Build a "Sealing Barrier" for New Energy Vehicle Coolant Pipe Bends'> 
+                                               <!-- 标题 -->
+                                               Micro-Crack Leakage and Batch Rework Caused by Misjudgment — How <strong class="text-blue-600">Leak Testing Machines</strong>  Build a "Sealing Barrier" for <strong class="text-blue-600"> New Energy Vehicle Coolant Pipe Bends</strong>
+                                           </a>
+                                       </h4>
+                                   </div>
+                                   <div>
+                                       <p class="text-gray-500 text-sm mb-3">
+                                           July 21, 2026
+                                       </p>
+                                       <p class="text-gray-600 mb-4 line-clamp-3">
+                                        Coolant elbow pipes for new energy vehicles are typically made of aluminum alloy, stainless steel, or composite materials. After processes such as bending and flaring, the following sealing risks may arise:
+                                       </p>
+                                       <a href="./solulist/tubing/EV-coolant-elbow-pipe.html"
+                                           class="inline-flex items-center px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
+                                           View Case <i class="fa fa-arrow-right ml-2"></i>
+                                       </a>
+                                   </div>
+                                   
+                               </div>
+                           </div>
                             <!-- 案例 2 -->
                             <div class="bg-gray-50 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
                                 <a href="./solulist/hardware/wireless-bridge-enclosure.html">
@@ -1668,37 +1699,7 @@
                                     </a>
                                 </div>
                             </div>  
-                            <!-- 案例 3 -->
-                             <div class="bg-gray-50 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md
-                             flex flex-col h-[505px]">
-                                <a href="./solulist/medical/tube-connector.html">
-                                    <img src="images/solu/medical/tubeConnector/tube-connector.jpg" alt="Medical Tubing Connector"
-                                        class="w-full h-48 object-cover rounded-t-xl transition-transform duration-700 hover:scale-105" loading="lazy">
-                                </a>
-                                <div class="p-6 flex flex-col justify-between flex-1">
-                                    <div>
-                                        <h4 class="font-bold text-xl text-gray-900 mb-3">
-                                            <a href="./solulist/medical/tube-connector.html" class="hover:text-primary transition-colors"> 
-                                                <!-- 标题 -->
-                                                How to Reliably Perform <strong class="text-blue-600">Leak Testing </strong> on <strong class="text-blue-600">Medical Tubing Connectors</strong>
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div>
-                                        <p class="text-gray-500 text-sm mb-3">
-                                            June 30, 2026
-                                        </p>
-                                        <p class="text-gray-600 mb-4 line-clamp-3">
-                                            Medical products demand far stricter sealing performance than ordinary industrial parts.The product to be tested in this case is a <strong style="background: linear-gradient(transparent 50%, #bfedfa 50%); border-radius: 4px;">medical tubing connector</strong>. Since it is used in medical devices, even the smallest leak can compromise product performance or even create safety risks.
-                                        </p>
-                                        <a href="./solulist/medical/tube-connector.html"
-                                            class="inline-flex items-center px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
-                                            View Case <i class="fa fa-arrow-right ml-2"></i>
-                                        </a>
-                                    </div>
-                                    
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -2165,7 +2166,6 @@
         class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
         <i class="fa fa-arrow-up"></i>
     </button>
-    <script src="./js/tailwind.config.js"></script>
     <script src="./js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </body>

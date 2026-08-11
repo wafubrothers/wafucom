@@ -1,3 +1,22 @@
+const inlineSvgIcons = {
+  bars: '<path d="M4 6h16M4 12h16M4 18h16"/>',
+  times: '<path d="M6 6l12 12M18 6L6 18"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  minus: '<path d="M5 12h14"/>',
+  'paper-plane': '<path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/>',
+  spinner: '<path d="M21 12a9 9 0 1 1-6.2-8.6"/>'
+};
+
+function setInlineSvgIcon(svgElement, iconName) {
+  if (!svgElement || !inlineSvgIcons[iconName]) return;
+  svgElement.dataset.icon = iconName;
+  svgElement.innerHTML = inlineSvgIcons[iconName];
+}
+
+function inlineSvg(iconName, classes = '') {
+  return `<svg class="svg-icon ${classes}" data-icon="${iconName}" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${inlineSvgIcons[iconName]}</svg>`;
+}
+
 // 侧边咨询悬浮按钮
 document.addEventListener("DOMContentLoaded", function () {
   const buttonListHTML = `
@@ -252,7 +271,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const menuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   if (!menuBtn || !mobileMenu) return;
-  const menuIcon = menuBtn.querySelector('i');
+  const menuIcon = menuBtn.querySelector('svg[data-icon]');
+  if (!menuIcon) return;
 
   menuBtn.addEventListener('click', function () {
     mobileMenu.classList.toggle('hidden');
@@ -260,11 +280,11 @@ document.addEventListener('DOMContentLoaded', function () {
     menuBtn.setAttribute('aria-expanded', String(isOpen));
     // 切换图标（菜单/关闭）
     if (!isOpen) {
-      menuIcon.classList.remove('fa-times', 'rotate-90');
-      menuIcon.classList.add('fa-bars');
+      menuIcon.classList.remove('rotate-90');
+      setInlineSvgIcon(menuIcon, 'bars');
     } else {
-      menuIcon.classList.remove('fa-bars');
-      menuIcon.classList.add('fa-times', 'rotate-90');
+      setInlineSvgIcon(menuIcon, 'times');
+      menuIcon.classList.add('rotate-90');
     }
   });
 
@@ -272,24 +292,25 @@ document.addEventListener('DOMContentLoaded', function () {
     if (window.innerWidth < 1180 || mobileMenu.classList.contains('hidden')) return;
     mobileMenu.classList.add('hidden');
     menuBtn.setAttribute('aria-expanded', 'false');
-    menuIcon.classList.remove('fa-times', 'rotate-90');
-    menuIcon.classList.add('fa-bars');
+    menuIcon.classList.remove('rotate-90');
+    setInlineSvgIcon(menuIcon, 'bars');
   });
 
   // 移动端下拉菜单交互
   document.querySelectorAll('.mobile-dropdown button').forEach(button => {
     button.addEventListener('click', function () {
       const content = this.nextElementSibling;
-      const icon = this.querySelector('i');
+      const icon = this.querySelector('svg[data-icon]');
 
       content.classList.toggle('hidden');
+      if (!icon) return;
       // 切换图标（+/-）
       if (content.classList.contains('hidden')) {
-        icon.classList.remove('fa-minus', 'rotate-45');
-        icon.classList.add('fa-plus');
+        icon.classList.remove('rotate-45');
+        setInlineSvgIcon(icon, 'plus');
       } else {
-        icon.classList.remove('fa-plus');
-        icon.classList.add('fa-minus', 'rotate-45');
+        setInlineSvgIcon(icon, 'minus');
+        icon.classList.add('rotate-45');
       }
     });
   });
@@ -591,7 +612,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Set submitting state
     submitButton.disabled = true;
-    submitButton.innerHTML = '<i class="fa fa-spinner fa-spin mr-2"></i> Sending...';
+    submitButton.innerHTML = `${inlineSvg('spinner', 'mr-2 spin')} Sending...`;
     showStatus('Sending, please wait...', 'info');
 
     emailjs.send('service_11vaisg', 'template_fa2fqcs', formData)
@@ -610,7 +631,7 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .finally(() => {
         submitButton.disabled = false;
-        submitButton.innerHTML = '<i class="fa fa-paper-plane mr-2"></i> Send Message';
+        submitButton.innerHTML = `${inlineSvg('paper-plane', 'mr-2')} Send Message`;
       });
 
   });

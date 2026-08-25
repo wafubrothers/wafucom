@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const menuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   if (!menuBtn || !mobileMenu) return;
-  const menuIcon = menuBtn.querySelector('svg[data-icon]');
+  const menuIcon = menuBtn.querySelector('i,svg[data-icon]');
   if (!menuIcon) return;
 
   menuBtn.addEventListener('click', function () {

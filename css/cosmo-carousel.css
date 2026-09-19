@@ -1,0 +1,326 @@
+.cosmo-hero {
+    --cosmo-duration: 6000ms;
+    position: relative;
+    height: 100vh;
+    height: 100svh;
+    min-height: 0;
+    overflow: hidden;
+    isolation: isolate;
+    background: #152b3c;
+    color: #fff;
+}
+
+body > #navbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(7, 28, 41, .48), rgba(7, 28, 41, 0));
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+#navbar .desktop-nav > a,
+#navbar .desktop-nav > div > a,
+#navbar .desktop-nav > div > button,
+#navbar #mobile-menu-btn {
+    color: #fff;
+}
+
+#navbar .navbar-logo {
+    filter:
+        drop-shadow(0 0 1px #fff)
+        drop-shadow(0 0 4px rgba(255, 255, 255, .9));
+}
+
+.cosmo-hero__slides,
+.cosmo-hero__slide,
+.cosmo-hero__slide picture,
+.cosmo-hero__slide img,
+.cosmo-hero__shade {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cosmo-hero__slide {
+    z-index: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.2s ease, visibility 1.2s ease;
+}
+
+.cosmo-hero__slide.is-active {
+    z-index: 1;
+    visibility: visible;
+    opacity: 1;
+}
+
+.cosmo-hero__slide img {
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.025);
+}
+
+.cosmo-hero__slide.is-active img {
+    animation: cosmo-image-in var(--cosmo-duration) linear both;
+}
+
+.cosmo-hero__shade {
+    z-index: 1;
+    background:
+        linear-gradient(90deg, rgba(10, 31, 45, .68) 0%, rgba(22, 57, 76, .32) 52%, rgba(13, 40, 56, .15) 100%),
+        rgba(28, 73, 94, .16);
+}
+
+.cosmo-hero__content {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: max(6vw, 48px);
+    width: min(860px, calc(100% - 120px));
+    transform: translateY(-42%);
+    text-shadow: 0 2px 20px rgba(0, 0, 0, .18);
+}
+
+.cosmo-hero__eyebrow {
+    margin: 0 0 48px;
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.cosmo-hero__content h1,
+.cosmo-hero__content h2 {
+    margin: 0;
+    max-width: 920px;
+    color: #fff;
+    font-size: 58px;
+    line-height: 1.22;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.cosmo-hero__content > * {
+    opacity: 0;
+    transform: translateY(22px);
+}
+
+.cosmo-hero__slide.is-active .cosmo-hero__eyebrow {
+    animation: cosmo-copy-in .8s .28s ease forwards;
+}
+
+.cosmo-hero__slide.is-active h1,
+.cosmo-hero__slide.is-active h2 {
+    animation: cosmo-copy-in .9s .45s ease forwards;
+}
+
+.cosmo-hero__pagination {
+    position: absolute;
+    z-index: 4;
+    right: max(4vw, 34px);
+    bottom: 42px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cosmo-hero__dot {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.cosmo-hero__dot::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .72);
+    transform: translate(-50%, -50%);
+    transition: background-color .25s ease, transform .25s ease;
+}
+
+.cosmo-hero__dot svg {
+    display: block;
+    width: 36px;
+    height: 36px;
+    transform: rotate(-90deg);
+}
+
+.cosmo-hero__dot circle {
+    fill: none;
+    stroke-width: 1.5;
+}
+
+.cosmo-hero__dot-track {
+    stroke: rgba(255, 255, 255, .28);
+}
+
+.cosmo-hero__dot-progress {
+    stroke: #fff;
+    stroke-dasharray: 101;
+    stroke-dashoffset: 101;
+}
+
+.cosmo-hero__dot.is-active::after {
+    background: #fff;
+    transform: translate(-50%, -50%) scale(1.25);
+}
+
+.cosmo-hero__dot.is-active .cosmo-hero__dot-progress {
+    animation: cosmo-progress var(--cosmo-duration) linear forwards;
+}
+
+.cosmo-hero__dot:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+.cosmo-hero__scroll {
+    position: absolute;
+    z-index: 4;
+    left: 28px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0;
+    writing-mode: vertical-rl;
+}
+
+.cosmo-hero__scroll i {
+    display: block;
+    width: 1px;
+    height: 58px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, .35);
+}
+
+.cosmo-hero__scroll i::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 50%;
+    background: #fff;
+    animation: cosmo-scroll 1.9s ease-in-out infinite;
+}
+
+@keyframes cosmo-image-in {
+    from { transform: scale(1.025); }
+    to { transform: scale(1.075); }
+}
+
+@keyframes cosmo-copy-in {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cosmo-progress {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes cosmo-scroll {
+    0% { transform: translateY(-110%); }
+    55%, 100% { transform: translateY(210%); }
+}
+
+@media (max-width: 1023px) {
+    .cosmo-hero__content h1,
+    .cosmo-hero__content h2 {
+        font-size: 46px;
+    }
+}
+
+@media (max-width: 767px) {
+    .cosmo-hero {
+        height: 100vh;
+        height: 100svh;
+        min-height: 0;
+    }
+
+    .cosmo-hero__slide img {
+        object-position: 58% center;
+    }
+
+    .cosmo-hero__shade {
+        background:
+            linear-gradient(0deg, rgba(8, 29, 42, .72) 0%, rgba(14, 47, 65, .28) 72%, rgba(14, 47, 65, .2) 100%),
+            rgba(25, 70, 91, .14);
+    }
+
+    .cosmo-hero__content {
+        top: auto;
+        right: 96px;
+        bottom: 112px;
+        left: 24px;
+        width: auto;
+        transform: none;
+    }
+
+    .cosmo-hero__eyebrow {
+        margin-bottom: 24px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .cosmo-hero__content h1,
+    .cosmo-hero__content h2 {
+        font-size: 34px;
+        line-height: 1.24;
+    }
+
+    .cosmo-hero__pagination {
+        right: 20px;
+        bottom: 28px;
+        gap: 8px;
+    }
+
+    .cosmo-hero__scroll {
+        display: none;
+    }
+}
+
+@media (max-width: 390px) {
+    .cosmo-hero__content h1,
+    .cosmo-hero__content h2 {
+        font-size: 30px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cosmo-hero__slide,
+    .cosmo-hero__content > * {
+        transition: none;
+    }
+
+    .cosmo-hero__slide.is-active img,
+    .cosmo-hero__slide.is-active .cosmo-hero__eyebrow,
+    .cosmo-hero__slide.is-active h1,
+    .cosmo-hero__slide.is-active h2,
+    .cosmo-hero__dot.is-active .cosmo-hero__dot-progress,
+    .cosmo-hero__scroll i::after {
+        animation: none;
+    }
+
+    .cosmo-hero__slide.is-active .cosmo-hero__content > * {
+        opacity: 1;
+        transform: none;
+    }
+}

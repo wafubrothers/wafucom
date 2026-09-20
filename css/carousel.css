@@ -105,6 +105,26 @@ body > #navbar {
     letter-spacing: 0;
 }
 
+.cosmo-hero__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 34px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .8);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: border-color .2s ease, color .2s ease;
+}
+
+.cosmo-hero__link:hover,
+.cosmo-hero__link:focus-visible {
+    color: #fff;
+    border-color: #fff;
+}
+
 .cosmo-hero__content > * {
     opacity: 0;
     transform: translateY(22px);
@@ -117,6 +137,10 @@ body > #navbar {
 .cosmo-hero__slide.is-active h1,
 .cosmo-hero__slide.is-active h2 {
     animation: cosmo-copy-in .9s .45s ease forwards;
+}
+
+.cosmo-hero__slide.is-active .cosmo-hero__link {
+    animation: cosmo-copy-in .9s .62s ease forwards;
 }
 
 .cosmo-hero__pagination {
@@ -284,6 +308,11 @@ body > #navbar {
     .cosmo-hero__content h2 {
         font-size: 34px;
         line-height: 1.24;
+    }
+
+    .cosmo-hero__link {
+        margin-top: 20px;
+        font-size: 15px;
     }
 
     .cosmo-hero__pagination {

@@ -1,12 +1,11 @@
-.cosmo-hero {
-    --cosmo-duration: 6000ms;
+.wafu-hero {
+    --wafu-duration: 6000ms;
     position: relative;
     height: 100vh;
     height: 100svh;
-    min-height: 0;
     overflow: hidden;
     isolation: isolate;
-    background: #152b3c;
+    background: #152b3caf;
     color: #fff;
 }
 
@@ -21,62 +20,62 @@ body > #navbar {
     backdrop-filter: none;
 }
 
-#navbar .desktop-nav > a,
-#navbar .desktop-nav > div > a,
-#navbar .desktop-nav > div > button,
+#navbar > .container > div > nav > a:not(:last-child),
+#navbar > .container > div > nav > div > a,
+#navbar > .container > div > nav > div > button,
 #navbar #mobile-menu-btn {
     color: #fff;
 }
 
-#navbar .navbar-logo {
-    filter:
-        drop-shadow(0 0 1px #fff)
-        drop-shadow(0 0 4px rgba(255, 255, 255, .9));
+#navbar > .container > div > a > img {
+    height: min(90px, 12svh);
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 4px rgba(255, 255, 255, .9));
 }
 
-.cosmo-hero__slides,
-.cosmo-hero__slide,
-.cosmo-hero__slide picture,
-.cosmo-hero__slide img,
-.cosmo-hero__shade {
+/* The mobile dropdown keeps its own solid background and dark link colors. */
+.wafu-hero__slides,
+.wafu-hero__slide,
+.wafu-hero__slide picture,
+.wafu-hero__slide img,
+.wafu-hero__shade {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
 }
 
-.cosmo-hero__slide {
+.wafu-hero__slide {
     z-index: 0;
     visibility: hidden;
     opacity: 0;
     transition: opacity 1.2s ease, visibility 1.2s ease;
 }
 
-.cosmo-hero__slide.is-active {
+.wafu-hero__slide.is-active {
     z-index: 1;
     visibility: visible;
     opacity: 1;
 }
 
-.cosmo-hero__slide img {
+.wafu-hero__slide img {
     display: block;
     object-fit: cover;
     object-position: center;
     transform: scale(1.025);
 }
 
-.cosmo-hero__slide.is-active img {
-    animation: cosmo-image-in var(--cosmo-duration) linear both;
+.wafu-hero__slide.is-active img {
+    animation: wafu-image-in var(--wafu-duration) linear both;
 }
 
-.cosmo-hero__shade {
+.wafu-hero__shade {
     z-index: 1;
-    background:
-        linear-gradient(90deg, rgba(10, 31, 45, .68) 0%, rgba(22, 57, 76, .32) 52%, rgba(13, 40, 56, .15) 100%),
-        rgba(28, 73, 94, .16);
+    background: linear-gradient(90deg, rgba(10, 31, 45, 0.075), rgba(22, 57, 76, 0) 52%, rgba(13, 40, 56, .15)), rgba(28, 73, 94, .16);
 }
 
-.cosmo-hero__content {
+.wafu-hero__content {
     position: absolute;
     z-index: 2;
     top: 50%;
@@ -86,7 +85,7 @@ body > #navbar {
     text-shadow: 0 2px 20px rgba(0, 0, 0, .18);
 }
 
-.cosmo-hero__eyebrow {
+.wafu-hero__eyebrow {
     margin: 0 0 48px;
     font-size: 20px;
     line-height: 1.5;
@@ -94,8 +93,8 @@ body > #navbar {
     letter-spacing: 0;
 }
 
-.cosmo-hero__content h1,
-.cosmo-hero__content h2 {
+.wafu-hero__content h1,
+.wafu-hero__content h2 {
     margin: 0;
     max-width: 920px;
     color: #fff;
@@ -105,7 +104,7 @@ body > #navbar {
     letter-spacing: 0;
 }
 
-.cosmo-hero__link {
+.wafu-hero__link {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -119,31 +118,22 @@ body > #navbar {
     transition: border-color .2s ease, color .2s ease;
 }
 
-.cosmo-hero__link:hover,
-.cosmo-hero__link:focus-visible {
+.wafu-hero__link:hover,
+.wafu-hero__link:focus-visible {
     color: #fff;
     border-color: #fff;
 }
 
-.cosmo-hero__content > * {
+.wafu-hero__content > * {
     opacity: 0;
     transform: translateY(22px);
 }
 
-.cosmo-hero__slide.is-active .cosmo-hero__eyebrow {
-    animation: cosmo-copy-in .8s .28s ease forwards;
-}
+.wafu-hero__eyebrow { animation: wafu-copy-in .8s .28s ease forwards; }
+.wafu-hero__content h1 { animation: wafu-copy-in .9s .45s ease forwards; }
+.wafu-hero__link { animation: wafu-copy-in .9s .62s ease forwards; }
 
-.cosmo-hero__slide.is-active h1,
-.cosmo-hero__slide.is-active h2 {
-    animation: cosmo-copy-in .9s .45s ease forwards;
-}
-
-.cosmo-hero__slide.is-active .cosmo-hero__link {
-    animation: cosmo-copy-in .9s .62s ease forwards;
-}
-
-.cosmo-hero__pagination {
+.wafu-hero__pagination {
     position: absolute;
     z-index: 4;
     right: max(4vw, 34px);
@@ -153,7 +143,7 @@ body > #navbar {
     gap: 12px;
 }
 
-.cosmo-hero__dot {
+.wafu-hero__dot {
     position: relative;
     width: 36px;
     height: 36px;
@@ -165,7 +155,7 @@ body > #navbar {
     cursor: pointer;
 }
 
-.cosmo-hero__dot::after {
+.wafu-hero__dot::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -175,46 +165,23 @@ body > #navbar {
     border-radius: 50%;
     background: rgba(255, 255, 255, .72);
     transform: translate(-50%, -50%);
-    transition: background-color .25s ease, transform .25s ease;
 }
 
-.cosmo-hero__dot svg {
+.wafu-hero__dot svg {
     display: block;
     width: 36px;
     height: 36px;
     transform: rotate(-90deg);
 }
 
-.cosmo-hero__dot circle {
-    fill: none;
-    stroke-width: 1.5;
-}
+.wafu-hero__dot circle { fill: none; stroke-width: 1.5; }
+.wafu-hero__dot-track { stroke: rgba(255, 255, 255, .28); }
+.wafu-hero__dot-progress { stroke: #fff; stroke-dasharray: 101; stroke-dashoffset: 101; }
+.wafu-hero__dot.is-active::after { background: #fff; }
+.wafu-hero__dot.is-active .wafu-hero__dot-progress { animation: wafu-progress var(--wafu-duration) linear forwards; }
+.wafu-hero__dot:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 
-.cosmo-hero__dot-track {
-    stroke: rgba(255, 255, 255, .28);
-}
-
-.cosmo-hero__dot-progress {
-    stroke: #fff;
-    stroke-dasharray: 101;
-    stroke-dashoffset: 101;
-}
-
-.cosmo-hero__dot.is-active::after {
-    background: #fff;
-    transform: translate(-50%, -50%) scale(1.25);
-}
-
-.cosmo-hero__dot.is-active .cosmo-hero__dot-progress {
-    animation: cosmo-progress var(--cosmo-duration) linear forwards;
-}
-
-.cosmo-hero__dot:focus-visible {
-    outline: 2px solid #fff;
-    outline-offset: 3px;
-}
-
-.cosmo-hero__scroll {
+.wafu-hero__scroll {
     position: absolute;
     z-index: 4;
     left: 28px;
@@ -230,7 +197,7 @@ body > #navbar {
     writing-mode: vertical-rl;
 }
 
-.cosmo-hero__scroll i {
+.wafu-hero__scroll i {
     display: block;
     width: 1px;
     height: 58px;
@@ -238,118 +205,57 @@ body > #navbar {
     background: rgba(255, 255, 255, .35);
 }
 
-.cosmo-hero__scroll i::after {
+.wafu-hero__scroll i::after {
     content: "";
     display: block;
     width: 100%;
     height: 50%;
     background: #fff;
-    animation: cosmo-scroll 1.9s ease-in-out infinite;
+    animation: wafu-scroll 1.9s ease-in-out infinite;
 }
 
-@keyframes cosmo-image-in {
-    from { transform: scale(1.025); }
-    to { transform: scale(1.075); }
-}
-
-@keyframes cosmo-copy-in {
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes cosmo-progress {
-    to { stroke-dashoffset: 0; }
-}
-
-@keyframes cosmo-scroll {
-    0% { transform: translateY(-110%); }
-    55%, 100% { transform: translateY(210%); }
-}
+@keyframes wafu-image-in { from { transform: scale(1.025); } to { transform: scale(1.075); } }
+@keyframes wafu-copy-in { to { opacity: 1; transform: translateY(0); } }
+@keyframes wafu-progress { to { stroke-dashoffset: 0; } }
+@keyframes wafu-scroll { 0% { transform: translateY(-110%); } 55%, 100% { transform: translateY(210%); } }
 
 @media (max-width: 1023px) {
-    .cosmo-hero__content h1,
-    .cosmo-hero__content h2 {
-        font-size: 46px;
-    }
+    .wafu-hero__content h1,
+    .wafu-hero__content h2 { font-size: 46px; }
 }
 
 @media (max-width: 767px) {
-    .cosmo-hero {
-        height: 100vh;
-        height: 100svh;
-        min-height: 0;
-    }
-
-    .cosmo-hero__slide img {
-        object-position: 58% center;
-    }
-
-    .cosmo-hero__shade {
-        background:
-            linear-gradient(0deg, rgba(8, 29, 42, .72) 0%, rgba(14, 47, 65, .28) 72%, rgba(14, 47, 65, .2) 100%),
-            rgba(25, 70, 91, .14);
-    }
-
-    .cosmo-hero__content {
+    #navbar > .container > div { height: 76px; }
+    #navbar > .container > div > a > img { height: 68px; }
+    .wafu-hero__slide img { object-position: 58% center; }
+    .wafu-hero__shade { background: linear-gradient(0deg, rgba(8, 29, 42, .72), rgba(14, 47, 65, .28) 72%, rgba(14, 47, 65, .2)), rgba(25, 70, 91, .14); }
+    .wafu-hero__content {
         top: auto;
-        right: 96px;
+        right: 80px;
         bottom: 112px;
         left: 24px;
         width: auto;
         transform: none;
     }
-
-    .cosmo-hero__eyebrow {
-        margin-bottom: 24px;
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    .cosmo-hero__content h1,
-    .cosmo-hero__content h2 {
-        font-size: 34px;
-        line-height: 1.24;
-    }
-
-    .cosmo-hero__link {
-        margin-top: 20px;
-        font-size: 15px;
-    }
-
-    .cosmo-hero__pagination {
-        right: 20px;
-        bottom: 28px;
-        gap: 8px;
-    }
-
-    .cosmo-hero__scroll {
-        display: none;
-    }
+    .wafu-hero__eyebrow { margin-bottom: 24px; font-size: 14px; }
+    .wafu-hero__content h1,
+    .wafu-hero__content h2 { font-size: 34px; line-height: 1.24; }
+    .wafu-hero__link { margin-top: 20px; font-size: 15px; }
+    .wafu-hero__pagination { right: 20px; bottom: 28px; gap: 8px; }
+    .wafu-hero__scroll { display: none; }
 }
 
 @media (max-width: 390px) {
-    .cosmo-hero__content h1,
-    .cosmo-hero__content h2 {
-        font-size: 30px;
-    }
+    .wafu-hero__content h1,
+    .wafu-hero__content h2 { font-size: 30px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .cosmo-hero__slide,
-    .cosmo-hero__content > * {
-        transition: none;
-    }
-
-    .cosmo-hero__slide.is-active img,
-    .cosmo-hero__slide.is-active .cosmo-hero__eyebrow,
-    .cosmo-hero__slide.is-active h1,
-    .cosmo-hero__slide.is-active h2,
-    .cosmo-hero__dot.is-active .cosmo-hero__dot-progress,
-    .cosmo-hero__scroll i::after {
-        animation: none;
-    }
-
-    .cosmo-hero__slide.is-active .cosmo-hero__content > * {
-        opacity: 1;
-        transform: none;
-    }
+    .wafu-hero__slide,
+    .wafu-hero__content > * { transition: none; }
+    .wafu-hero__slide.is-active img,
+    .wafu-hero__content > *,
+    .wafu-hero__dot.is-active .wafu-hero__dot-progress,
+    .wafu-hero__scroll i::after { animation: none; }
+    .wafu-hero__content > * { opacity: 1; transform: none; }
 }

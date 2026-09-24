@@ -4,8 +4,8 @@
     const carousel = document.getElementById('heroCarousel');
     if (!carousel) return;
 
-    const slides = Array.from(carousel.querySelectorAll('[data-cosmo-slide]'));
-    const dots = Array.from(carousel.querySelectorAll('[data-cosmo-dot]'));
+    const slides = Array.from(carousel.querySelectorAll('[data-wafu-slide]'));
+    const dots = Array.from(carousel.querySelectorAll('[data-wafu-dot]'));
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const interval = 6000;
     let activeIndex = 0;
@@ -15,7 +15,7 @@
     if (slides.length < 2 || slides.length !== dots.length) return;
 
     function restartProgress(dot) {
-        const progress = dot.querySelector('.cosmo-hero__dot-progress');
+        const progress = dot.querySelector('.wafu-hero__dot-progress');
         if (!progress || reducedMotion) return;
         progress.style.animation = 'none';
         void progress.getBoundingClientRect();
@@ -53,14 +53,13 @@
 
     dots.forEach((dot) => {
         dot.addEventListener('click', () => {
-            showSlide(Number(dot.dataset.cosmoDot));
+            showSlide(Number(dot.dataset.wafuDot));
             startAutoplay();
         });
     });
 
     carousel.addEventListener('focusin', stopAutoplay);
     carousel.addEventListener('focusout', startAutoplay);
-
     carousel.addEventListener('keydown', (event) => {
         if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
         event.preventDefault();

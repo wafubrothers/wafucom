@@ -552,25 +552,40 @@ function initPhoneCopy() {
   const text = document.getElementById('phoneText');
   if (!btn || !text) return;
 
-  const phone = btn.getAttribute('data-phone') || text.textContent;
+  const phoneText = text.textContent.trim();
+  let textTimer;
+  let feedbackTimer;
 
   function setText(newText) {
+    window.clearTimeout(textTimer);
     text.classList.add('opacity-0');
-    window.setTimeout(() => {
-      text.innerText = newText;
+    textTimer = window.setTimeout(() => {
+      text.textContent = newText;
       text.classList.remove('opacity-0');
     }, 150);
   }
 
-  btn.addEventListener('mouseenter', () => setText('Click to Copy'));
-  btn.addEventListener('mouseleave', () => setText(phone));
+  btn.addEventListener('mouseenter', () => {
+    window.clearTimeout(feedbackTimer);
+    setText('Click to Copy');
+  });
+  btn.addEventListener('mouseleave', () => {
+    window.clearTimeout(feedbackTimer);
+    setText(phoneText);
+  });
   btn.addEventListener('click', async () => {
+    window.clearTimeout(feedbackTimer);
     try {
-      await navigator.clipboard.writeText(phone);
+      await navigator.clipboard.writeText(phoneText);
       setText('Copied');
-      window.setTimeout(() => setText(phone), 1500);
+      feedbackTimer = window.setTimeout(() => {
+        setText(btn.matches(':hover') ? 'Click to Copy' : phoneText);
+      }, 1500);
     } catch (error) {
       setText('Copy Failed');
+      feedbackTimer = window.setTimeout(() => {
+        setText(btn.matches(':hover') ? 'Click to Copy' : phoneText);
+      }, 1500);
     }
   });
 }

@@ -10,14 +10,46 @@
 }
 
 body > #navbar {
-    position: absolute;
+    position: fixed;
+    z-index: 1000;
     top: 0;
     right: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(180deg, rgba(7, 28, 41, .48), rgba(7, 28, 41, 0));
+    isolation: isolate;
+    background: transparent;
     box-shadow: none;
     backdrop-filter: none;
+    transition: box-shadow .5s cubic-bezier(.22, 1, .36, 1);
+}
+
+body > #navbar::before,
+body > #navbar::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    pointer-events: none;
+    transition: opacity .5s cubic-bezier(.22, 1, .36, 1);
+    will-change: opacity;
+}
+
+body > #navbar::before {
+    background: linear-gradient(180deg, rgba(7, 28, 41, .48), rgba(7, 28, 41, 0));
+    opacity: 1;
+}
+
+body > #navbar::after {
+    background: #fff;
+    opacity: 0;
+}
+
+body > #navbar.navbar--scrolled::before {
+    opacity: 0;
+}
+
+body > #navbar.navbar--scrolled::after {
+    opacity: 1;
 }
 
 #navbar > .container > div > nav > a:not(:last-child),
@@ -25,6 +57,7 @@ body > #navbar {
 #navbar > .container > div > nav > div > button,
 #navbar #mobile-menu-btn {
     color: #fff;
+    transition: color .38s cubic-bezier(.22, 1, .36, 1);
 }
 
 #navbar > .container > div > a > img {

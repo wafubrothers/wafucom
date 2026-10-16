@@ -590,7 +590,33 @@ function initPhoneCopy() {
   });
 }
 
+function initStickyNavbar() {
+  const navbar = document.getElementById('navbar');
+  if (!navbar) return;
+
+  let ticking = false;
+  let isScrolled = false;
+
+  function updateNavbar() {
+    const nextScrolled = isScrolled ? window.scrollY > 6 : window.scrollY > 36;
+    if (nextScrolled !== isScrolled) {
+      isScrolled = nextScrolled;
+      navbar.classList.toggle('navbar--scrolled', isScrolled);
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateNavbar);
+  }, { passive: true });
+
+  updateNavbar();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  initStickyNavbar();
   initFloatingContactButtons();
   initMobileMenu();
   initHeroCarousel();

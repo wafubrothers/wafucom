@@ -313,6 +313,247 @@
                 height: auto;
             }
         }
+
+        .product-showcase {
+            padding: 48px 0;
+            background: #f7f8fa;
+        }
+
+        .product-showcase__container {
+            width: min(100% - 32px, 1280px);
+            margin: 0 auto;
+        }
+
+        .product-showcase__header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .product-showcase__title {
+            margin: 0 0 12px;
+            color: #d7282f;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        .product-showcase__intro {
+            margin: 0;
+            padding: 16px;
+            background: #ffffff;
+            color: #111827;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.55;
+        }
+
+        .product-showcase__grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .product-card {
+            display: flex;
+            min-width: 0;
+            height: 100%;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            background: #ffffff;
+            box-shadow: 0 4px 10px rgba(17, 24, 39, 0.08);
+            transition: none;
+        }
+
+        .product-card__image-link {
+            display: block;
+        }
+
+        .product-card__media {
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            background: #f3f4f6;
+        }
+
+        .product-card__image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card__image-link:hover .product-card__image {
+            transform: scale(1.04);
+        }
+
+        .product-card__body {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .product-card__heading-link {
+            display: inline-block;
+            margin-bottom: 8px;
+            color: #111827;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .product-card__heading-link:hover,
+        .product-card__detail-link:hover {
+            color: #0e42b3;
+        }
+
+        .product-card__heading {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .product-card__copy {
+            margin: 0 0 12px;
+            color: #4b5563;
+            font-size: 14px;
+            line-height: 1.65;
+        }
+
+        .product-card__footer {
+            margin-top: auto;
+            padding-top: 12px;
+        }
+
+        .product-card__features {
+            display: grid;
+            gap: 8px;
+            margin-bottom: 16px;
+            color: #6b7280;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .product-card__feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .product-card__icon {
+            width: 16px;
+            height: 16px;
+            flex: 0 0 16px;
+            margin-top: 1px;
+            color: #165dff;
+        }
+
+        .product-card__actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .product-card__detail-link,
+        .product-card__contact-link,
+        .product-showcase__all-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.4;
+            text-decoration: none;
+            transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .product-card__detail-link {
+            color: #165dff;
+        }
+
+        .product-card__contact-link {
+            padding: 7px 12px;
+            border-radius: 6px;
+            background: #165dff;
+            color: #ffffff;
+            box-shadow: 0 2px 5px rgba(22, 93, 255, 0.2);
+            white-space: nowrap;
+        }
+
+        .product-card__contact-link:hover {
+            background: #0e42b3;
+            box-shadow: 0 4px 9px rgba(22, 93, 255, 0.28);
+        }
+
+        .product-card__action-icon {
+            width: 15px;
+            height: 15px;
+            flex: 0 0 15px;
+        }
+
+        .product-showcase__all {
+            margin-top: 32px;
+            text-align: center;
+        }
+
+        .product-showcase__all-link {
+            padding: 9px 24px;
+            border: 1px solid #165dff;
+            border-radius: 999px;
+            background: #ffffff;
+            color: #165dff;
+        }
+
+        .product-showcase__all-link:hover {
+            background: #165dff;
+            color: #ffffff;
+        }
+
+        @media (max-width: 1023px) {
+            .product-showcase__grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 767px) {
+            .product-showcase {
+                padding: 40px 0;
+            }
+
+            .product-showcase__title {
+                font-size: 26px;
+            }
+
+            .product-showcase__intro {
+                font-size: 17px;
+            }
+
+            .product-showcase__intro br {
+                display: none;
+            }
+
+            .product-showcase__grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        @media (max-width: 420px) {
+            .product-card__actions {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .product-card__detail-link,
+            .product-card__contact-link {
+                width: 100%;
+                min-height: 38px;
+            }
+        }
     </style>
 
     <!-- 多语言声明 -->
@@ -777,153 +1018,106 @@
         </section>
 
         <!-- 产品 -->
-        <section class="py-12 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-10">
-                    <h2 class="text-[clamp(1.25rem,3vw,2rem)] font-bold text-gray-900 mb-3">
-                        High-Precision <span class="text-primary">Leak Testing Equipment</span>
-                    </h2>
-                    <p class="text-white bg-primary pt-4 pb-4 font-bold text-xl">
-                        WAFU Brothers’ main products include leak testing instruments, waterproof testing instruments, sealing testing equipment, and other leak detection devices,<br />
-                        and is a leading enterprise in China’s leak detection equipment industry.
-                    </p>
+        <section class="product-showcase">
+            <div class="product-showcase__container">
+                <div class="product-showcase__header">
+                    <h2 class="product-showcase__title">Best-Selling Products</h2>
+                    <p class="product-showcase__intro">WAFU Brothers' main products include airtightness, waterproof, and sealing test instruments,<br>making us a leading Chinese manufacturer of leak testing equipment.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="product-showcase__grid">
                     <!-- 产品1：最新款气密性检测仪 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden relative group">
-                        <a href="./products/fangle.html" class="block">
-                            <div class="aspect-[1/1] overflow-hidden">
-                                <img src="./images/products/fangle/fangle.png" alt="Latest Leak Tester" width="400" height="400"
-                                    loading="lazy"
-                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                    decoding="async">
+                    <article class="product-card">
+                        <a href="./products/fangle.html" class="product-card__image-link">
+                            <div class="product-card__media">
+                                <img src="./images/products/fangle/fangle.png" alt="Latest premium leak tester" width="400" height="400" loading="lazy"
+                                    class="product-card__image" decoding="async">
                             </div>
                         </a>
-                        <div class="p-5">
-                            <a href="./products/fangle.html" class="inline-block mb-2">
-                                <h3 class="font-bold text-lg text-gray-900 hover:text-primary transition-colors">
-                                    Latest Leak Tester
-                                </h3>
-                            </a>
-                            <p class="text-gray-600 text-sm mb-3">
-                                The latest leak tester from WAFU Brothers adopts a higher-precision microcontroller integrated solution,
-                                achieving an accuracy of 0.1Pa. It meets the needs of high-precision seal testing, leak point detection, and
-                                airtightness testing.
-                            </p>
-                            <div class="flex items-center text-xs text-gray-500 mb-4">
-                                <span class="mr-3">
-                                    <svg class="svg-icon text-primary mr-1" data-icon="check-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Accuracy: 0.1Pa
-                                </span>
-                                <span>
-                                    <svg class="svg-icon text-primary mr-1" data-icon="check-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Fast Testing
-                                </span>
+                        <div class="product-card__body">
+                            <div>
+                                <a href="./products/fangle.html" class="product-card__heading-link"><h3 class="product-card__heading">Latest Premium Leak Tester</h3></a>
+                                <p class="product-card__copy">Industry-leading precision. The tenth-generation premium leak tester uses 24-bit A/D conversion, with sensitivity down to 0.02 Pa, 0.1 Pa measurement accuracy, and repeatability within 1 Pa. It can identify micron-scale leak paths for demanding applications from consumer electronics to new-energy vehicle components.</p>
+                                <p class="product-card__copy">Temperature compensation and advanced filtering suppress workshop temperature drift, air-source pulsation, and electromagnetic noise. The result is stable pass/fail judgment near presses and welders and across large day-to-night temperature changes, reducing false rejects and unnecessary rework.</p>
+                                <p class="product-card__copy">Direct-pressure, differential-pressure, flow, and vacuum methods can be configured for different products and standards. Positive-pressure testing suits products that must remain dry, while vacuum testing supports faster production cycles.</p>
                             </div>
-                            <div class="flex justify-between items-center">
-                                <a href="./products/fangle.html"
-                                    class="inline-flex items-center text-primary text-sm font-medium hover:text-secondary transition-colors">
-                                    View Details <svg class="svg-icon ml-1" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                                </a>
-                                <!-- <a href="./contact.html">
-                                    <button
-                                        class="bg-primary hover:bg-primary/90 text-white text-sm px-3 py-1.5 rounded-md transition-all duration-300 flex items-center shadow-sm hover:shadow">
-                                        <svg class="svg-icon mr-1" data-icon="comments-o" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a7 7 0 0 1-7 7H8l-5 3 1.6-4.8A7 7 0 1 1 21 12z"/><path d="M8 11h8M8 15h5"/></svg> Contact Now
-                                    </button>
-                                </a> -->
+                            <div class="product-card__footer">
+                                <div class="product-card__features">
+                                    <span class="product-card__feature"><svg class="product-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.5 2.5L16 9"/></svg>0.1 Pa accuracy for precision seal and leak-rate testing</span>
+                                    <span class="product-card__feature"><svg class="product-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.5 2.5L16 9"/></svg>Multiple test modes with flexible product-specific parameters</span>
+                                    <span class="product-card__feature"><svg class="product-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.5 2.5L16 9"/></svg>Multichannel expansion for high-volume production</span>
+                                    <span class="product-card__feature"><svg class="product-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.5 2.5L16 9"/></svg>Stable, traceable results for production quality management</span>
+                                </div>
+                                <div class="product-card__actions">
+                                    <a href="./products/fangle.html" class="product-card__detail-link">More Details <svg class="product-card__action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+                                    <a href="./contact.html" class="product-card__contact-link"><svg class="product-card__action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a7 7 0 0 1-7 7H8l-5 3 1.6-4.8A7 7 0 1 1 21 12z"/><path d="M8 11h8M8 15h5"/></svg>Contact Now</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-  
-                    <!-- 产品2：十通道血压袖带非标定制气密性检测柜机 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <a href="./products/electric-four-wheeler-tail-light.html" class="block group">
-                            <div class="aspect-[1/1] overflow-hidden">
-                    
+                    <!-- 产品2：爱玛老头乐四轮电动车尾灯气密性检测柜机 -->
+                    <article class="product-card">
+                        <a href="./products/electric-four-wheeler-tail-light.html" class="product-card__image-link">
+                            <div class="product-card__media">
                                 <img loading="lazy" src="./images/products/custom/electricFourWheelerTailLight/electric-four-wheeler-tail-light-leak-tester-front.jpg"
-                                    alt="10-Channel Customized Blood Pressure Cuff Leak Testing Cabinet" width="400" height="400"
-                                    loading="lazy"
-                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                    decoding="async">
+                                    alt="Custom leak testing cabinet for electric four-wheeler tail lights" width="400" height="400"
+                                    class="product-card__image" decoding="async">
                             </div>
                         </a>
-                        <div class="p-5">
-                            <!-- 产品2内容 -->
-                            <a href="./products/electric-four-wheeler-tail-light.html" class="inline-block mb-2">
-                                <h3 class="font-bold text-lg text-gray-900 hover:text-primary transition-colors">
-                                    Customized Leak Testing Cabinet
-                                </h3>
-                            </a>
-                            <p class="text-gray-600 text-sm mb-3">
-                                This product is a high-precision leak testing equipment with a high degree of customization. The equipment
-                                adopts an integrated structure and supports fully customized solutions, including customized testing
-                                processes.
-                            </p>
-                            <div class="flex items-center text-xs text-gray-500 mb-4">
-                                <span class="mr-3">
-                                    <svg class="svg-icon text-primary mr-1" data-icon="check-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Sensitivity: 0.01Pa
-                                </span>
-                                <span>
-                                    <svg class="svg-icon text-primary mr-1" data-icon="check-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Customized Solution
-                                </span>
+                        <div class="product-card__body">
+                            <div>
+                                <a href="./products/electric-four-wheeler-tail-light.html" class="product-card__heading-link"><h3 class="product-card__heading">Custom Leak Testing Cabinet</h3></a>
+                                <p class="product-card__copy">This highly integrated custom system combines the leak tester, dedicated fixture, and control system in one compact platform. Noise suppression and temperature compensation deliver 0.1 Pa resolution, repeatability within 1 Pa, and cycle times as fast as three seconds.</p>
+                                <p class="product-card__copy">The process and fixture can be tailored to product dimensions, seal locations, process requirements, and line takt time. Automatic clamping, recipe control, pass/fail judgment, and data recording support standardized, traceable quality control.</p>
+                                <p class="product-card__copy">The cabinet can integrate loading, testing, sorting, and data upload with automated lines. Its precision, speed, and customization suit automotive components, medical devices, consumer electronics, home appliances, aerospace, and other demanding high-volume applications.</p>
                             </div>
-                            <div class="flex justify-between items-center">
-                                <a href="./products/blood-pressure-cuff.html"
-                                    class="inline-flex items-center text-primary text-sm font-medium hover:text-secondary transition-colors">
-                                    View Details <svg class="svg-icon ml-1" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                                </a>
-                                
+                            <div class="product-card__footer">
+                                <div class="product-card__features">
+                                    <span class="product-card__feature"><svg class="product-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.5 2.5L16 9"/></svg>0.01 Pa sensitivity for minute leak detection</span>
+                                    <span class="product-card__feature"><svg class="product-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.5 2.5L16 9"/></svg>Integrated tester, fixture, and control system</span>
+                                    <span class="product-card__feature"><svg class="product-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.5 2.5L16 9"/></svg>Automatic clamping, judgment, and data recording</span>
+                                    <span class="product-card__feature"><svg class="product-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.5 2.5L16 9"/></svg>Custom line integration matched to product and takt time</span>
+                                </div>
+                                <div class="product-card__actions">
+                                    <a href="./products/electric-four-wheeler-tail-light.html" class="product-card__detail-link">More Details <svg class="product-card__action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+                                    <a href="./contact.html" class="product-card__contact-link"><svg class="product-card__action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a7 7 0 0 1-7 7H8l-5 3 1.6-4.8A7 7 0 1 1 21 12z"/><path d="M8 11h8M8 15h5"/></svg>Contact Now</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
+
                     <!-- Leak Point Detector -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <a href="./products/water-leaktest.html" class="block group">
-                            <div class="aspect-[1/1] overflow-hidden">
-                                <picture>
-                                    <source srcset="./images/webp/leak_detector.webp" type="image/webp">
-                                    <source srcset="./images/products/water_detector/leak_detector.jpg"  type="image/jpeg">
-                                    <img src="./images/products/water_detector/leak_detector.jpg"
-                                        alt="Leak Point Detector" width="400" height="400" loading="lazy"
-                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                        decoding="async"/>
-                                </picture>
+                    <article class="product-card">
+                        <a href="./products/water-leaktest.html" class="product-card__image-link">
+                            <div class="product-card__media">
+                                <img src="./images/products/water_detector/leak_detector.jpg" alt="Water immersion leak point detector" width="400" height="400" loading="lazy" class="product-card__image" decoding="async">
                             </div>
                         </a>
-                        <div class="p-5">
-                            <!-- Product 3 content -->
-                            <a href="./products/water-leaktest.html" class="inline-block mb-2">
-                                <h3 class="font-bold text-lg text-gray-900 hover:text-primary transition-colors">
-                                    Leak Point Detector
-                                </h3>
-                            </a>
-                            <p class="text-gray-600 text-sm mb-3">
-                                This product is a high-precision leak point detector, also known as a water leakage
-                                tester, designed to check product sealing and locate leaks. By applying water pressure,
-                                it accurately identifies leak points, helping companies detect sealing issues in
-                                production and design promptly.
-                            </p>
-                            <div class="flex items-center text-xs text-gray-500 mb-4">
-                                <span class="mr-3">
-                                    <svg class="svg-icon text-primary mr-1" data-icon="check-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Test Range: 0~90KPa
-                                </span>
-                                <span>
-                                    <svg class="svg-icon text-primary mr-1" data-icon="check-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Simulates Water Depth up to 300
-                                    meters
-                                </span>
+                        <div class="product-card__body">
+                            <div>
+                                <a href="./products/water-leaktest.html" class="product-card__heading-link"><h3 class="product-card__heading">Water Immersion Leak Point Detector</h3></a>
+                                <p class="product-card__copy">This high-precision immersion tester checks sealing and pinpoints the exact leak location. It pressurizes the part and submerges it so escaping bubbles reveal minute defects quickly and directly.</p>
+                                <p class="product-card__copy">The fixture seals and fills the workpiece before lowering it smoothly into the tank. Pressure, hold time, and sequence can be adjusted for different structures so operators obtain clear, reliable results.</p>
+                                <p class="product-card__copy">Unlike pass/fail-only methods, bubble testing identifies whether the defect is at a seal, weld, housing, or connector. It supports sample validation, production sampling, and failed-part diagnosis and can complement an automated leak tester.</p>
                             </div>
-                            <a href="./products/water-leaktest.html"
-                                class="inline-flex items-center text-primary text-sm font-medium hover:text-secondary transition-colors">
-                                View Details <svg class="svg-icon ml-1" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                            </a>
+                            <div class="product-card__footer">
+                                <div class="product-card__features">
+                                    <span class="product-card__feature"><svg class="product-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.5 2.5L16 9"/></svg>Adjustable 0-90 kPa test range</span>
+                                    <span class="product-card__feature"><svg class="product-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.5 2.5L16 9"/></svg>Simulates water depths up to 300 meters</span>
+                                    <span class="product-card__feature"><svg class="product-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.5 2.5L16 9"/></svg>Visible bubbles identify the exact leak location</span>
+                                    <span class="product-card__feature"><svg class="product-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.5 2.5L16 9"/></svg>Ideal for diagnosing castings and electronic housings</span>
+                                </div>
+                                <div class="product-card__actions">
+                                    <a href="./products/water-leaktest.html" class="product-card__detail-link">More Details <svg class="product-card__action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+                                    <a href="./contact.html" class="product-card__contact-link"><svg class="product-card__action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a7 7 0 0 1-7 7H8l-5 3 1.6-4.8A7 7 0 1 1 21 12z"/><path d="M8 11h8M8 15h5"/></svg>Contact Now</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </article>
                 </div>
 
-                <div class="text-center mt-8">
-                    <a href="./products.html"
-                        class="inline-block bg-white border border-primary text-primary hover:bg-primary hover:text-white text-sm font-medium py-2 px-6 rounded-full transition-colors">
-                        more products
-                    </a>
+                <div class="product-showcase__all">
+                    <a href="./products.html" class="product-showcase__all-link">View All Products</a>
                 </div>
             </div>
         </section>
@@ -1342,7 +1536,7 @@
                                 <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
                                 <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
                             </div>
-        
+
                             <!-- 文字 -->
                             <p class="mt-4">
                                 We are a manufacturer of new energy vehicle batteries. After adopting WAFU Brothers leak
@@ -1780,6 +1974,38 @@
                             Testing Cases
                         </h3>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- 案例 3 -->
+                            <div class="bg-gray-50 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md
+                            flex flex-col h-[505px]">
+                               <a href="./solulist/tubing/pet-bird-water-valve.html">
+                                   <img src="./images/solu/valve/petBirdWaterValve/pet-bird-water-valve.jpg" alt="Pet bird water valve leak testing"
+                                       class="w-full h-48 object-cover rounded-t-xl transition-transform duration-700 hover:scale-105" loading="lazy">
+                               </a>
+                               <div class="p-6 flex flex-col justify-between flex-1">
+                                   <div>
+                                       <h4 class="font-bold text-xl text-gray-900 mb-3">
+                                           <a href="./solulist/tubing/pet-bird-water-valve.html" class="hover:text-primary transition-colors line-clamp-3" title="Slow Drips or Seepage from Pet Bird Water Valves? Reliable Leak Testing Is the Key">
+                                               <!-- 标题 -->
+                                               Slow Drips or Seepage from <strong class="text-blue-600">Pet Bird Water Valves</strong>? Reliable <strong class="text-blue-600">Leak Testing</strong> Is the Key
+                                           </a>
+                                       </h4>
+                                   </div>
+                                   <div>
+                                       <p class="text-gray-500 text-sm mb-3">
+                                        October 16, 2026
+                                       </p>
+                                       <p class="text-gray-600 mb-4 line-clamp-3">
+                                        Test the valve core, seals, and connections to identify minute leaks quickly and reduce slow dripping,
+                                        transport leakage, and quality risks after high-volume delivery.
+                                       </p>
+                                       <a href="./solulist/tubing/pet-bird-water-valve.html"
+                                           class="inline-flex items-center px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
+                                           View Case <svg class="svg-icon ml-2" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                                       </a>
+                                   </div>
+
+                               </div>
+                           </div>
                             <!-- 案例 2 -->
                             <div class="bg-gray-50 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
                                 <a href="./solulist/kitchen/smart-toilet-water-valve.html">
@@ -1837,42 +2063,8 @@
                                         View Case <svg class="svg-icon ml-2" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
                                     </a>
                                 </div>
-                            </div>  
-                            <!-- 案例 3 -->
-                            <div class="bg-gray-50 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md
-                            flex flex-col h-[505px]">
-                               <a href="./solulist/electronic/LED-dot-matrix-module.html">
-                                   <img src="images/solu/electronic/LedDotMatrixModule/LED-dot-matrix-module.jpg" alt="LED Dot Matrix Module"
-                                       class="w-full h-48 object-cover rounded-t-xl transition-transform duration-700 hover:scale-105" loading="lazy">
-                               </a>
-                               <div class="p-6 flex flex-col justify-between flex-1">
-                                   <div>
-                                       <h4 class="font-bold text-xl text-gray-900 mb-3">
-                                           <a href="./solulist/electronic/LED-dot-matrix-module.html" class="hover:text-primary transition-colors line-clamp-3" title='How Leak Testing Helps LED Dot Matrix Module Manufacturers Reduce Water Ingress Risk'>
-                                               <!-- 标题 -->
-                                               How <strong class="text-blue-600">Leak Testing</strong>  Helps <strong class="text-blue-600">LED Dot Matrix Module</strong>  Manufacturers Reduce Water Ingress Risk
-                                           </a>
-                                       </h4>
-                                   </div>
-                                   <div>
-                                       <p class="text-gray-500 text-sm mb-3">
-                                        September 3, 2026
-                                       </p>
-                                       <p class="text-gray-600 mb-4 line-clamp-3">
-                                        LED dot matrix modules are widely used in information display screens, outdoor advertising displays, traffic
-                                        guidance displays, industrial display equipment, and smart terminals. Some products need to <strong
-                                          style="background: linear-gradient(transparent 50%, #ffd9e4 50%); border-radius: 4px;">operate for long periods in
-                                          humid, rainy, or highly temperature-variable environments</strong>. Therefore, the waterproof performance of the
-                                        module housing and sealing structure directly affects product reliability and service life.
-                                       </p>
-                                       <a href="./solulist/electronic/LED-dot-matrix-module.html"
-                                           class="inline-flex items-center px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
-                                           View Case <svg class="svg-icon ml-2" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                                       </a>
-                                   </div>
+                            </div>
 
-                               </div>
-                           </div>
 
 
                         </div>

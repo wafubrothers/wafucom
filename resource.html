@@ -29,6 +29,15 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <link href="/css/footer-theme.css" rel="stylesheet">
+    <style>
+        #article-list a[href] h4 {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+        }
+    </style>
 </head>
 
 <body class="bg-white text-gray-800 font-inter overflow-x-hidden">
@@ -381,8 +390,37 @@
                         </div>
                     </section>
                     <br />
-                    <!-- 技术文章部分 -->
-                    <div id="articles" class="mb-20 scroll-mt-20">
+                    <div class="lg:grid lg:grid-cols-[12rem_minmax(0,1fr)] lg:gap-8 xl:gap-10 items-start">
+                        <aside class="mb-8 lg:mb-0 lg:sticky lg:top-24 z-10" aria-label="Technical article categories">
+                            <div class="bg-gray-50 border border-gray-200 rounded-lg p-3">
+                                <h3 class="px-3 pt-2 pb-3 text-base font-bold text-gray-900 flex items-center">
+                                    <svg class="w-5 h-5 text-primary mr-2 flex-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h6l2 2h10v10H3z"/><path d="M3 7V5h6l2 2"/></svg>
+                                    Article Categories
+                                </h3>
+                                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-1 gap-2" role="group" aria-label="Filter technical articles by category">
+                                    <button type="button" data-article-filter="all" aria-pressed="true"
+                                        class="article-filter w-full px-4 py-2.5 text-sm text-left font-medium text-white bg-primary border border-primary rounded-md hover:bg-secondary hover:text-white hover:border-secondary transition-colors">
+                                        All Articles
+                                    </button>
+                                    <button type="button" data-article-filter="knowledge" aria-pressed="false"
+                                        class="article-filter w-full px-4 py-2.5 text-sm text-left font-medium text-gray-600 bg-white border border-gray-200 rounded-md hover:bg-secondary hover:text-white hover:border-secondary transition-colors">
+                                        Knowledge
+                                    </button>
+                                    <button type="button" data-article-filter="selection" aria-pressed="false"
+                                        class="article-filter w-full px-4 py-2.5 text-sm text-left font-medium text-gray-600 bg-white border border-gray-200 rounded-md hover:bg-secondary hover:text-white hover:border-secondary transition-colors">
+                                        Equipment Selection
+                                    </button>
+                                    <button type="button" data-article-filter="qa" aria-pressed="false"
+                                        class="article-filter w-full px-4 py-2.5 text-sm text-left font-medium text-gray-600 bg-white border border-gray-200 rounded-md hover:bg-secondary hover:text-white hover:border-secondary transition-colors">
+                                        Q&amp;A
+                                    </button>
+                                </div>
+                                <p id="article-filter-status" class="px-3 pt-4 pb-2 text-xs text-gray-500" aria-live="polite"></p>
+                            </div>
+                        </aside>
+
+                    <!-- Technical articles -->
+                    <div id="articles" class="mb-20 scroll-mt-20 min-w-0">
                         <div class="flex flex-wrap items-center justify-between mb-10">
                             <h3 class="text-2xl md:text-3xl font-bold text-dark flex items-center">
                                 <i class="fas fa-file-alt mr-3 text-primary"></i> Technical Articles
@@ -392,7 +430,7 @@
 
                         <!-- 列表样式 -->
                          
-                        <div class="space-y-6">
+                        <div id="article-list" class="space-y-6">
                             <!-- 最新 -->
                             <a href="./faq/T-art-33.html"
                                 class="flex flex-col md:flex-row bg-white rounded-xl shadow-md hover:shadow-lg overflow-hidden transition-shadow group">
@@ -404,7 +442,7 @@
                                 <div class="p-5 md:w-2/3 flex flex-col justify-between">
                                     <div>
                                         <div class="flex items-center mb-2">
-                                            <span class="text-xs text-gray-400">October 17, 2026</span>
+                                            <span class="text-xs text-gray-400">October 20, 2026</span>
                                         </div>
                                         <h4 class="text-lg font-semibold text-gray-800 group-hover:text-primary mb-2">
                                             How Much Does an <strong class="text-blue-600">Air Leak Tester</strong> Cost? What After-Sales Support Matters Beyond Price?
@@ -1361,6 +1399,7 @@
                         
                         </div>
                     </div>
+                    </div>
 
                 </div>
             </div>
@@ -1547,6 +1586,89 @@
     </button>
     <script src="./js/tailwind.config.js"></script>
     <script src="./js/script.js"></script>
+    <script>
+        (function () {
+            var categoryMap = {
+                knowledge: [1, 2, 5, 8, 9, 10, 11, 12, 15, 17, 19, 21, 23, 25, 26, 27, 28, 29],
+                selection: [3, 6, 13, 14, 16, 18, 20, 22, 24, 32],
+                qa: [4, 7, 30, 31, 33]
+            };
+            var standaloneArticleCategories = {
+                './faq/Medical-gas-valve.html': 'knowledge',
+                './faq/airtightness-analysis.html': 'knowledge'
+            };
+            var categoryNames = {
+                all: 'All Articles',
+                knowledge: 'Knowledge',
+                selection: 'Equipment Selection',
+                qa: 'Q&A'
+            };
+            var articleList = document.getElementById('article-list');
+            var filterButtons = document.querySelectorAll('.article-filter');
+            var status = document.getElementById('article-filter-status');
+
+            document.querySelectorAll('#article-list a[href] h4').forEach(function (heading) {
+                heading.title = heading.textContent.replace(/\s+/g, ' ').trim();
+            });
+
+            if (!articleList || !filterButtons.length || !status) {
+                return;
+            }
+
+            var articles = Array.from(articleList.querySelectorAll('a[href]')).filter(function (article) {
+                return article.querySelector('h4');
+            });
+
+            articles.forEach(function (article) {
+                var href = article.getAttribute('href');
+                var match = href.match(/T-art-(\d+)\.html/);
+
+                if (!match) {
+                    article.dataset.category = standaloneArticleCategories[href] || 'knowledge';
+                    return;
+                }
+
+                var articleNumber = Number(match[1]);
+                var category = Object.keys(categoryMap).find(function (key) {
+                    return categoryMap[key].includes(articleNumber);
+                });
+                article.dataset.category = category || 'knowledge';
+            });
+
+            function setActiveFilter(selectedCategory) {
+                var visibleCount = 0;
+
+                articles.forEach(function (article) {
+                    var shouldShow = selectedCategory === 'all' || article.dataset.category === selectedCategory;
+                    article.classList.toggle('hidden', !shouldShow);
+                    if (shouldShow) {
+                        visibleCount += 1;
+                    }
+                });
+
+                filterButtons.forEach(function (button) {
+                    var isActive = button.dataset.articleFilter === selectedCategory;
+                    button.setAttribute('aria-pressed', String(isActive));
+                    button.classList.toggle('bg-primary', isActive);
+                    button.classList.toggle('border-primary', isActive);
+                    button.classList.toggle('text-white', isActive);
+                    button.classList.toggle('bg-white', !isActive);
+                    button.classList.toggle('border-gray-200', !isActive);
+                    button.classList.toggle('text-gray-600', !isActive);
+                });
+
+                status.textContent = categoryNames[selectedCategory] + ': ' + visibleCount + ' articles';
+            }
+
+            filterButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    setActiveFilter(button.dataset.articleFilter);
+                });
+            });
+
+            setActiveFilter('all');
+        }());
+    </script>
 </body>
 
 </html>

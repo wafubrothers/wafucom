@@ -198,6 +198,171 @@
                 height: 36px;
             }
         }
+
+        .tech-library {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        .tech-library__header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 1.75rem;
+        }
+        .tech-library__eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            color: #2563eb;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0;
+        }
+        .tech-library__eyebrow::before {
+            width: 1.75rem;
+            height: 2px;
+            background: #2563eb;
+            content: "";
+        }
+        .tech-library__intro {
+            max-width: 42rem;
+            color: #6b7280;
+            line-height: 1.75;
+        }
+        .tech-library__all {
+            display: inline-flex;
+            flex: 0 0 auto;
+            align-items: center;
+            gap: 0.6rem;
+            color: #1d4ed8;
+            font-weight: 700;
+        }
+        .tech-library__all:hover { color: #1e40af; }
+        .tech-library__grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+        .tech-article {
+            --article-accent: #2563eb;
+            --article-soft: #eff6ff;
+            display: grid;
+            grid-template-columns: minmax(190px, 41%) minmax(0, 1fr);
+            min-height: 270px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            border-top: 3px solid var(--article-accent);
+            border-radius: 8px;
+            background: #ffffff;
+            box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+            transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+        }
+        .tech-article:hover {
+            transform: translateY(-3px);
+            border-color: #cbd5e1;
+            border-top-color: var(--article-accent);
+            box-shadow: 0 18px 38px rgba(15, 23, 42, 0.11);
+        }
+        .tech-article--qa { --article-accent: #0891b2; --article-soft: #ecfeff; }
+        .tech-article--selection { --article-accent: #d97706; --article-soft: #fffbeb; }
+        .tech-article--service { --article-accent: #059669; --article-soft: #ecfdf5; }
+        .tech-article__media {
+            position: relative;
+            min-height: 100%;
+            overflow: hidden;
+            background: #e5e7eb;
+        }
+        .tech-article__media::after {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 55%, rgba(15, 23, 42, 0.32));
+            content: "";
+            pointer-events: none;
+        }
+        .tech-article__media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 500ms ease;
+        }
+        .tech-article:hover .tech-article__media img { transform: scale(1.04); }
+        .tech-article__step {
+            position: absolute;
+            left: 1rem;
+            bottom: 1rem;
+            z-index: 1;
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        .tech-article__body {
+            display: flex;
+            min-width: 0;
+            flex-direction: column;
+            padding: 1.4rem;
+        }
+        .tech-article__category {
+            display: inline-flex;
+            align-self: flex-start;
+            align-items: center;
+            gap: 0.45rem;
+            margin-bottom: 0.8rem;
+            padding: 0.35rem 0.65rem;
+            border-radius: 999px;
+            background: var(--article-soft);
+            color: var(--article-accent);
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        .tech-article__title {
+            margin-bottom: 0.65rem;
+            color: #111827;
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.55;
+        }
+        .tech-article__title a:hover { color: var(--article-accent); }
+        .tech-article__summary {
+            display: -webkit-box;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            color: #6b7280;
+            font-size: 0.875rem;
+            line-height: 1.7;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+        }
+        .tech-article__footer {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: auto;
+            padding-top: 0.9rem;
+            border-top: 1px solid #f1f5f9;
+            color: #9ca3af;
+            font-size: 0.75rem;
+        }
+        .tech-article__link {
+            color: var(--article-accent);
+            font-size: 0.875rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        @media (max-width: 1100px) {
+            .tech-article { grid-template-columns: 1fr; }
+            .tech-article__media { min-height: 190px; max-height: 190px; }
+        }
+        @media (max-width: 767px) {
+            .tech-library { margin-top: 2.25rem; padding-top: 2.25rem; }
+            .tech-library__header { display: block; }
+            .tech-library__all { margin-top: 1rem; }
+            .tech-library__grid { grid-template-columns: 1fr; }
+            .tech-article__media { min-height: 180px; max-height: 180px; }
+        }
     </style>
     <link href="./css/index.css?v=20261016c" rel="stylesheet">
     <link href="./css/carousel.css?v=20261016c" rel="stylesheet">
@@ -1848,127 +2013,73 @@
                 </div>
                 <!-- Content Area -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                    <div class="lg:col-span-12">
-                        <h3 class="text-lg font-bold text-gray-900 pl-3 border-l-4 border-primary mb-6">
-                            Seal Integrity Testing Technology Explained
-                        </h3>
-                        <p class="text-center text-white bg-primary pb-4 pt-4 mt-2 font-bold text-xl mb-4">Air Leak Tester Selection: A Q&A Guide</p>
-
-                        <!-- 技术 -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- 技术文章 1 -->
-                            <div class="bg-gray-50 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md flex flex-col">
-                                <div class="h-60 overflow-hidden">
-                                    <a href="./faq/T-art-32.html">
-                                        <img loading="lazy" src="/images/services/faq/f32/direct-vs-differential-thick-divider.jpg"
-                                            alt="Comparison of direct pressure and differential pressure air leak testing methods"
-                                            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
-                                    </a>
-                                </div>
-                                <div class="p-6 flex flex-col flex-1">
-                                    <h4 class="font-bold text-xl text-gray-900 mb-3 line-clamp-3 flex-1">
-                                        <a href="./faq/T-art-32.html" class="hover:text-primary transition-colors">
-                                            How to Choose an <strong class="text-blue-600">Air Leak Testing Method</strong>: <strong class="text-blue-600">Direct Pressure</strong> or <strong class="text-blue-600">Differential Pressure</strong>?
-                                        </a>
-                                    </h4>
-                                    <div>
-                                        <p><svg class="svg-icon mr-1" data-icon="calendar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> October 10, 2026</p>
-                                        <p class="text-gray-600 mb-4 line-clamp-3">
-                                            Both methods can identify leaks, but they differ in principle, accuracy, efficiency, cost, and suitable applications. Learn how to select the right method for your part and production requirements.
-                                        </p>
-                                        <a href="./faq/T-art-32.html"
-                                            class="inline-flex items-center px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
-                                            Read More <svg class="svg-icon ml-2" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                                        </a>
-                                    </div>
-                                </div>
+                    <!-- 技术文章 -->
+                    <div id="technical-guide" class="lg:col-span-12 tech-library">
+                        <div class="tech-library__header">
+                            <div>
+                                <span class="tech-library__eyebrow">TECHNICAL GUIDE</span>
+                                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Seal Integrity Testing Guide</h3>
+                                <p class="tech-library__intro">Air leak tester selection and practical answers.<br />Move from basic principles to equipment selection, pricing, and after-sales support based on the decision you need to make now.</p>
                             </div>
-                            <!-- 技术文章2 -->
-                            <div class="bg-gray-50 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md flex flex-col">
-                                <div class="h-60 overflow-hidden">
-                                    <a href="./faq/T-art-30.html">
-                                        <img loading="lazy" src="./images/services/faq/f30/immersion-leak-test.jpg" alt="Water immersion leak tester supplying air from the top of the tank while observing whether bubbles appear around the product in the water"  
-                                            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"> 
-                                    </a>
-                                </div>
-                                <div class="p-6 flex flex-col flex-1">
-                                    <h4 class="font-bold text-xl text-gray-900 mb-3 line-clamp-3 flex-1">
-                                        <a href="./faq/T-art-30.html" class="hover:text-primary transition-colors">
-                                            How Are <strong class="text-blue-600">Waterproof</strong> Products Tested for <strong class="text-blue-600">Sealing Performance</strong>? A Comprehensive Guide to Common Testing Methods, Procedures, and Equipment
-                                        </a>
-                                    </h4>
-                                    <div>
-                                        <p><svg class="svg-icon mr-1" data-icon="calendar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> August 11, 2026</p>
-                                        <p class="text-gray-600 mb-4 line-clamp-3">
-                                            With the development of industries such as consumer electronics, automotive, new energy, medical devices, and smart home appliances, more and more products are required to have excellent <strong style="background: linear-gradient(transparent 50%,  #bfedfa  50%); border-radius: 4px;">waterproof and dustproof</strong> performance. Whether a product needs to achieve <strong style="background: linear-gradient(transparent 50%,  #bfedfa  50%); border-radius: 4px;">IP67 or IP68</strong>, or meet other protection rating requirements, reliable sealing structures are essential. However, visual inspection alone cannot determine whether a product truly has good sealing performance. Therefore, <strong style="background: linear-gradient(transparent 50%,  #bfedfa  50%); border-radius: 4px;">leak testing</strong> has become an essential part of the product manufacturing process.
-                                        </p>
-                                        <a href="./faq/T-art-30.html"
-                                            class="inline-flex items-center px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
-                                            Read More <svg class="svg-icon ml-2" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                                        </a>
-                                    </div>
-                                </div> 
-                            </div>
-                            <!-- 技术文章3 -->
-                            <div class="bg-gray-50 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md flex flex-col">
-                                <div class="h-60 overflow-hidden">
-                                    <a href="./faq/T-art-29.html">
-                                        <img loading="lazy" src="/images/solu/Automotive parts.jpg" alt="Automotive parts that require leak testing across different manufacturing industries"
-                                            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
-                                    </a>
-                                </div>
-                                <div class="p-6 flex flex-col flex-1">
-                                    <h4 class="font-bold text-xl text-gray-900 mb-3 line-clamp-3 flex-1">
-                                        <a href="./faq/T-art-29.html" class="hover:text-primary transition-colors">
-                                            Do You Really Know All the Applications of <strong class="text-blue-600">Leak Testers</strong>?
-                                        </a>
-                                    </h4>
-                                    <div>
-                                        <p><svg class="svg-icon mr-1" data-icon="calendar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> June 18, 2026</p>
-                                        <p class="text-gray-600 mb-4 line-clamp-3">
-                                            Many people assume that <strong style="background: linear-gradient(transparent 50%,  #bfedfa  50%); border-radius: 4px;">leak testers</strong> are only used in the automotive or electronics industries. However, in modern manufacturing, any product involving <strong style="background: linear-gradient(transparent 50%,  #bfedfa  50%); border-radius: 4px;">sealing, waterproofing, or leak detection</strong> relies on leak testing technology.
-                                        </p>
-                                        <a href="./faq/T-art-29.html"
-                                            class="inline-flex items-center px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
-                                            Read More <svg class="svg-icon ml-2" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 技术文章4 -->
-                            <div class="bg-gray-50 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md flex flex-col">
-                                <div class="h-60 overflow-hidden">
-                                    <a href="./faq/T-art-20.html">
-                                        <img loading="lazy" src="./images/services/faq/faq_3.jpg" alt="WAFU Brothers leak tester production line"
-                                            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
-                                    </a>
-                                </div>
-                                <div class="p-6 flex flex-col flex-1">
-                                    <h4 class="font-bold text-xl text-gray-900 mb-3 line-clamp-3 flex-1">
-                                        <a href="./faq/T-art-20.html" class="hover:text-primary transition-colors">
-                                            Don't Just Look at the <strong>Price</strong> - The Core <strong class="text-blue-600">Value</strong> of a <strong class="text-blue-600">Leak Tester Manufacturer</strong> Lies Here
-                                        </a>
-                                    </h4>
-                                    <div>
-                                        <p><svg class="svg-icon mr-1" data-icon="calendar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> December 30, 2025</p>
-                                        <p class="text-gray-600 mb-4 line-clamp-3">
-                                            When purchasing a leak tester, many companies' first reaction is often "<strong>How much does one cost?</strong>". However, in real industrial applications, price is often only the most superficial factor. What truly determines testing performance, long-term costs, and production stability is <strong>the comprehensive capabilities of the leak tester manufacturer</strong>.
-                                        </p>
-                                        <a href="./faq/T-art-20.html"
-                                            class="inline-flex items-center px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
-                                            Read More <svg class="svg-icon ml-2" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                            <a href="/resource.html" class="tech-library__all">View All Technical Articles <svg class="svg-icon" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
                         </div>
-                    
-                        <div class="text-right mt-6">
-                            <a href="/Allquestions.html"
-                                class="inline-flex items-center px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
-                                View More Technical Articles
-                                <svg class="svg-icon ml-2" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                            </a>
+
+                        <div class="tech-library__grid">
+                            <!-- Fundamentals -->
+                            <article class="tech-article">
+                                <a class="tech-article__media" href="./faq/T-art-30.html" aria-label="Read the waterproof product seal testing guide">
+                                    <img loading="lazy" src="./images/services/faq/f30/immersion-leak-test.jpg" alt="Water immersion tester checking a waterproof product for leaks">
+                                    <span class="tech-article__step">01 · START HERE</span>
+                                </a>
+                                <div class="tech-article__body">
+                                    <span class="tech-article__category"><svg class="svg-icon" data-icon="lightbulb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 22h4"/><path d="M15.1 14c.2-.2.3-.5.5-.7A6 6 0 1 0 8.4 13.3c.2.2.3.5.5.7.6.7 1.1 1.3 1.1 2h4c0-.7.5-1.3 1.1-2Z"/></svg> Fundamentals</span>
+                                    <h4 class="tech-article__title"><a href="./faq/T-art-30.html">How Are Waterproof Products Tested for Sealing Performance?</a></h4>
+                                    <p class="tech-article__summary">Understand water immersion and air leak testing, from protection ratings and basic methods to the complete test process.</p>
+                                    <div class="tech-article__footer"><a class="tech-article__link" href="./faq/T-art-30.html">Learn the Basics <svg class="svg-icon ml-1" data-icon="chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></div>
+                                </div>
+                            </article>
+
+                            <!-- Common questions -->
+                            <article class="tech-article tech-article--qa">
+                                <a class="tech-article__media" href="./faq/T-art-31.html" aria-label="Read the vacuum leak testing questions and answers">
+                                    <img loading="lazy" src="/images/services/faq/f31/positive-vs-negative-pressure.jpg" alt="Comparison of positive-pressure and negative-pressure leak testing">
+                                    <span class="tech-article__step">02 · ANSWER QUESTIONS</span>
+                                </a>
+                                <div class="tech-article__body">
+                                    <span class="tech-article__category"><svg class="svg-icon" data-icon="circle-help" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 1 1 5.8 1c0 2-2.9 2-2.9 4M12 18h.01"/></svg> Common Questions</span>
+                                    <h4 class="tech-article__title"><a href="./faq/T-art-31.html">Can an Air Leak Tester Perform Vacuum Testing?</a></h4>
+                                    <p class="tech-article__summary">Learn how positive and negative pressure differ, which products suit vacuum testing, and how the method works.</p>
+                                    <div class="tech-article__footer"><a class="tech-article__link" href="./faq/T-art-31.html">See the Answers <svg class="svg-icon ml-1" data-icon="chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></div>
+                                </div>
+                            </article>
+
+                            <!-- Method selection -->
+                            <article class="tech-article tech-article--selection">
+                                <a class="tech-article__media" href="./faq/T-art-32.html" aria-label="Read the direct pressure and differential pressure selection guide">
+                                    <img loading="lazy" src="/images/services/faq/f32/direct-vs-differential-thick-divider.jpg" alt="Direct pressure and differential pressure air leak testing comparison">
+                                    <span class="tech-article__step">03 · SELECT A METHOD</span>
+                                </a>
+                                <div class="tech-article__body">
+                                    <span class="tech-article__category"><svg class="svg-icon" data-icon="sliders-horizontal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4h-7M10 4H3M21 12h-9M8 12H3M21 20h-5M12 20H3"/><path d="M14 2v4M8 10v4M16 18v4"/></svg> Equipment Selection</span>
+                                    <h4 class="tech-article__title"><a href="./faq/T-art-32.html">When Should You Use Direct Pressure or Differential Pressure?</a></h4>
+                                    <p class="tech-article__summary">Compare the two methods by accuracy, efficiency, cost, and product characteristics to choose the right test.</p>
+                                    <div class="tech-article__footer"><a class="tech-article__link" href="./faq/T-art-32.html">Choose a Method <svg class="svg-icon ml-1" data-icon="chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></div>
+                                </div>
+                            </article>
+
+                            <!-- Price and service -->
+                            <article class="tech-article tech-article--service">
+                                <a class="tech-article__media" href="./faq/T-art-33.html" aria-label="Read the air leak tester price and after-sales guide">
+                                    <img loading="lazy" src="./images/services/faq/faq_3.jpg" alt="WAFU Brothers air leak tester production and technical service">
+                                    <span class="tech-article__step">04 · EVALUATE THE PURCHASE</span>
+                                </a>
+                                <div class="tech-article__body">
+                                    <span class="tech-article__category"><svg class="svg-icon" data-icon="shield-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3v8Z"/><path d="m9 12 2 2 4-4"/></svg> Price and Service</span>
+                                    <h4 class="tech-article__title"><a href="./faq/T-art-33.html">How Much Does an Air Leak Tester Cost, and What Support Matters?</a></h4>
+                                    <p class="tech-article__summary">The quote is only one part of the purchase. Solution capability, test stability, delivery, and long-term support also matter.</p>
+                                    <div class="tech-article__footer"><a class="tech-article__link" href="./faq/T-art-33.html">Review Buying Factors <svg class="svg-icon ml-1" data-icon="chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></div>
+                                </div>
+                            </article>
                         </div>
                     </div>
                     <!-- 检测案例 -->

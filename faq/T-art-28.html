@@ -197,9 +197,16 @@
                         </div>
                     </div>
 
-                    <a href="../about.html"
-                        class="text-gray-800 font-medium hover:text-primary transition-colors tracking-wide px-2 py-1">About
-                        Us</a>
+                    <div class="relative group">
+                        <a href="/about/about.html" class="text-gray-800 font-medium hover:text-primary transition-colors flex items-center tracking-wide px-2 py-1">About Us <i class="fa fa-angle-down ml-1 text-xs transition-transform group-hover:rotate-180 duration-300"></i></a>
+                        <div class="absolute left-0 mt-1 w-56 rounded-lg shadow-xl bg-white ring-1 ring-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50">
+                            <div class="py-2">
+                                <a href="/about/about.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">About Us</a>
+                                <a href="/about/company.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Company Strength</a>
+                                <a href="/about/about-us.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Partners</a>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- Service Support Dropdown -->
                     <div class="relative group">
@@ -334,9 +341,14 @@
                         </div>
                     </div>
 
-                    <a href="../about.html"
-                        class="block py-3 px-4 text-gray-800 hover:text-primary hover:bg-gray-50 rounded-md transition-colors">About
-                        Us</a>
+                    <div class="mobile-dropdown">
+                        <button type="button" aria-expanded="false" class="w-full flex justify-between items-center text-gray-800 font-medium hover:text-primary py-3 px-4 text-left focus:outline-none">About Us <svg class="svg-icon text-xs transition-transform duration-300" data-icon="plus" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+                        <div class="mobile-dropdown-content hidden pl-6 mt-0 border-l-2 border-gray-100">
+                            <a href="/about/about.html" class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">About Us</a>
+                            <a href="/about/company.html" class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Company Strength</a>
+                            <a href="/about/about-us.html" class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Partners</a>
+                        </div>
+                    </div>
 
                     <!-- Service Support Mobile -->
                     <div class="mobile-dropdown">
@@ -389,17 +401,17 @@
 
     <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <!-- 面包屑导航 -->
-        <nav class="text-sm text-gray-500 mb-6">
+        <nav class="text-sm text-gray-500 mb-6" aria-label="Breadcrumb">
             <ol class="flex flex-wrap items-center">
                 <li><a href="/" class="hover:text-primary transition-colors duration-200">Home</a></li>
                 <li class="mx-2"><i class="fa fa-angle-right text-xs"></i></li>
                 <li><a href="/services.html" class="hover:text-primary transition-colors duration-200">Service Center</a></li>
                 <li class="mx-2"><i class="fa fa-angle-right text-xs"></i></li>
-                <li><a href="/resource.html" class="hover:text-primary transition-colors duration-200">Technical Articles</a></li>
+                <li><a href="../resource.html#articles" class="hover:text-primary transition-colors duration-200">Technical Articles</a></li>
                 <li class="mx-2"><i class="fa fa-angle-right text-xs"></i></li>
-                <li class="text-gray-700"> 
+                <li class="text-gray-700"><a href="./T-art-28.html" aria-current="page">
                     Are These Customer Requirements Actually Leak Testing? Understanding 15+ Common Industry Names for Leak Testing
-                </li>
+                </a></li>
             </ol>
         </nav>
         
@@ -483,7 +495,7 @@
                         <figcaption class="text-center text-gray-500 text-sm">Figure 3: Relay waterproof tester</figcaption>
                     </div>
                     
-                    <h3>Waterproof Testing Equipment, Waterproof Test Equipment</h3>
+                    <h3>Waterproof Testing Equipment, <strong class="core-keyword">Waterproof Test Equipment</strong></h3>
                     <p class="text-base" style="text-indent: 2em;">
                         Generally used for batch testing on automated production lines, <strong style="background: linear-gradient(transparent 50%,  #bfedfa  50%); border-radius: 4px;">this is essentially still an application form of air tightness testing equipment</strong>. Commonly used for:
                     </p>
@@ -626,7 +638,7 @@
                             <div class="text-right">
                                 <p class="text-sm text-gray-500">Next Article</p>
                                 <p class="font-medium">
-                                    Do You Really Know All the Applications of <strong class="text-blue-600">Leak Testers</strong>?
+                                    Do You Really Know All the Applications of <strong class="text-blue-600 core-keyword">Leak Testers</strong>?
                                 </p>
                             </div>
                             <i class="fa fa-angle-right"></i>
@@ -739,6 +751,7 @@ style="animation-delay: 0.3s">
         </div>
     </main>
 
+    <nav class="bottom-breadcrumb" aria-label="Breadcrumb"><div class="bottom-breadcrumb__inner"><a href="../index.html">Home</a><span aria-hidden="true"> / </span><a href="../services.html">Service Center</a><span aria-hidden="true"> / </span><a href="../resource.html#articles">Technical Articles</a><span aria-hidden="true"> / </span><a href="./T-art-28.html" aria-current="page">Are These Customer Requirements Actually Leak Testing? Understanding 15+ Common Industry Names for Leak Testing</a></div></nav>
     <footer class="site-footer bg-white text-gray-800 pt-4 pb-8">
         <div class="footer-overlay" aria-hidden="true"></div>
         <div class="container mx-auto px-4">
@@ -752,7 +765,7 @@ style="animation-delay: 0.3s">
                     <p class="text-gray-600 mb-6 text-balance max-w-md">
                         WAFU Brothers (Shenzhen) Automation Technology Co., Ltd., established in 2009, serves over 8,000
                         domestic and international clients including Audi. As a global leader in leak tester
-                        manufacturing and solution provision, we have accumulated 16 years of experience in non-standard
+                        manufacturing and solution provision, we have accumulated experience since 2009 in non-standard
                         automation and sealing detection. With a spirit of innovation and bold breakthroughs, we guide
                         clients with forward-thinking designs and deliver internationally competitive product solutions.
                     </p>
@@ -885,13 +898,6 @@ style="animation-delay: 0.3s">
                         <li class="flex items-start"><svg class="svg-icon text-primary mt-1 mr-3 w-4 text-center" data-icon="clock-o" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span
                                 class="text-gray-600">Monday to Friday: 9:00 - 18:00</span></li>
                     </ul>
-                    <br />
-                    <h3 class="font-semibold text-lg mb-4 text-dark flex items-center">
-                        <svg class="svg-icon text-primary mr-2" data-icon="handshake-o" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12l2.5 2.5a2 2 0 0 0 2.8 0L16 12"/><path d="M2 12l4-4h4l2 2 2-2h4l4 4"/><path d="M6 8l-4 5 5 5h3M18 8l4 5-5 5h-3"/></svg>Friendly Links
-                    </h3>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="http://www.west.cn/" title="虚拟主机-域名注册-云主机-VPS主机-服务器租用" target="_blank">云主机</a>
-                    </div>
                 </div>
             </div>
 

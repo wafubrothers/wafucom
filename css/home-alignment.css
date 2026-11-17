@@ -1,0 +1,379 @@
+/* English homepage alignment with the Chinese homepage.
+   Load after the existing homepage styles, including inline styles. */
+
+/* The header is part of the document flow, not an overlay on the hero. */
+body > #navbar {
+    position: sticky;
+    top: 0;
+    right: auto;
+    left: auto;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 1px 8px rgba(15, 23, 42, .08);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+body > #navbar::before,
+body > #navbar::after,
+body > #navbar.navbar--scrolled::before,
+body > #navbar.navbar--scrolled::after {
+    opacity: 0;
+}
+
+body > #navbar.navbar--scrolled {
+    background: #fff;
+    box-shadow: 0 1px 8px rgba(15, 23, 42, .08);
+}
+
+body > #navbar > .navbar-container > .navbar-row {
+    height: 90px;
+}
+
+body > #navbar > .navbar-container > .navbar-row > .navbar-brand > img {
+    width: auto;
+    height: 90px;
+    max-width: 100%;
+    object-fit: contain;
+    filter: none;
+}
+
+/* Match the specificity of the transparent-header selectors in carousel.css. */
+body > #navbar > .navbar-container > .navbar-row > .desktop-nav > a:not(.navbar-contact),
+body > #navbar > .navbar-container > .navbar-row > .desktop-nav > div > a,
+body > #navbar > .navbar-container > .navbar-row > .desktop-nav > div > button,
+body > #navbar #mobile-menu-btn {
+    color: #111827;
+}
+
+body > #navbar > .navbar-container > .navbar-row > .desktop-nav > a:not(.navbar-contact):hover,
+body > #navbar > .navbar-container > .navbar-row > .desktop-nav > div > a:hover,
+body > #navbar > .navbar-container > .navbar-row > .desktop-nav > div > button:hover,
+body > #navbar #mobile-menu-btn:hover {
+    color: #165dff;
+}
+
+body > #navbar > .navbar-container > .navbar-row > .desktop-nav > .navbar-contact,
+body > #navbar > .navbar-container > .navbar-row > .desktop-nav > .navbar-contact:hover,
+body > #navbar > .navbar-container > .navbar-row > .desktop-nav > .navbar-contact:focus-visible {
+    color: #fff;
+}
+
+/* About menu mirrors the Chinese navigation and also opens on keyboard focus. */
+.about-nav__trigger { gap: .25rem; }
+.about-nav__trigger svg { width: .9rem; height: .9rem; }
+.about-nav__menu { position: absolute; top: 100%; left: 0; z-index: 50; min-width: 12rem; padding: .5rem 0; border: 1px solid #f3f4f6; border-radius: .5rem; background: #fff; box-shadow: 0 10px 24px rgba(15, 23, 42, .15); opacity: 0; visibility: hidden; transform: translateY(.25rem); transition: opacity .2s, visibility .2s, transform .2s; }
+.about-nav:hover .about-nav__menu,
+.about-nav:focus-within .about-nav__menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.about-nav__menu a { display: block; padding: .625rem 1rem; color: #374151; font-size: .875rem; text-decoration: none; }
+.about-nav__menu a:hover,
+.about-nav__menu a:focus-visible { background: #f3f7ff; color: #165dff; }
+#home-customers { scroll-margin-top: 6rem; }
+
+/* Grow for long English copy or very short viewports rather than clipping it. */
+.wafu-hero {
+    --wafu-nav-height: 90px;
+    display: grid;
+    align-items: center;
+    height: auto;
+    min-height: calc(100vh - var(--wafu-nav-height));
+    min-height: calc(100svh - var(--wafu-nav-height));
+    padding: 3.5rem max(6vw, 48px) 6.5rem;
+}
+
+.wafu-hero__content {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: min(860px, 100%);
+    min-width: 0;
+    transform: none;
+}
+
+.wafu-hero__eyebrow {
+    margin-bottom: clamp(1rem, 3vh, 2rem);
+}
+
+.wafu-hero__content h1,
+.wafu-hero__content h2 {
+    font-size: clamp(2rem, 4vw, 3.625rem);
+    overflow-wrap: anywhere;
+}
+
+/* carousel.css hides every direct child, but does not animate a lead. */
+.wafu-hero__content > .wafu-hero__lead {
+    max-width: 760px;
+    margin: 1rem 0 0;
+    color: #fff;
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    line-height: 1.65;
+    opacity: 1;
+    transform: none;
+    animation: none;
+}
+
+.wafu-hero__link {
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 1179px) {
+    body > #navbar > .navbar-container > .navbar-row { height: 72px; }
+    body > #navbar > .navbar-container > .navbar-row > .navbar-brand > img { height: 62px; }
+    .wafu-hero { --wafu-nav-height: 72px; }
+}
+
+@media (max-width: 767px) {
+    body > #navbar > .navbar-container > .navbar-row { height: 76px; }
+    body > #navbar > .navbar-container > .navbar-row > .navbar-brand > img { height: 68px; }
+    #navbar #mobile-menu { max-height: calc(100vh - 76px); max-height: calc(100dvh - 76px); }
+    /* Keep the floating contact links from covering long English hero text. */
+    #button-list { top: 20px; right: 64px; transform: none; }
+    #button-list > div { width: auto; height: auto; flex-direction: row; }
+    #button-list button { width: 36px; height: 36px; border-bottom: 0; border-right: 1px solid #fff; }
+    #button-list button img { padding: .5rem; }
+    #button-list > div > .group > div { top: 100%; right: 0; margin: .5rem 0 0; }
+    .wafu-hero {
+        --wafu-nav-height: 76px;
+        align-items: end;
+        padding: 2.5rem 24px 6.5rem;
+    }
+    .wafu-hero__content { width: 100%; }
+    .wafu-hero__eyebrow { margin-bottom: 1rem; font-size: 14px; }
+    .wafu-hero__content h1,
+    .wafu-hero__content h2 { font-size: clamp(1.7rem, 7vw, 2.125rem); line-height: 1.24; }
+    .wafu-hero__content > .wafu-hero__lead { margin-top: .75rem; font-size: .95rem; line-height: 1.55; }
+    .wafu-hero__link { margin-top: 1rem; font-size: 15px; }
+}
+
+/* About and customer brands: same layout, colors and spacing as the CN page. */
+.wafu-about { padding: 5.5rem 0 3.5rem; background: #f7f9fc; }
+.wafu-about__inner { width: 100%; max-width: 1392px; margin: 0 auto; padding: 0 1.5rem; }
+.wafu-about__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 3.5rem; align-items: start; }
+.wafu-about__col { min-width: 0; }
+.wafu-about__eyebrow { display: flex; align-items: center; gap: .65rem; margin: 0 0 1.2rem; color: #165dff; font-size: .78rem; font-weight: 700; letter-spacing: .14em; }
+.wafu-about__eyebrow::before { flex: 0 0 1.8rem; width: 1.8rem; height: 2px; background: currentColor; content: ""; }
+.wafu-about__statement { margin: 0; color: #172238; font-size: clamp(1.65rem, 2.1vw, 2.15rem); font-weight: 700; line-height: 1.5; }
+.wafu-about__statement strong,
+.wafu-about__statement .text-primary { color: #165dff; }
+.wafu-about__brands { margin-top: 2rem; }
+.wafu-about__brand-grid { position: relative; }
+.wafu-about__brand-grid > a { display: block; }
+.wafu-about__brand-grid > img,
+.wafu-about__brand-grid > a > img { display: block; width: 100%; height: auto; }
+.wafu-about__brand-links { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(4, minmax(0, 1fr)); }
+.wafu-about__brand-link { border-radius: .5rem; }
+.wafu-about__brand-link:hover { box-shadow: inset 0 0 0 2px #a8c1ff; }
+.wafu-about__brand-link:focus-visible { outline: 2px solid #165dff; outline-offset: -3px; }
+.wafu-about__brand-logo:hover { border-color: #a8c1ff; box-shadow: 0 10px 24px rgba(25, 65, 130, .08); }
+.wafu-about__additional-brands { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem 2.5%; margin-top: .65rem; padding: 0 1.75%; }
+.wafu-about__additional-brand { display: flex; aspect-ratio: 173 / 79; align-items: center; justify-content: center; overflow: hidden; border: 1px solid #d6e3f0; border-radius: .5rem; background: #fff; }
+.wafu-about__additional-brand img { display: block; width: 85%; height: 85%; object-fit: contain; }
+a.wafu-about__additional-brand:hover { border-color: #a8c1ff; box-shadow: 0 4px 14px rgba(25, 65, 130, .08); }
+a.wafu-about__additional-brand:focus-visible { outline: 2px solid #165dff; outline-offset: 2px; }
+.wafu-about__copy { color: #526178; font-size: 1rem; line-height: 1.9; }
+.wafu-about__copy h3 { margin: 0 0 1rem; color: #172238; font-size: 1.5rem; font-weight: 700; line-height: 1.4; }
+.wafu-about__copy p { margin: 0 0 1rem; }
+.wafu-about__text-link { color: #165dff; font-weight: 600; }
+.wafu-about__text-link:hover { text-decoration: underline; }
+.wafu-about__media { display: block; overflow: hidden; margin-top: .5rem; border-radius: 1rem; background: #e7edf5; }
+.wafu-about__media img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; transition: transform .35s; }
+.wafu-about__media:hover img { transform: scale(1.025); }
+.wafu-about__details { display: flex; align-items: center; justify-content: center; min-height: 3.125rem; margin-top: 1.5rem; }
+.wafu-about__actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.5rem; }
+.wafu-about__details a,
+.wafu-about__actions a { display: inline-flex; min-height: 3.125rem; align-items: center; justify-content: center; padding: .75rem 2rem; border: 1px solid #165dff; border-radius: 999px; background: #165dff; color: #fff; font-weight: 600; text-decoration: none; transition: background-color .2s, color .2s, box-shadow .2s; }
+.wafu-about__details a:hover,
+.wafu-about__actions a:hover { background: #0e42b3; border-color: #0e42b3; color: #fff; }
+.wafu-about__actions a + a { background: #fff; color: #165dff; }
+.wafu-about__actions a + a:hover { background: #edf3ff; border-color: #165dff; color: #165dff; }
+#home-customers { scroll-margin-top: 6rem; }
+
+/* Five headline figures and a CSS-drawn hexagonal icon frame. */
+.wafu-stats { --wafu-stats-bg: #ce003d; padding: 4rem 1.5rem; background: var(--wafu-stats-bg); color: #fff; }
+.wafu-stats__inner { display: grid; width: 100%; max-width: 1344px; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 2.5rem 1.5rem; margin: 0 auto; }
+.wafu-stats__item { display: flex; min-width: 0; flex-direction: column; align-items: center; color: #fff; text-align: center; }
+.wafu-stats__icon { position: relative; display: flex; width: 80px; height: 80px; flex: 0 0 80px; align-items: center; justify-content: center; margin-bottom: 1.25rem; background: rgba(255, 255, 255, .4); color: #fff; clip-path: polygon(50% 0, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%); }
+.wafu-stats__icon::before { position: absolute; inset: 1px; background: var(--wafu-stats-bg); clip-path: polygon(50% 0, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%); content: ""; }
+.wafu-stats__icon svg,
+.wafu-stats__icon i { position: relative; z-index: 1; width: 2rem; height: 2rem; font-size: 2rem; }
+.wafu-stats__item strong { display: block; font-size: clamp(1.8rem, 3vw, 2.25rem); font-weight: 700; line-height: 1.1; }
+.wafu-stats__item > span:not(.wafu-stats__icon) { display: block; margin-top: 1.25rem; font-size: 1rem; font-weight: 600; line-height: 1.5; }
+
+/* Buying-guide cards, modeled on the Chinese knowledge links. */
+.buying-guide { padding: 4rem 1.5rem; background: #fff; }
+.buying-guide__inner { width: 100%; max-width: 1344px; margin: 0 auto; }
+.buying-guide__header { max-width: 48rem; margin: 0 auto 2.5rem; text-align: center; }
+.buying-guide__header h2 { margin: 0 0 1rem; color: #111827; font-size: clamp(1.5rem, 3vw, 1.875rem); font-weight: 700; line-height: 1.3; }
+.buying-guide__header p { color: #4b5563; line-height: 1.65; }
+.buying-guide__header .buying-guide__eyebrow,
+.buying-guide__header > p:first-child { margin: 0 0 .5rem; color: #165dff; font-size: .875rem; font-weight: 600; letter-spacing: .06em; }
+.buying-guide__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.buying-guide__card { display: flex; min-width: 0; height: 100%; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem; border: 1px solid #e5e7eb; border-radius: .5rem; background: #fff; color: #111827; text-decoration: none; transition: border-color .25s, box-shadow .25s; }
+.buying-guide__card > span:first-child { min-width: 0; flex: 1 1 auto; }
+.buying-guide__category { display: block; margin: 0 0 .5rem; color: #165dff; font-size: .75rem; font-weight: 600; }
+.buying-guide__title { display: block; margin: 0; color: #111827; font-size: 1rem; font-weight: 600; line-height: 1.4; transition: color .25s; }
+.buying-guide__summary { display: block; margin: .5rem 0 0; color: #4b5563; font-size: .875rem; line-height: 1.625; }
+.buying-guide__arrow { display: block; width: 1rem; height: 1rem; flex: 0 0 1rem; color: #9ca3af; transition: color .25s, transform .25s; }
+.buying-guide__arrow svg { display: block; width: 100%; height: 100%; }
+.buying-guide__card:hover,
+.buying-guide__card:focus-visible { border-color: #165dff; box-shadow: 0 4px 12px rgba(15, 23, 42, .1); }
+.buying-guide__card:hover .buying-guide__title,
+.buying-guide__card:focus-visible .buying-guide__title,
+.buying-guide__card:hover .buying-guide__arrow,
+.buying-guide__card:focus-visible .buying-guide__arrow { color: #165dff; }
+.buying-guide__card:hover .buying-guide__arrow,
+.buying-guide__card:focus-visible .buying-guide__arrow { transform: translateX(.25rem); }
+.buying-guide__more { margin-top: 2.5rem; text-align: center; }
+.buying-guide__more a { display: inline-flex; min-height: 3rem; align-items: center; justify-content: center; gap: .5rem; padding: .75rem 1.75rem; border-radius: 999px; background: #165dff; color: #fff; font-weight: 600; text-decoration: none; box-shadow: 0 2px 6px rgba(22, 93, 255, .18); transition: background-color .2s, box-shadow .2s; }
+.buying-guide__more a:hover { background: #0e42b3; color: #fff; box-shadow: 0 5px 14px rgba(22, 93, 255, .24); }
+
+/* The optional English-only material stays accessible inside a native disclosure. */
+.wafu-extra { background: #f7f9fc; }
+.wafu-extra > summary { display: block; padding: 1.5rem; background: #f1f5f9; color: #172238; font-size: 1.1rem; font-weight: 700; line-height: 1.5; text-align: center; cursor: pointer; list-style: none; }
+.wafu-extra > summary::-webkit-details-marker { display: none; }
+.wafu-extra > summary::after { display: inline-block; margin-left: .65rem; color: #165dff; content: "+"; }
+.wafu-extra[open] > summary::after { content: "−"; }
+.wafu-extra > summary:hover { color: #165dff; }
+.wafu-extra > summary:focus-visible { outline: 2px solid #165dff; outline-offset: -4px; }
+
+/* Reasons to choose WAFU. */
+.wafu-reasons { padding: 3rem 1.5rem; background: #165dff; color: #fff; }
+.wafu-reasons__inner { max-width: 1344px; margin: 0 auto; }
+.wafu-reasons__body { display: grid; gap: 2rem; align-items: stretch; }
+.wafu-reasons__intro { min-width: 0; margin-bottom: 2rem; text-align: center; }
+.wafu-reasons__eyebrow { margin: 0 0 .8rem; color: #c5d8ff; font-size: .75rem; font-weight: 700; letter-spacing: .16em; }
+.wafu-reasons__intro h2 { margin: 0; color: #fff; font-size: clamp(1.6rem, 2.1vw, 2.3rem); font-weight: 700; line-height: 1.35; }
+.wafu-reasons__lead { margin: .7rem 0 0; color: #e0ebff; font-size: 1rem; line-height: 1.7; }
+.wafu-reasons__media { min-width: 0; }
+.wafu-reasons__media img { display: block; width: 100%; height: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 1rem; }
+.wafu-reasons__details { min-width: 0; text-align: right; }
+.wafu-reasons__list { display: grid; grid-template-columns: minmax(0, 1fr); gap: .6rem; align-content: start; margin: 0; padding: 0; list-style: none; text-align: left; }
+.wafu-reasons__list li { display: flex; align-items: flex-start; gap: .7rem; min-width: 0; padding: .65rem .8rem; border: 1px solid rgba(255, 255, 255, .2); border-radius: .8rem; background: rgba(255, 255, 255, .1); color: #fff; font-size: 1.1rem; font-weight: 700; line-height: 1.55; }
+.wafu-reasons__number { display: flex; width: 1.8rem; height: 1.8rem; flex: none; align-items: center; justify-content: center; border-radius: .5rem; background: rgba(255, 255, 255, .17); color: #fff; font-size: .75rem; font-weight: 700; }
+.wafu-reasons__phone { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; margin-top: 1rem; padding: .7rem 1.4rem; border-radius: 999px; background: #fff; color: #165dff; font-weight: 600; text-decoration: none; transition: box-shadow .2s, transform .2s; }
+.wafu-reasons__phone:hover { box-shadow: 0 8px 24px rgba(0, 22, 80, .2); transform: translateY(-2px); }
+
+/* Clickable images in the horizontal company timeline. */
+.history-timeline__image-link { display: block; }
+.history-timeline__image-link:focus-visible { outline: 3px solid #165dff; outline-offset: 2px; }
+
+/* Company strength cards. */
+.wafu-strength { padding: 5rem 1.5rem; background: #f6f8fc; scroll-margin-top: 6rem; }
+.wafu-strength__inner { max-width: 1344px; margin: 0 auto; }
+.wafu-strength__header { max-width: 760px; margin: 0 auto 2.5rem; text-align: center; }
+.wafu-strength__eyebrow { margin: 0 0 .65rem; color: #165dff; font-size: .75rem; font-weight: 700; letter-spacing: .15em; }
+.wafu-strength__header h2 { margin: 0; color: #172238; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; line-height: 1.3; }
+.wafu-strength__header p:last-child:not(.wafu-strength__eyebrow) { margin: 1rem 0 0; color: #637087; line-height: 1.7; }
+.wafu-strength__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.wafu-strength__card { display: flex; min-width: 0; flex-direction: column; overflow: hidden; border: 1px solid #e4eaf2; border-radius: .9rem; background: #fff; color: #172238; text-decoration: none; transition: transform .25s, box-shadow .25s, border-color .25s; }
+.wafu-strength__card:hover { transform: translateY(-3px); border-color: #a8c1ff; box-shadow: 0 12px 28px rgba(33, 64, 110, .1); }
+.wafu-strength__image { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: #e9eef5; }
+.wafu-strength__image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+.wafu-strength__card:hover img { transform: scale(1.04); }
+.wafu-strength__image--certificate img { object-fit: contain; }
+.wafu-strength__caption { display: flex; align-items: center; justify-content: space-between; gap: .5rem; padding: .9rem 1rem; font-weight: 600; }
+.wafu-strength__caption i,
+.wafu-strength__caption svg { flex: none; color: #165dff; }
+.wafu-strength__caption svg { width: 1rem; height: 1rem; }
+
+/* Company news cards complement the existing English testing cases. */
+.company-news { grid-column: 1 / -1; background: #fff; }
+.company-news__inner { max-width: none; margin: 0 auto; }
+.company-news__heading { margin: 0; padding-left: .75rem; border-left: 4px solid #165dff; color: #111827; font-size: 1.35rem; font-weight: 700; }
+.company-news__intro { margin: .75rem 0 1.5rem; color: #64748b; }
+.company-news__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+.company-news__card { min-width: 0; overflow: hidden; border: 1px solid #edf1f7; border-radius: .75rem; background: #f9fafb; box-shadow: 0 1px 3px rgba(15, 23, 42, .08); transition: box-shadow .3s; }
+.company-news__card:hover { box-shadow: 0 10px 20px rgba(15, 23, 42, .12); }
+.company-news__image { display: block; height: 15rem; overflow: hidden; }
+.company-news__image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.company-news__card:hover img { transform: scale(1.04); }
+.company-news__body { padding: 1.25rem; }
+.company-news__body h4 { margin: 0 0 .5rem; color: #111827; font-size: 1.125rem; font-weight: 700; line-height: 1.45; }
+.company-news__body h4 a:hover { color: #165dff; }
+.company-news__body time { display: block; margin-bottom: .75rem; color: #6b7280; font-size: .875rem; }
+.company-news__body p { margin: 0; color: #4b5563; line-height: 1.65; }
+.company-news__link { display: inline-flex; flex-wrap: wrap; gap: .3rem; margin-top: 1rem; color: #165dff; font-size: .9rem; font-weight: 600; }
+.company-news__more { margin-top: 1.5rem; text-align: right; }
+.company-news__more a { display: inline-flex; flex-wrap: wrap; gap: .3rem; align-items: center; padding: .5rem 1rem; border: 1px solid #165dff; border-radius: .5rem; color: #165dff; font-weight: 500; }
+.company-news__more a:hover { background: #165dff; color: #fff; }
+
+/* Quick links above the contact form, as on the Chinese homepage. */
+.contact-quick-nav { display: flex; flex-wrap: wrap; gap: .75rem 2.5rem; margin-bottom: 2rem; font-weight: 600; }
+.contact-quick-nav a { color: #fff; text-decoration: none; }
+.contact-quick-nav a:hover,
+.contact-quick-nav a:focus-visible { text-decoration: underline; }
+
+/* Match the Chinese product heading and technical-article spacing. */
+.product-showcase__title { color: #111827; }
+.tech-library { margin-top: 1.5rem; padding-top: 1.5rem; }
+
+@media (min-width: 640px) {
+    .wafu-reasons__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 768px) {
+    /* Keep right-aligned actions clear of the fixed social toolbar. */
+    .wafu-reasons__phone { margin-right: 4rem; }
+}
+
+@media (min-width: 1024px) {
+    .wafu-about__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 5rem; align-items: stretch; }
+    .wafu-about__col { display: flex; flex-direction: column; }
+    .wafu-about__brands { margin-top: auto; padding-top: 2rem; }
+    .wafu-about__media { position: relative; flex: 1 1 18rem; min-height: 18rem; margin-top: 0; }
+    .wafu-about__media img { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; }
+    .wafu-about__actions { min-height: 3.125rem; }
+    .wafu-reasons__body { grid-template-columns: minmax(0, .58fr) minmax(0, 1.42fr); column-gap: 3rem; row-gap: 1rem; }
+    .wafu-reasons__details { display: contents; }
+    .wafu-reasons__media { grid-column: 1; grid-row: 1; }
+    .wafu-reasons__media img { aspect-ratio: auto; }
+    .wafu-reasons__list { grid-column: 2; grid-row: 1; }
+    .wafu-reasons__phone { grid-column: 2; grid-row: 2; justify-self: end; margin-top: 0; }
+    .wafu-strength__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@media (max-width: 1023px) {
+    .wafu-stats__inner { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 1rem; }
+    .wafu-stats__item:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc((100% - 1rem) / 2); }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .buying-guide__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 767px) {
+    /* Long English footer headings must wrap within the mobile viewport. */
+    .site-footer .solutions-column { width: 100%; min-width: 0; }
+    .site-footer .solutions-column h3 { white-space: normal; }
+    .site-footer .solutions-column a { overflow-wrap: anywhere; }
+    .wafu-about { padding: 3.5rem 0; }
+    .wafu-about__inner { padding: 0 1.25rem; }
+    .wafu-about__grid { gap: 3rem; }
+    .wafu-stats { padding: 3rem 1.25rem; }
+    .buying-guide { padding: 3rem 1.25rem; }
+    .buying-guide__grid { grid-template-columns: minmax(0, 1fr); }
+    .company-news__grid { grid-template-columns: minmax(0, 1fr); }
+    .tech-library { margin-top: 1.5rem; padding-top: 1.5rem; }
+}
+
+@media (max-width: 639px) {
+    .wafu-reasons { padding: 2.5rem 1.25rem; }
+    .wafu-strength { padding: 3.5rem 1.25rem; }
+    .wafu-strength__grid { gap: .75rem; }
+    .wafu-strength__caption { padding: .75rem; font-size: .9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wafu-about__media img,
+    .wafu-strength__card,
+    .wafu-strength__image img,
+    .wafu-reasons__phone,
+    .about-nav__menu,
+    .company-news__card,
+    .company-news__image img,
+    .buying-guide__card,
+    .buying-guide__title,
+    .buying-guide__arrow { transition: none; }
+}

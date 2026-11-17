@@ -27,6 +27,11 @@
     }
   </script>
   
+  <style>
+    .error-breadcrumb { position: relative; z-index: 10; width: 100%; max-width: 42rem; padding: 1rem 0; color: #111; font-size: .875rem; font-weight: 700; text-align: left; }
+    .error-breadcrumb a { color: inherit; text-decoration: none; }
+    .error-breadcrumb a:hover { color: #165dff; }
+  </style>
   <!-- 自定义工具类 -->
   <style type="text/tailwindcss">
     @layer utilities {
@@ -54,6 +59,8 @@
   <div class="absolute top-10 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-pulse-slow"></div>
   <div class="absolute bottom-10 right-10 w-32 h-32 bg-accent/10 rounded-full blur-xl animate-pulse-slow" style="animation-delay: 1s;"></div>
   
+<!-- Top breadcrumb -->
+<nav class="error-breadcrumb" aria-label="Breadcrumb"><a href="/index.html">Home</a> <span aria-hidden="true">/</span> <a href="/404/404.htm" aria-current="page">Page Not Found</a></nav>
 <!-- Main content container -->
 <div class="max-w-2xl w-full text-center z-10">
   <!-- 404 icon/text -->
@@ -106,6 +113,8 @@
   </div>
 </div>
   
+<!-- Bottom breadcrumb -->
+<nav class="error-breadcrumb" aria-label="Breadcrumb"><a href="/index.html">Home</a> <span aria-hidden="true">/</span> <a href="/404/404.htm" aria-current="page">Page Not Found</a></nav>
 <!-- Footer -->
 <footer class="text-secondary text-sm mt-auto">
   <p>If the problem persists, please contact <a href="mailto:wafubrother@outlook.com" class="text-primary hover:underline">wafubrother@outlook.com</a></p>

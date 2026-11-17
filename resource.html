@@ -30,6 +30,30 @@
     <!-- End Google Tag Manager (noscript) -->
     <link href="/css/footer-theme.css" rel="stylesheet">
     <style>
+        .resource-layout { max-width: 1440px; }
+        @media (min-width: 768px) and (max-width: 1023px) {
+            #navbar > .container > div > nav { display: none; }
+            #navbar #mobile-menu-btn { display: block; }
+            #navbar #mobile-menu:not(.hidden) { display: block; }
+        }
+        .resource-filters { border: 1px solid #e2e8f0; background: #fff; }
+        .resource-filter-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .resource-filter-list .article-filter { display: flex; align-items: center; justify-content: space-between; gap: .5rem; border: 0; border-top: 1px solid #e2e8f0; border-radius: 0; padding: .95rem 1rem; }
+        .resource-filter-list .article-filter::after { content: '›'; font-size: 1.25rem; line-height: 1; }
+        .resource-filter-list .article-filter:focus-visible { outline: 2px solid #165dff; outline-offset: -2px; }
+        .resource-article-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: start; }
+        .resource-article-grid > a { display: flex; flex-direction: column; height: 100%; border: 1px solid #e5eaf1; box-shadow: none; }
+        .resource-article-grid > a.hidden { display: none; }
+        .resource-article-grid > a > div { width: 100%; }
+        .resource-article-grid > a > div:first-child { overflow: hidden; }
+        .resource-article-grid > a img { width: 100%; height: 210px; object-fit: cover; }
+        @media (min-width: 640px) {
+            .resource-article-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (min-width: 1024px) {
+            .resource-filter-list { grid-template-columns: minmax(0, 1fr); }
+            .resource-article-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
         #article-list a[href] h4 {
             display: -webkit-box;
             overflow: hidden;
@@ -125,9 +149,16 @@
                         </div>
                     </div>
 
-                    <a href="./about.html"
-                        class="text-gray-800 font-medium hover:text-primary transition-colors tracking-wide px-2 py-1">About
-                        Us</a>
+                    <div class="relative group">
+                        <a href="/about/about.html" class="text-gray-800 font-medium hover:text-primary transition-colors flex items-center tracking-wide px-2 py-1">About Us <i class="fa fa-angle-down ml-1 text-xs transition-transform group-hover:rotate-180 duration-300"></i></a>
+                        <div class="absolute left-0 mt-1 w-56 rounded-lg shadow-xl bg-white ring-1 ring-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50">
+                            <div class="py-2">
+                                <a href="/about/about.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">About Us</a>
+                                <a href="/about/company.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Company Strength</a>
+                                <a href="/about/about-us.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Partners</a>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- Service Support Dropdown -->
                     <div class="relative group">
@@ -262,9 +293,14 @@
                         </div>
                     </div>
 
-                    <a href="./about.html"
-                        class="block py-3 px-4 text-gray-800 hover:text-primary hover:bg-gray-50 rounded-md transition-colors">About
-                        Us</a>
+                    <div class="mobile-dropdown">
+                        <button type="button" aria-expanded="false" class="w-full flex justify-between items-center text-gray-800 font-medium hover:text-primary py-3 px-4 text-left focus:outline-none">About Us <svg class="svg-icon text-xs transition-transform duration-300" data-icon="plus" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+                        <div class="mobile-dropdown-content hidden pl-6 mt-0 border-l-2 border-gray-100">
+                            <a href="/about/about.html" class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">About Us</a>
+                            <a href="/about/company.html" class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Company Strength</a>
+                            <a href="/about/about-us.html" class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Partners</a>
+                        </div>
+                    </div>
 
                     <!-- Service Support Mobile -->
                     <div class="mobile-dropdown">
@@ -273,14 +309,18 @@
                             Service & Support <i class="fa fa-plus text-xs transition-transform duration-300"></i>
                         </button>
                         <div class="mobile-dropdown-content hidden pl-6 mt-0 border-l-2 border-gray-100">
-                            <a href="./solu/solu-carparts.html"
+                            <a href="./resource.html"
                                 class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Resource
                                 Center</a>
-                            <a href="./solu/solu-medical.html"
+                            <a href="./Allquestions.html"
                                 class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">FAQ</a>
-                            <a href="./solu/solu-battery.html"
+                            <a href="./resource.html#articles"
                                 class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Technical
                                 Articles</a>
+                            <a href="./test-case.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Case Images</a>
+                            <a href="./digital.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Case Videos</a>
                         </div>
                     </div>
                     <!-- Mobile Language Selector -->
@@ -351,7 +391,7 @@
                         <li class="inline-flex items-center">
                             <a href="./services.html"
                                 class="text-gray-500 hover:text-blue-600 transition-colors duration-200">
-                                Support&Services
+                                Support &amp; Services
                             </a>
                         </li>
                         <li>
@@ -363,17 +403,17 @@
                                 </svg>
                             </div>
                         </li>
-                        <li aria-current="page">
-                            <span class="text-blue-600 font-medium">Resource Center</span>
+                        <li>
+                            <a href="./resource.html" aria-current="page" class="text-blue-600 font-medium">Resource Center</a>
                         </li>
                     </ol>
                 </nav>
             </div>
         </section>
 
-        <section class="py-16 bg-white">
+        <section class="pt-8 pb-16 bg-white">
             <div class="container mx-auto px-4 md:px-6">
-                <div class="max-w-5xl mx-auto">
+                <div class="resource-layout mx-auto">
                     <section class="py-4 bg-white">
                         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                             <div class="flex flex-wrap items-center gap-2 md:gap-4">
@@ -392,12 +432,12 @@
                     <br />
                     <div class="lg:grid lg:grid-cols-[12rem_minmax(0,1fr)] lg:gap-8 xl:gap-10 items-start">
                         <aside class="mb-8 lg:mb-0 lg:sticky lg:top-24 z-10" aria-label="Technical article categories">
-                            <div class="bg-gray-50 border border-gray-200 rounded-lg p-3">
+                            <div class="resource-filters">
                                 <h3 class="px-3 pt-2 pb-3 text-base font-bold text-gray-900 flex items-center">
                                     <svg class="w-5 h-5 text-primary mr-2 flex-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h6l2 2h10v10H3z"/><path d="M3 7V5h6l2 2"/></svg>
                                     Article Categories
                                 </h3>
-                                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-1 gap-2" role="group" aria-label="Filter technical articles by category">
+                                <div class="resource-filter-list" role="group" aria-label="Filter technical articles by category">
                                     <button type="button" data-article-filter="all" aria-pressed="true"
                                         class="article-filter w-full px-4 py-2.5 text-sm text-left font-medium text-white bg-primary border border-primary rounded-md hover:bg-secondary hover:text-white hover:border-secondary transition-colors">
                                         All Articles
@@ -430,7 +470,7 @@
 
                         <!-- 列表样式 -->
                          
-                        <div id="article-list" class="space-y-6">
+                        <div id="article-list" class="resource-article-grid">
                             <!-- 最新 -->
                             <a href="./faq/T-art-34.html"
                             class="flex flex-col md:flex-row bg-white rounded-xl shadow-md hover:shadow-lg overflow-hidden transition-shadow group">
@@ -445,7 +485,7 @@
                                         <span class="text-xs text-gray-400">October 20, 2026</span>
                                     </div>
                                     <h4 class="text-lg font-semibold text-gray-800 group-hover:text-primary mb-2">
-                                        How to Choose an <strong class="text-blue-600">Air Leak Tester</strong>: Test Principles and Selection Logic for <strong class="text-blue-600">Waterproof Sealing Equipment</strong>
+                                        How to Choose an <strong class="text-blue-600 core-keyword">Air Leak Tester</strong>: Test Principles and Selection Logic for <strong class="text-blue-600">Waterproof Sealing Equipment</strong>
                                     </h4>
                                     <p class="text-sm text-gray-600 line-clamp-2">
                                         When planning waterproof sealing tests, the most common question is not whether to buy equipment, but which type to buy. Available systems range from basic direct-pressure testers to highly automated differential-pressure systems. Their principles and suitable applications differ significantly. Choose the wrong one and you may miss microleaks and ship defective products, or pay for accuracy you do not need while slowing down the production line.
@@ -453,7 +493,7 @@
                                 </div>
                             </div>
                         </a>
-                            <a href="./faq/T-art-33.html"
+                            <a href="./faq/T-art-33%20.html"
                                 class="flex flex-col md:flex-row bg-white rounded-xl shadow-md hover:shadow-lg overflow-hidden transition-shadow group">
                                 <div class="md:w-1/3 w-full">
                                     <img src="./images/services/faq/faq_3.jpg"
@@ -466,7 +506,7 @@
                                             <span class="text-xs text-gray-400">October 20, 2026</span>
                                         </div>
                                         <h4 class="text-lg font-semibold text-gray-800 group-hover:text-primary mb-2">
-                                            How Much Does an <strong class="text-blue-600">Air Leak Tester</strong> Cost? What After-Sales Support Matters Beyond Price?
+                                            How Much Does an <strong class="text-blue-600 core-keyword">Air Leak Tester</strong> Cost? What After-Sales Support Matters Beyond Price?
                                         </h4>
                                         <p class="text-sm text-gray-600 line-clamp-2">
                                             A quote is only one part of the purchase. Solution capability, test stability, delivery support, and long-term service all determine the equipment's true lifetime value.
@@ -487,7 +527,7 @@
                                             <span class="text-xs text-gray-400">October 10, 2026</span>
                                         </div>
                                         <h4 class="text-lg font-semibold text-gray-800 group-hover:text-primary mb-2">
-                                            How to Choose an <strong class="text-blue-600">Air Leak Testing Method</strong>: <strong class="text-blue-600">Direct Pressure</strong> or <strong class="text-blue-600">Differential Pressure</strong>?
+                                            How to Choose an <strong class="text-blue-600"><span class="core-keyword">Air Leak Testing</span> Method</strong>: <strong class="text-blue-600">Direct Pressure</strong> or <strong class="text-blue-600">Differential Pressure</strong>?
                                         </h4>
                                         <p class="text-sm text-gray-600 line-clamp-2">
                                             Both methods can identify leaks, but they differ in principle, accuracy, efficiency, cost, and suitable applications. Learn how to select the right method for your part and production requirements.
@@ -554,11 +594,11 @@
                                             </div>
                             
                                             <h4 class="text-lg font-semibold text-gray-800 group-hover:text-primary mb-2">
-                                                Do You Really Know All the Applications of <strong class="text-blue-600">Leak Testers</strong>?
+                                                Do You Really Know All the Applications of <strong class="text-blue-600 core-keyword">Leak Testers</strong>?
                                             </h4>
                             
                                             <p class="text-sm text-gray-600 line-clamp-2">
-                                                Many people assume that <strong
+                                                Many people assume that <strong class="core-keyword"
                                                     style="background: linear-gradient(transparent 50%,  #bfedfa  50%); border-radius: 4px;">leak
                                                     testers</strong>
                                                 are only used in the automotive or electronics industries.
@@ -567,7 +607,7 @@
                                                     style="background: linear-gradient(transparent 50%,  #bfedfa  50%); border-radius: 4px;">sealing,
                                                     waterproofing, or leak detection</strong>
                                                 relies on leak testing technology. So the questions are:
-                                                👉 Which industries can leak testers be used in?
+                                                👉 Which industries can <strong class="core-keyword">leak testers</strong> be used in?
                                                 👉 Why are they used in almost every manufacturing sector?
                                                 👉 How many different product categories do they actually cover?
                                             </p>
@@ -759,7 +799,7 @@
                                             </h4>
                                             <p class="text-sm text-gray-600 line-clamp-2">
                                                 If you are a factory owner and the products you manufacture require
-                                                <strong>“waterproof”</strong> performance, you may have heard of <strong>“leak testers” or
+                                                <strong>“waterproof”</strong> performance, you may have heard of <strong>“<span class="core-keyword">leak testers</span>” or
                                                     “waterproof testers”</strong>. From the name, you might have a general idea, but what
                                                 exactly are these devices? <strong style="text-decoration: underline;">Can they meet my
                                                     waterproof testing requirements</strong><strong>?</strong>
@@ -926,7 +966,7 @@
                                             to “air leakage,” but don’t know how it can determine sealing performance
                                             within just a few seconds. Actually, a leak tester is not some unattainable
                                             technology. Today, through several smartphone leak testing cases, I’ll
-                                            explain the working principle of leak testers!
+                                            explain the working principle of <strong class="core-keyword">leak testers</strong>!
                                         </p>
                                     </div>
                                 </div>
@@ -949,7 +989,7 @@
                                             time – WAFU Brothers’ new product solves it perfectly!!
                                         </h4>
                                         <p class="text-sm text-gray-600 line-clamp-3">
-                                            In the field of industrial manufacturing quality testing, leak testers have
+                                            In the field of industrial manufacturing quality testing, <strong class="core-keyword">leak testers</strong> have
                                             already become mainstream equipment. They can precisely determine whether
                                             products have micro-leakage using pressure decay, flow measurement, and
                                             other methods. Compared with traditional water immersion testing, leak
@@ -1409,6 +1449,15 @@
                 </div>
             </div>
         </section>
+        <nav class="container mx-auto px-4 pb-8 text-sm" aria-label="Breadcrumb">
+            <ol class="flex flex-wrap items-center gap-2">
+                <li><a href="./index.html">Home</a></li>
+                <li aria-hidden="true">/</li>
+                <li><a href="./services.html">Support &amp; Services</a></li>
+                <li aria-hidden="true">/</li>
+                <li><a href="./resource.html" aria-current="page">Resource Center</a></li>
+            </ol>
+        </nav>
     </main>
     <footer class="site-footer bg-white text-gray-800 pt-4 pb-8">
         <div class="footer-overlay" aria-hidden="true"></div>
@@ -1423,7 +1472,7 @@
                     <p class="text-gray-600 mb-6 text-balance max-w-md">
                         WAFU Brothers (Shenzhen) Automation Technology Co., Ltd., established in 2009, serves over 8,000
                         domestic and international clients including Audi. As a global leader in leak tester
-                        manufacturing and solution provision, we have accumulated 16 years of experience in non-standard
+                        manufacturing and solution provision, we have accumulated experience since 2009 in non-standard
                         automation and sealing detection. With a spirit of innovation and bold breakthroughs, we guide
                         clients with forward-thinking designs and deliver internationally competitive product solutions.
                     </p>
@@ -1556,13 +1605,6 @@
                         <li class="flex items-start"><svg class="svg-icon text-primary mt-1 mr-3 w-4 text-center" data-icon="clock-o" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span
                                 class="text-gray-600">Monday to Friday: 9:00 - 18:00</span></li>
                     </ul>
-                    <br />
-                    <h3 class="font-semibold text-lg mb-4 text-dark flex items-center">
-                        <svg class="svg-icon text-primary mr-2" data-icon="handshake-o" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12l2.5 2.5a2 2 0 0 0 2.8 0L16 12"/><path d="M2 12l4-4h4l2 2 2-2h4l4 4"/><path d="M6 8l-4 5 5 5h3M18 8l4 5-5 5h-3"/></svg>Friendly Links
-                    </h3>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="http://www.west.cn/" title="虚拟主机-域名注册-云主机-VPS主机-服务器租用" target="_blank">云主机</a>
-                    </div>
                 </div>
             </div>
 

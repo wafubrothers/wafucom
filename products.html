@@ -31,6 +31,15 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <link href="/css/footer-theme.css" rel="stylesheet">
+    <style>
+        .product-solutions .svg-icon {
+            width: 1em;
+            height: 1em;
+            display: inline-block;
+            vertical-align: -0.125em;
+            flex-shrink: 0;
+        }
+    </style>
 
     <!-- Product Schema 标记 -->
     <script type="application/ld+json">
@@ -574,9 +583,16 @@
                         </div>
                     </div>
 
-                    <a href="./about.html"
-                        class="text-gray-800 font-medium hover:text-primary transition-colors tracking-wide px-2 py-1">About
-                        Us</a>
+                    <div class="relative group">
+                        <a href="/about/about.html" class="text-gray-800 font-medium hover:text-primary transition-colors flex items-center tracking-wide px-2 py-1">About Us <i class="fa fa-angle-down ml-1 text-xs transition-transform group-hover:rotate-180 duration-300"></i></a>
+                        <div class="absolute left-0 mt-1 w-56 rounded-lg shadow-xl bg-white ring-1 ring-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50">
+                            <div class="py-2">
+                                <a href="/about/about.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">About Us</a>
+                                <a href="/about/company.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Company Strength</a>
+                                <a href="/about/about-us.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Partners</a>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- Service Support Dropdown -->
                     <div class="relative group">
@@ -711,9 +727,14 @@
                         </div>
                     </div>
 
-                    <a href="./about.html"
-                        class="block py-3 px-4 text-gray-800 hover:text-primary hover:bg-gray-50 rounded-md transition-colors">About
-                        Us</a>
+                    <div class="mobile-dropdown">
+                        <button type="button" aria-expanded="false" class="w-full flex justify-between items-center text-gray-800 font-medium hover:text-primary py-3 px-4 text-left focus:outline-none">About Us <svg class="svg-icon text-xs transition-transform duration-300" data-icon="plus" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+                        <div class="mobile-dropdown-content hidden pl-6 mt-0 border-l-2 border-gray-100">
+                            <a href="/about/about.html" class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">About Us</a>
+                            <a href="/about/company.html" class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Company Strength</a>
+                            <a href="/about/about-us.html" class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Partners</a>
+                        </div>
+                    </div>
 
                     <!-- Service Support Mobile -->
                     <div class="mobile-dropdown">
@@ -799,28 +820,9 @@
                             </div>
                         </li>
 
-                        <!-- Product Center -->
-                        <li>
-                            <a href="./products.html"
-                                class="text-gray-500 hover:text-blue-600 transition-colors duration-200">
-                                Product Center
-                            </a>
-                        </li>
-
-                        <!-- Separator -->
-                        <li>
-                            <div class="flex items-center">
-                                <svg class="w-4 h-4 mx-1.5 text-gray-400" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 5l7 7-7 7"></path>
-                                </svg>
-                            </div>
-                        </li>
-
                         <!-- Current page (active) -->
-                        <li aria-current="page">
-                            <span class="text-blue-600 font-medium">Leak Testing Instrument Series</span>
+                        <li>
+                            <a href="./products.html" aria-current="page" class="text-blue-600 font-medium">Product Center</a>
                         </li>
                     </ol>
                 </nav>
@@ -1270,7 +1272,7 @@
                                 <div class="md:w-3/5 p-4">
                                     <a href="./products/wire-harness.html" class="block hover:text-primary transition-colors duration-200">
                                         <h4 class="text-lg font-bold mb-1">Custom 5-Channel Bubble Tester for Wire Harness</h4>
-                                        <p class="text-sm text-gray-500 mb-2">Custom Bubble Leak Detection Equipment</p>
+                                        <p class="text-sm text-gray-500 mb-2">Custom Bubble <strong class="core-keyword">Leak Detection Equipment</strong></p>
                                         <p class="text-sm text-gray-700">
                                             This is a custom five-channel bubble leak detection system for wire-harness or  heat-shrinkable tubes. The five
                                             channels can be operated independently and support parallel testing of multiple wire harnesses.
@@ -1406,7 +1408,7 @@
                                 </span>
                                 <h3 class="text-xl font-bold text-gray-900">Testing &amp; Certification Reports</h3>
                             </div>
-                            <p class="text-gray-700 leading-relaxed">Our leak testers have passed CE, FCC, and other product compliance assessments, supporting export documentation and project acceptance.</p>
+                            <p class="text-gray-700 leading-relaxed">Our <strong class="core-keyword">leak testers</strong> have passed CE, FCC, and other product compliance assessments, supporting export documentation and project acceptance.</p>
                         </div>
                     </article>
 
@@ -1436,74 +1438,237 @@
             </div>
         </section>
 
-        <!-- Selection and testing knowledge -->
-        <section id="testing-knowledge" class="py-16 bg-gray-50" aria-labelledby="product-knowledge-title">
+        <!-- Air Tightness Testing Solutions -->
+        <section class="py-16 bg-white product-solutions">
             <div class="container mx-auto px-4">
-                <div class="max-w-3xl mx-auto text-center mb-10">
-                    <p class="text-primary text-sm font-semibold tracking-wider mb-2">SELECTION &amp; TESTING KNOWLEDGE</p>
-                    <h2 id="product-knowledge-title" class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Common Questions About Air Leak Testing</h2>
-                    <p class="text-gray-600 leading-relaxed">Find practical answers about test methods, equipment selection, and real-world applications before choosing or using a leak test system.</p>
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary text-center mb-10">
+                    Air Tightness Testing Solutions
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Solution Card -->
+                    <!-- Transportation Components -->
+                    <div
+                        class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-primary/30 group">
+                        <a href="solu/solu-carparts.html" class="relative block h-60 overflow-hidden">
+                            <picture>
+                                <source srcset="./images/webp/Automotive.webp" type="image/webp">
+                                <source srcset="./images/solu/Automotive%20parts.jpg" type="image/jpeg">
+                                <img src="./images/solu/Automotive parts.jpg" alt="Transportation Components"
+                                    width="800" height="800"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    loading="lazy" decoding="async">
+                            </picture>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold text-white">Transportation Components</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                                Transportation Components
+                            </h3>
+                            <p class="text-gray-600 mb-6">
+                                Fuel tanks, automotive lighting waterproof testing, engine part leak detection, vehicle
+                                cameras, charging guns, and more.
+                            </p>
+                            <a href="solu/solu-carparts.html"
+                                class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                                Learn More <svg class="svg-icon ml-2 text-sm" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Electronic Devices -->
+                    <div
+                        class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-primary/30 group">
+                        <a href="solu/solu-electronic.html" class="relative block h-60 overflow-hidden">
+                            <picture>
+                                <source srcset="./images/webp/Electronic.webp" type="image/webp">
+                                <source srcset="./images/solu/Electronic%20devices.jpg" type="image/jpeg">
+                                <img src="./images/solu/Electronic devices.jpg" alt="Electronic Devices" width="800"
+                                    height="800"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    loading="lazy" decoding="async">
+                            </picture>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold text-white">Electronic Devices</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                                Electronic Devices
+                            </h3>
+                            <p class="text-gray-600 mb-6">
+                                Waterproof, dustproof, and leak testing for irrigators, smartphones, earphones,
+                                Type-C connectors, and more.
+                            </p>
+                            <a href="solu/solu-electronic.html"
+                                class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                                Learn More <svg class="svg-icon ml-2 text-sm" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Medical Equipment -->
+                    <div
+                        class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-primary/30 group">
+                        <a href="solu/solu-medical.html" class="relative block h-60 overflow-hidden">
+                            <picture>
+                                <source srcset="./images/webp/medical.webp" type="image/webp">
+                                <source srcset="./images/solu/medical%20equipment.jpg" type="image/jpeg">
+                                <img src="./images/solu/medical equipment.jpg" alt="Medical Equipment" width="800"
+                                    height="800"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    loading="lazy" decoding="async">
+                            </picture>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold text-white">Medical Equipment</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                                Medical Equipment
+                            </h3>
+                            <p class="text-gray-600 mb-6">
+                                Leak testing for electronic sphygmomanometers, IV tubing, sealed pouches,
+                                laparoscopic trocars, and more.
+                            </p>
+                            <a href="solu/solu-medical.html"
+                                class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                                Learn More <svg class="svg-icon ml-2 text-sm" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Security & Lighting -->
+                    <div
+                        class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-primary/30 group">
+                        <a href="solu/solu-lighting.html" class="relative block h-60 overflow-hidden">
+                            <picture>
+                                <source srcset="./images/webp/Security.webp" type="image/webp">
+                                <source srcset="./images/solu/Security%20lighting.jpg" type="image/jpeg">
+                                <img src="./images/solu/Security lighting.jpg" alt="Security & Lighting" width="800"
+                                    height="800"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    loading="lazy" decoding="async">
+                            </picture>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold text-white">Security & Lighting</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                                Security & Lighting
+                            </h3>
+                            <p class="text-gray-600 mb-6">
+                                Leak testing for surveillance cameras, LED lights, displays, radars, base stations,
+                                geophysical sampling equipment, hydrological and environmental monitoring instruments.
+                            </p>
+                            <a href="solu/solu-lighting.html"
+                                class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                                Learn More <svg class="svg-icon ml-2 text-sm" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hardware & Die Casting -->
+                    <div
+                        class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-primary/30 group">
+                        <a href="solu/solu-hardware.html" class="relative block h-60 overflow-hidden">
+                            <picture>
+                                <source srcset="./images/webp/Hardware.webp" type="image/webp">
+                                <source srcset="./images/solu/Hardware%20mold.jpg" type="image/jpeg">
+                                <img src="./images/solu/Hardware mold.jpg" alt="Hardware Die Casting" width="800"
+                                    height="800"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    loading="lazy" decoding="async">
+                            </picture>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold text-white">Hardware Die Casting</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                                Hardware Die Casting
+                            </h3>
+                            <p class="text-gray-600 mb-6">
+                                Leak testing for automotive die-cast parts, marine die-cast parts, stamped aluminum
+                                sheets, and other mold products.
+                            </p>
+                            <a href="solu/solu-hardware.html"
+                                class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                                Learn More <svg class="svg-icon ml-2 text-sm" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Smart Home Appliances -->
+                    <div
+                        class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-primary/30 group">
+                        <a href="solu/solu-kitchen.html" class="relative block h-60 overflow-hidden">
+                            <picture>
+                                <source srcset="./images/webp/smart.webp" type="image/webp">
+                                <source srcset="./images/solu/smart%20furniture.jpg" type="image/jpeg">
+                                <img src="./images/solu/smart furniture.jpg" alt="Smart Home" width="800" height="800"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    loading="lazy" decoding="async">
+                            </picture>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold text-white">Smart Home</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                                Smart Home
+                            </h3>
+                            <p class="text-gray-600 mb-6">
+                                Leak testing for smart home products like kettles, juicers, water dispensers, electric
+                                water heaters, and filter chambers.
+                            </p>
+                            <a href="solu/solu-kitchen.html"
+                                class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                                Learn More <svg class="svg-icon ml-2 text-sm" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <nav class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" aria-label="Air leak testing questions and technical articles">
-                    <a href="./faq/T-art-21.html" class="group flex items-center justify-between gap-4 bg-white border border-gray-200 p-5 rounded-lg hover:border-primary hover:shadow-md transition-all duration-300">
-                        <span class="min-w-0 flex-1"><span class="block text-xs font-medium text-primary mb-2">Fundamentals</span><span class="block font-semibold text-gray-900 leading-snug group-hover:text-primary transition-colors">What Is an Air Leak Tester?</span><span class="block text-sm text-gray-600 leading-relaxed mt-2">It monitors pressure, differential pressure, or flow changes to identify leaks, providing efficient, non-destructive seal testing.</span></span>
-                        <svg class="w-5 h-5 flex-none text-gray-400 group-hover:text-primary group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </a>
-                    <a href="./faq/T-art-24.html" class="group flex items-center justify-between gap-4 bg-white border border-gray-200 p-5 rounded-lg hover:border-primary hover:shadow-md transition-all duration-300">
-                        <span class="min-w-0 flex-1"><span class="block text-xs font-medium text-primary mb-2">Equipment Selection</span><span class="block font-semibold text-gray-900 leading-snug group-hover:text-primary transition-colors">How Do You Choose an Air Leak Tester?</span><span class="block text-sm text-gray-600 leading-relaxed mt-2">Consider the allowable leak rate, test pressure, cycle time, fixture compatibility, and data traceability requirements.</span></span>
-                        <svg class="w-5 h-5 flex-none text-gray-400 group-hover:text-primary group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </a>
-                    <a href="./faq/T-art-32.html" class="group flex items-center justify-between gap-4 bg-white border border-gray-200 p-5 rounded-lg hover:border-primary hover:shadow-md transition-all duration-300">
-                        <span class="min-w-0 flex-1"><span class="block text-xs font-medium text-primary mb-2">Test Principles</span><span class="block font-semibold text-gray-900 leading-snug group-hover:text-primary transition-colors">Direct Pressure vs. Differential Pressure Testing</span><span class="block text-sm text-gray-600 leading-relaxed mt-2">Direct pressure is versatile and economical; differential pressure offers greater sensitivity and stability for minute leaks.</span></span>
-                        <svg class="w-5 h-5 flex-none text-gray-400 group-hover:text-primary group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </a>
-                    <a href="./faq/T-art-13.html" class="group flex items-center justify-between gap-4 bg-white border border-gray-200 p-5 rounded-lg hover:border-primary hover:shadow-md transition-all duration-300">
-                        <span class="min-w-0 flex-1"><span class="block text-xs font-medium text-primary mb-2">Method Comparison</span><span class="block font-semibold text-gray-900 leading-snug group-hover:text-primary transition-colors">Water Testing or Air Testing: Which Is Better?</span><span class="block text-sm text-gray-600 leading-relaxed mt-2">Water testing makes leak locations visible; air testing is faster, measurable, non-destructive, and better suited to automation.</span></span>
-                        <svg class="w-5 h-5 flex-none text-gray-400 group-hover:text-primary group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </a>
-                    <a href="./faq/T-art-30.html" class="group flex items-center justify-between gap-4 bg-white border border-gray-200 p-5 rounded-lg hover:border-primary hover:shadow-md transition-all duration-300">
-                        <span class="min-w-0 flex-1"><span class="block text-xs font-medium text-primary mb-2">Waterproof Testing</span><span class="block font-semibold text-gray-900 leading-snug group-hover:text-primary transition-colors">How Are Waterproof Products Tested for Leaks?</span><span class="block text-sm text-gray-600 leading-relaxed mt-2">A typical cycle includes fixture sealing, pressurizing or evacuating, stabilization, measurement, evaluation, and venting.</span></span>
-                        <svg class="w-5 h-5 flex-none text-gray-400 group-hover:text-primary group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </a>
-                    <a href="./faq/T-art-29.html" class="group flex items-center justify-between gap-4 bg-white border border-gray-200 p-5 rounded-lg hover:border-primary hover:shadow-md transition-all duration-300">
-                        <span class="min-w-0 flex-1"><span class="block text-xs font-medium text-primary mb-2">Applications</span><span class="block font-semibold text-gray-900 leading-snug group-hover:text-primary transition-colors">Which Products Need Air Leak Testing?</span><span class="block text-sm text-gray-600 leading-relaxed mt-2">Sealed automotive parts, batteries, medical devices, consumer electronics, valves, and pipelines commonly require testing.</span></span>
-                        <svg class="w-5 h-5 flex-none text-gray-400 group-hover:text-primary group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </a>
-                    <a href="./faq/T-art-18.html" class="group flex items-center justify-between gap-4 bg-white border border-gray-200 p-5 rounded-lg hover:border-primary hover:shadow-md transition-all duration-300">
-                        <span class="min-w-0 flex-1"><span class="block text-xs font-medium text-primary mb-2">Buying Guide</span><span class="block font-semibold text-gray-900 leading-snug group-hover:text-primary transition-colors">Common Mistakes When Buying a Leak Tester</span><span class="block text-sm text-gray-600 leading-relaxed mt-2">Do not compare only price or maximum accuracy; verify cycle time, repeatability, service, and fixture suitability.</span></span>
-                        <svg class="w-5 h-5 flex-none text-gray-400 group-hover:text-primary group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </a>
-                    <a href="./faq/T-art-23.html" class="group flex items-center justify-between gap-4 bg-white border border-gray-200 p-5 rounded-lg hover:border-primary hover:shadow-md transition-all duration-300">
-                        <span class="min-w-0 flex-1"><span class="block text-xs font-medium text-primary mb-2">How It Works</span><span class="block font-semibold text-gray-900 leading-snug group-hover:text-primary transition-colors">How Does an Air Leak Test Work?</span><span class="block text-sm text-gray-600 leading-relaxed mt-2">The tester fills, stabilizes, measures, and vents, then evaluates pressure or flow changes against the leak limit.</span></span>
-                        <svg class="w-5 h-5 flex-none text-gray-400 group-hover:text-primary group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </a>
-                    <a href="./faq/T-art-31.html" class="group flex items-center justify-between gap-4 bg-white border border-gray-200 p-5 rounded-lg hover:border-primary hover:shadow-md transition-all duration-300">
-                        <span class="min-w-0 flex-1"><span class="block text-xs font-medium text-primary mb-2">Vacuum Testing</span><span class="block font-semibold text-gray-900 leading-snug group-hover:text-primary transition-colors">Can a Leak Tester Perform Vacuum Testing?</span><span class="block text-sm text-gray-600 leading-relaxed mt-2">Yes. Monitoring pressure rise after evacuation tests sealed chambers and products unsuitable for positive pressure.</span></span>
-                        <svg class="w-5 h-5 flex-none text-gray-400 group-hover:text-primary group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </a>
-                    <a href="./faq/T-art-4.html" class="group flex items-center justify-between gap-4 bg-white border border-gray-200 p-5 rounded-lg hover:border-primary hover:shadow-md transition-all duration-300">
-                        <span class="min-w-0 flex-1"><span class="block text-xs font-medium text-primary mb-2">Accuracy Control</span><span class="block font-semibold text-gray-900 leading-snug group-hover:text-primary transition-colors">How Do Environmental Factors Affect Accuracy?</span><span class="block text-sm text-gray-600 leading-relaxed mt-2">Temperature changes gas pressure, while vibration and unstable air supply disturb readings, so compensation and isolation matter.</span></span>
-                        <svg class="w-5 h-5 flex-none text-gray-400 group-hover:text-primary group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </a>
-                    <a href="./faq/T-art-17.html" class="group flex items-center justify-between gap-4 bg-white border border-gray-200 p-5 rounded-lg hover:border-primary hover:shadow-md transition-all duration-300">
-                        <span class="min-w-0 flex-1"><span class="block text-xs font-medium text-primary mb-2">IP Protection</span><span class="block font-semibold text-gray-900 leading-snug group-hover:text-primary transition-colors">How Do You Verify IP67 and IP68 Protection?</span><span class="block text-sm text-gray-600 leading-relaxed mt-2">Set an equivalent test pressure and leak limit for the target rating, then test and record the sealing result.</span></span>
-                        <svg class="w-5 h-5 flex-none text-gray-400 group-hover:text-primary group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </a>
-                    <a href="./faq/T-art-25.html" class="group flex items-center justify-between gap-4 bg-white border border-gray-200 p-5 rounded-lg hover:border-primary hover:shadow-md transition-all duration-300">
-                        <span class="min-w-0 flex-1"><span class="block text-xs font-medium text-primary mb-2">New Energy</span><span class="block font-semibold text-gray-900 leading-snug group-hover:text-primary transition-colors">Key Requirements for Battery Pack Leak Testing</span><span class="block text-sm text-gray-600 leading-relaxed mt-2">Testing must balance large volume, short cycle time, minute leaks, safety, case deformation, and adequate stabilization.</span></span>
-                        <svg class="w-5 h-5 flex-none text-gray-400 group-hover:text-primary group-hover:translate-x-1 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </a>
-                </nav>
-                <div class="text-center mt-10">
-                    <a href="./Allquestions.html" class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-secondary text-white font-medium py-3 px-7 rounded-full transition-colors duration-300 shadow-sm hover:shadow-md">
-                        View More Technical Answers
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+
+                <!-- Learn More Button -->
+                <div class="text-center mt-12">
+                    <a href="./application.html"
+                        class="inline-block bg-primary hover:bg-secondary text-white font-medium py-3 px-8 rounded-full transition-colors duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-1">
+                        Learn More
                     </a>
                 </div>
             </div>
         </section>
     </main>
 
+    <nav class="bottom-breadcrumb container mx-auto px-4 py-4 text-sm" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-2">
+            <li><a href="./index.html" class="text-gray-500 hover:text-blue-600">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li><a href="./products.html" aria-current="page" class="text-blue-600 font-medium">Product Center</a></li>
+        </ol>
+    </nav>
     <footer class="site-footer bg-white text-gray-800 pt-4 pb-8">
         <div class="footer-overlay" aria-hidden="true"></div>
         <div class="container mx-auto px-4">
@@ -1517,7 +1682,7 @@
                     <p class="text-gray-600 mb-6 text-balance max-w-md">
                         WAFU Brothers (Shenzhen) Automation Technology Co., Ltd., established in 2009, serves over 8,000
                         domestic and international clients including Audi. As a global leader in leak tester
-                        manufacturing and solution provision, we have accumulated 16 years of experience in non-standard
+                        manufacturing and solution provision, we have accumulated experience since 2009 in non-standard
                         automation and sealing detection. With a spirit of innovation and bold breakthroughs, we guide
                         clients with forward-thinking designs and deliver internationally competitive product solutions.
                     </p>
@@ -1650,13 +1815,6 @@
                         <li class="flex items-start"><svg class="svg-icon text-primary mt-1 mr-3 w-4 text-center" data-icon="clock-o" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span
                                 class="text-gray-600">Monday to Friday: 9:00 - 18:00</span></li>
                     </ul>
-                    <br />
-                    <h3 class="font-semibold text-lg mb-4 text-dark flex items-center">
-                        <svg class="svg-icon text-primary mr-2" data-icon="handshake-o" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12l2.5 2.5a2 2 0 0 0 2.8 0L16 12"/><path d="M2 12l4-4h4l2 2 2-2h4l4 4"/><path d="M6 8l-4 5 5 5h3M18 8l4 5-5 5h-3"/></svg>Friendly Links
-                    </h3>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="http://www.west.cn/" title="虚拟主机-域名注册-云主机-VPS主机-服务器租用" target="_blank">云主机</a>
-                    </div>
                 </div>
             </div>
 

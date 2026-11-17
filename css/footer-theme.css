@@ -1,3 +1,67 @@
+/* Highlight product keywords without changing the original wording or links. */
+.core-keyword {
+    color: #165dff !important;
+    font-weight: 700 !important;
+}
+
+/* English-site breadcrumbs, including legacy product and article markup. */
+nav[aria-label="Breadcrumb"],
+.bottom-breadcrumb,
+main > nav.text-sm.text-gray-500.mb-6,
+div.bg-gray-100.py-2 > div.container.mx-auto.px-4.text-sm.text-gray-500 {
+    color: #111111 !important;
+    font-weight: 700 !important;
+}
+nav[aria-label="Breadcrumb"] :is(a, span, li),
+.bottom-breadcrumb :is(a, span, li),
+main > nav.text-sm.text-gray-500.mb-6 :is(a, span, li),
+div.bg-gray-100.py-2 > div.container.mx-auto.px-4.text-sm.text-gray-500 :is(a, span) {
+    color: #111111 !important;
+    font-weight: 700 !important;
+}
+nav[aria-label="Breadcrumb"] a:hover,
+.bottom-breadcrumb a:hover,
+main > nav.text-sm.text-gray-500.mb-6 a:hover,
+div.bg-gray-100.py-2 > div.container.mx-auto.px-4.text-sm.text-gray-500 a:hover {
+    color: #165dff !important;
+    text-decoration: underline;
+}
+nav[aria-label="Breadcrumb"] .core-keyword,
+.bottom-breadcrumb .core-keyword,
+main > nav.text-sm.text-gray-500.mb-6 .core-keyword,
+div.bg-gray-100.py-2 > div.container.mx-auto.px-4.text-sm.text-gray-500 .core-keyword {
+    color: #111111 !important;
+}
+nav[aria-label="Breadcrumb"] a:hover .core-keyword,
+.bottom-breadcrumb a:hover .core-keyword,
+main > nav.text-sm.text-gray-500.mb-6 a:hover .core-keyword,
+div.bg-gray-100.py-2 > div.container.mx-auto.px-4.text-sm.text-gray-500 a:hover .core-keyword {
+    color: #165dff !important;
+}
+nav[aria-label="Breadcrumb"] a:hover :is(span, li),
+main > nav.text-sm.text-gray-500.mb-6 a:hover :is(span, li),
+div.bg-gray-100.py-2 > div.container.mx-auto.px-4.text-sm.text-gray-500 a:hover :is(span, li) {
+    color: #165dff !important;
+}
+
+/* Match the Chinese site's bottom breadcrumb spacing without covering its text. */
+.bottom-breadcrumb {
+    padding: 1.1rem 1.5rem;
+    background: #f6f8fc;
+    border-top: 1px solid #e2e8f0;
+    line-height: 1.6;
+}
+.bottom-breadcrumb__inner {
+    max-width: 1352px;
+    margin: 0 auto;
+    overflow-wrap: anywhere;
+}
+.bottom-breadcrumb + footer.site-footer { margin-top: 0; }
+@media (max-width: 767px) {
+    .bottom-breadcrumb { padding: 1rem; }
+    .bottom-breadcrumb a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+}
+
 footer.site-footer {
     position: relative;
     isolation: isolate;

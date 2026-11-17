@@ -17,6 +17,19 @@ function inlineSvg(iconName, classes = '') {
   return `<svg class="svg-icon ${classes}" data-icon="${iconName}" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${inlineSvgIcons[iconName]}</svg>`;
 }
 
+// Keep the footer's cloud-hosting link consistent across English pages.
+document.addEventListener('DOMContentLoaded', () => {
+  const footer = document.querySelector('footer.site-footer');
+  if (!footer || footer.querySelector('a[href="https://www.west.cn/cloudhost/"]')) return;
+  const heading = Array.from(footer.querySelectorAll('h3')).find(item => item.textContent.trim() === 'Contact Information');
+  const contact = heading && heading.parentElement;
+  if (!contact) return;
+  const block = document.createElement('div');
+  block.className = 'mt-6';
+  block.innerHTML = `<h3 class="font-semibold text-lg mb-3 text-dark flex items-center"><svg class="svg-icon text-primary mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.1 0l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1"/><path d="M14 11a5 5 0 0 0-7.1 0l-2 2A5 5 0 0 0 12 20.1l1.1-1.1"/></svg>Friendly Links</h3><a href="https://www.west.cn/cloudhost/" target="_blank" rel="noopener noreferrer" lang="zh-CN" class="text-gray-600 hover:text-primary transition-colors">云主机</a>`;
+  contact.appendChild(block);
+});
+
 // 侧边咨询悬浮按钮
 document.addEventListener("DOMContentLoaded", function () {
   const buttonListHTML = `
@@ -303,6 +316,9 @@ document.addEventListener('DOMContentLoaded', function () {
       const icon = this.querySelector('svg[data-icon]');
 
       content.classList.toggle('hidden');
+      if (this.hasAttribute('aria-expanded')) {
+        this.setAttribute('aria-expanded', String(!content.classList.contains('hidden')));
+      }
       if (!icon) return;
       // 切换图标（+/-）
       if (content.classList.contains('hidden')) {

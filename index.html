@@ -92,7 +92,7 @@
               "@type": "ListItem",
               "position": 2,
               "name": "Customized Leak Testing Cabinet",
-              "url": "https://www.wafubrother.com/products/blood-pressure-cuff"
+              "url": "https://www.wafubrother.com/products/electric-four-wheeler-tail-light"
             },
             {
               "@type": "ListItem",
@@ -127,9 +127,9 @@
 
     <!-- robots元标签 -->
     <meta name="robots" content="index, follow">
-    
-    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
-    
+
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+
     <!-- 证书轮播图 -->
     <style>
         /* 自定义一些微调样式 */
@@ -147,7 +147,7 @@
             to { transform: rotate(360deg); }
         }
 
-       
+
         .honorary-carousel {
             perspective: 1000px;
             width: 100%;
@@ -236,11 +236,16 @@
             display: inline-flex;
             flex: 0 0 auto;
             align-items: center;
-            gap: 0.6rem;
-            color: #1d4ed8;
-            font-weight: 700;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #165dff;
+            border-radius: 0.5rem;
+            background: transparent;
+            color: #165dff;
+            font-weight: 400;
+            transition: background 0.2s, color 0.2s;
         }
-        .tech-library__all:hover { color: #1e40af; }
+        .tech-library__all:hover { background: #165dff; color: #ffffff; }
         .tech-library__grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -364,7 +369,7 @@
             .tech-article__media { min-height: 180px; max-height: 180px; }
         }
     </style>
-    <link href="./css/index.css?v=20261016c" rel="stylesheet">
+    <link href="./css/index.css?v=20261114a" rel="stylesheet">
     <link href="./css/carousel.css?v=20261016c" rel="stylesheet">
     <link href="/css/footer-theme.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;display=swap" rel="stylesheet">
@@ -720,6 +725,8 @@
             }
         }
     </style>
+    <!-- Homepage layout shared with the Chinese site -->
+    <link href="./css/home-alignment.css?v=20261114a" rel="stylesheet">
 
     <!-- 多语言声明 -->
     <link rel="alternate" hreflang="zh-CN" href="https://www.wafubrother.cn/index.html" />
@@ -727,8 +734,9 @@
     <link rel="alternate" hreflang="vi" href="https://www.wafuvn.com/index.html" />
     <link rel="alternate" hreflang="th" href="https://www.wafuth.com/index.html" />
     <link rel="alternate" hreflang="ar" href="https://www.wafuar.com/index.html" />
-    
-    
+    <link rel="alternate" hreflang="es" href="https://wafues.com/" />
+
+
 
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
@@ -769,7 +777,7 @@
                         </a>
                         <!-- Optimized Dropdown -->
                         <div
-                            class="absolute left-0 mt-1 w-64 rounded-lg shadow-xl bg-white ring-1 ring-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                            class="absolute left-0 mt-1 w-64 rounded-lg shadow-xl bg-white ring-1 ring-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible
                                     transition-all duration-300 z-50 transform origin-top scale-95 group-hover:scale-100">
                             <div class="py-2">
                                 <a href="./products.html#Leak_detector"
@@ -794,7 +802,7 @@
                                 <svg t="1786434152330" class="icon ml-1 text-xs transition-transform group-hover:rotate-180 duration-300" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1711" width="1.2em" height="1.2em"><path d="M512 693.333333c14.933333 0 29.866667-4.266667 40.533333-14.933333l277.33333399-234.666667c27.733333-23.466667 29.866667-64 8.53333301-89.6-23.466667-27.733333-64-29.866667-89.6-8.53333299L512 546.133333l-236.8-200.53333299c-27.733333-23.466667-68.266667-19.19999999-89.6 8.53333299-23.466667 27.733333-19.19999999 68.266667 8.53333301 89.6l277.33333399 234.666667c10.666667 10.666667 25.6 14.933333 40.533333 14.933333z" fill="currentColor" p-id="1712"></path></svg>
                         </a>
                         <div
-                            class="absolute left-0 mt-1 w-64 rounded-lg shadow-xl bg-white ring-1 ring-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                            class="absolute left-0 mt-1 w-64 rounded-lg shadow-xl bg-white ring-1 ring-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible
                                     transition-all duration-300 z-50 transform origin-top scale-95 group-hover:scale-100">
                             <div class="py-2">
                                 <a href="solu/solu-carparts.html"
@@ -827,15 +835,21 @@
                                 <a href="solu/solu-lighting.html"
                                     class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Security
                                     & Lighting</a>
-<a href="solu/solu-micromobility.html" 
+<a href="solu/solu-micromobility.html"
                                     class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Moped Manufacturing Industry</a>
                             </div>
                         </div>
                     </div>
 
-                    <a href="./about.html"
-                        class="text-gray-800 font-medium hover:text-primary transition-colors tracking-wide px-2 py-1">About
-                        Us</a>
+                    <!-- About WAFU dropdown -->
+                    <div class="relative group about-nav">
+                        <a href="./about/about.html" class="about-nav__trigger text-gray-800 font-medium hover:text-primary transition-colors flex items-center tracking-wide px-2 py-1">About Us <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+                        <div class="about-nav__menu">
+                            <a href="./about/about.html">About Us</a>
+                            <a href="./about/company.html">Company Strength</a>
+                            <a href="./about/about-us.html">Partners</a>
+                        </div>
+                    </div>
 
                     <!-- Service Support Dropdown -->
                     <div class="relative group">
@@ -846,7 +860,7 @@
                             <svg t="1786434152330" class="icon ml-1 text-xs transition-transform group-hover:rotate-180 duration-300" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1711" width="1.2em" height="1.2em"><path d="M512 693.333333c14.933333 0 29.866667-4.266667 40.533333-14.933333l277.33333399-234.666667c27.733333-23.466667 29.866667-64 8.53333301-89.6-23.466667-27.733333-64-29.866667-89.6-8.53333299L512 546.133333l-236.8-200.53333299c-27.733333-23.466667-68.266667-19.19999999-89.6 8.53333299-23.466667 27.733333-19.19999999 68.266667 8.53333301 89.6l277.33333399 234.666667c10.666667 10.666667 25.6 14.933333 40.533333 14.933333z" fill="currentColor" p-id="1712"></path></svg>
                         </a>
                         <div
-                            class="absolute left-0 mt-1 w-64 rounded-lg shadow-xl bg-white ring-1 ring-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                            class="absolute left-0 mt-1 w-64 rounded-lg shadow-xl bg-white ring-1 ring-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible
                                     transition-all duration-300 z-50 transform origin-top scale-95 group-hover:scale-100">
                             <div class="py-2">
                                 <a href="./resource.html"
@@ -863,6 +877,7 @@
                             </div>
                         </div>
                     </div>
+                    <a href="./news.html" class="text-gray-800 font-medium hover:text-primary transition-colors px-2 py-1">News</a>
                     <!-- Language Selector -->
                     <div class="relative group">
                         <button
@@ -888,6 +903,9 @@
                             <a href="https://wafuar.com/"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇸🇦
                                 العربية</a>
+                            <a href="https://wafues.com/" hreflang="es" lang="es"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇪🇸
+                                Español</a>
                         </div>
                     </div>
                     <a href="./contact.html"
@@ -968,14 +986,21 @@
                             <a href="solu/solu-lighting.html"
                                 class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Security
                                 & Lighting</a>
-<a href="solu/solu-micromobility.html" 
+<a href="solu/solu-micromobility.html"
                                 class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Moped Manufacturing Industry</a>
                         </div>
                     </div>
 
-                    <a href="./about.html"
-                        class="block py-3 px-4 text-gray-800 hover:text-primary hover:bg-gray-50 rounded-md transition-colors">About
-                        Us</a>
+                    <div class="mobile-dropdown">
+                        <button type="button" aria-expanded="false" aria-controls="mobile-about-menu" class="w-full flex justify-between items-center text-gray-800 font-medium hover:text-primary py-3 px-4 text-left focus:outline-none">
+                            About Us <svg class="svg-icon text-xs transition-transform duration-300" data-icon="plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                        </button>
+                        <div id="mobile-about-menu" class="mobile-dropdown-content hidden pl-6 mt-0 border-l-2 border-gray-100">
+                            <a href="./about/about.html" class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">About Us</a>
+                            <a href="./about/company.html" class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Company Strength</a>
+                            <a href="./about/about-us.html" class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Partners</a>
+                        </div>
+                    </div>
 
                     <!-- Service Support Mobile -->
                     <div class="mobile-dropdown">
@@ -984,16 +1009,17 @@
                             Service & Support <svg class="svg-icon text-xs transition-transform duration-300" data-icon="plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
                         </button>
                         <div class="mobile-dropdown-content hidden pl-6 mt-0 border-l-2 border-gray-100">
-                            <a href="./solu/solu-carparts.html"
-                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Resource
-                                Center</a>
-                            <a href="./solu/solu-medical.html"
+                            <a href="./resource.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Resource Center</a>
+                            <a href="./Allquestions.html"
                                 class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">FAQ</a>
-                            <a href="./solu/solu-battery.html"
-                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Technical
-                                Articles</a>
+                            <a href="./test-case.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Case Images</a>
+                            <a href="./digital.html"
+                                class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Case Videos</a>
                         </div>
                     </div>
+                    <a href="./news.html" class="block py-3 px-4 text-gray-800 hover:text-primary hover:bg-gray-50 rounded-md transition-colors">News</a>
                     <!-- Mobile Language Selector -->
                     <div class="mobile-dropdown">
                         <button
@@ -1016,6 +1042,9 @@
                             <a href="https://wafuar.com/"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇸🇦
                                 العربية</a>
+                            <a href="https://wafues.com/" hreflang="es" lang="es"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary">🇪🇸
+                                Español</a>
                         </div>
                     </div>
                     <a href="./contact.html"
@@ -1061,8 +1090,9 @@
             </div>
 
             <div class="wafu-hero__content">
-                <p class="wafu-hero__eyebrow">Focused on leak testing, empowering high-quality manufacturing</p>
-                <h1>Air Leak Tester Manufacturer & Leak Testing Machine Supplier</h1>
+                <p class="wafu-hero__eyebrow">Leak testing manufacturer in Shenzhen · Established in 2009</p>
+                <h1><strong class="core-keyword">Air Leak Tester</strong> Manufacturer &amp; Leak Testing Machine Supplier</h1>
+                <p class="wafu-hero__lead">18 years of leak testing expertise, with in-house algorithms, filtering and repeatability up to 1 Pa. Serving 8,000+ customers, including Audi, BYD, General Motors and Midea.</p>
                 <a class="wafu-hero__link" href="./products.html">Explore Products <svg class="svg-icon" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
             </div>
 
@@ -1084,103 +1114,57 @@
             <div class="wafu-hero__scroll" aria-hidden="true"><span>SCROLL</span><i></i></div>
         </section>
         <!-- About WAFU Brothers -->
-        <section class="py-20 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="about-overview-grid">
-                    <div>
-                        <div class="about-copy">
-                            <p class="about-feature-statement">
-                                <span class="about-feature-statement__lead">We are a <strong class="text-primary">leader in the air leak tester industry</strong></span>, backed by 20 years of leakage tester manufacturing experience. More than 8,000 customers worldwide use our waterproof test equipment. <br />Here are some of the brands we are proud to serve:
-                            </p>
-                        </div>
-                        <div class="about-media-panel about-customer-brands">
-                            
-                            <img src="./images/about/global-customer-brands.png" alt="Selected global customers including BYD, Audi, General Motors, GAC Group, Huawei, UGREEN, Midea, Gree, Xiaomi, Aima, Segway-Ninebot, and Haier" loading="lazy">
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="about-copy">
-                            <div class="space-y-5 text-gray-600 text-lg leading-relaxed">
-                                <p>
-                                    WAFU Brothers (Shenzhen) Automation Technology Co., Ltd. is an origin manufacturer in the air leak tester field, with core patented technologies and a global customer base of more than 8,000 enterprises, including Audi, BYD, Xiaomi, and General Motors.
-                                </p>
-                                <p class="mt-4">
-                                    WAFU Brothers is a China-based manufacturer of air leak testers and leak detection equipment, offering flow test and vacuum leak tester solutions for waterproof test equipment applications.
-                                </p>
-                                <p class="mt-4">
-                                    We design tailored test solutions that fit your workflows, materials, and throughput requirements, while supporting
-                                    smooth implementation.
-                                    We also provide responsive technical support to help you maintain stable quality control throughout every stage of
-                                    production, including deployment and ongoing operation.
-                                </p>
+        <section class="wafu-about" aria-labelledby="about-title">
+            <div class="wafu-about__inner">
+                <div class="wafu-about__grid">
+                    <div class="wafu-about__col">
+                        <p class="wafu-about__eyebrow">TRUSTED BY INDUSTRY LEADERS</p>
+                        <h2 id="about-title" class="wafu-about__statement">WAFU Brothers is a China-based manufacturer of <strong class="core-keyword">air leak testers</strong> and <strong class="core-keyword">leak detection equipment</strong>, offering <strong class="core-keyword">flow test</strong> and <strong class="core-keyword">vacuum leak tester</strong> solutions for <strong class="core-keyword">waterproof test equipment</strong> applications.</h2>
+                        <div id="home-customers" class="wafu-about__brands">
+                            <div class="wafu-about__brand-grid">
+                                <img src="./images/about/global-customer-brands.png" alt="" width="569" height="346" loading="lazy">
+                                <div class="wafu-about__brand-links" role="group" aria-label="Selected WAFU Brothers customers">
+                                    <a class="wafu-about__brand-link" href="./about/about-us.html" aria-label="Learn about WAFU Brothers' customers, including BYD"></a>
+                                    <a class="wafu-about__brand-link" href="./about/about-us.html" aria-label="Learn about WAFU Brothers' customers, including Audi"></a>
+                                    <a class="wafu-about__brand-link" href="./about/about-us.html" aria-label="Learn about WAFU Brothers' customers, including General Motors"></a>
+                                    <a class="wafu-about__brand-link" href="./about/about-us.html" aria-label="Learn about WAFU Brothers' customers, including Midea"></a>
+                                    <a class="wafu-about__brand-link" href="./about/about-us.html" aria-label="Learn about WAFU Brothers' customers, including Gree"></a>
+                                    <a class="wafu-about__brand-link" href="./about/about-us.html" aria-label="Learn about WAFU Brothers' customers, including Xiaomi"></a>
+                                    <a class="wafu-about__brand-link" href="./about/about-us.html" aria-label="Learn about WAFU Brothers' customers, including GAC Group"></a>
+                                    <a class="wafu-about__brand-link" href="./about/about-us.html" aria-label="Learn about WAFU Brothers' customers, including Huawei"></a>
+                                    <a class="wafu-about__brand-link" href="./about/about-us.html" aria-label="Learn about WAFU Brothers' customers, including UGREEN"></a>
+                                    <a class="wafu-about__brand-link" href="./about/about-us.html" aria-label="Learn about WAFU Brothers' customers, including Aima"></a>
+                                    <a class="wafu-about__brand-link" href="./about/about-us.html" aria-label="Learn about WAFU Brothers' customers, including Segway-Ninebot"></a>
+                                    <a class="wafu-about__brand-link" href="./about/about-us.html" aria-label="Learn about WAFU Brothers' customers, including Haier"></a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="about-media-panel about-company-photo">
-                            <picture>
-                                <source media="(max-width: 767px)" srcset="./images/about/about-us.png">
-                                <img src="./images/about/about-us.webp" alt="WAFU Brothers company reception" loading="lazy">
-                            </picture>
+                            <div class="wafu-about__additional-brands" aria-label="More customers">
+                                <a class="wafu-about__additional-brand" href="./about/about-us.html"><img src="./images/about/partner-hans-laser.png" alt="Han's Laser" loading="lazy"></a>
+                                <a class="wafu-about__additional-brand" href="./about/about-us.html"><img src="./images/about/partner-kyoden.jpg" alt="Kyoden" loading="lazy"></a>
+                                <a class="wafu-about__additional-brand" href="./about/about-us.html"><img src="./images/about/partner-catl.jpg" alt="CATL" loading="lazy"></a>
+                                <a class="wafu-about__additional-brand" href="./about/about-us.html"><img src="./images/about/partner-ose.png" alt="Orient Semiconductor Electronics" loading="lazy"></a>
+                                <a class="wafu-about__additional-brand" href="./about/about-us.html"><img src="./images/about/partner-blue-logo.jpg" alt="Customer company logo" loading="lazy"></a>
+                                <a class="wafu-about__additional-brand" href="./about/about-us.html"><img src="./images/about/partner-foxconn.png" alt="Foxconn" loading="lazy"></a>
+                            </div>
+                            <div class="wafu-about__details"><a href="./about/about-us.html" class="inline-flex items-center justify-center bg-primary hover:bg-secondary text-white font-medium py-3 px-8 rounded-full transition-colors duration-300 shadow-sm hover:shadow-md">View Details</a></div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 发展历程 时间轴 -->
-        <section class="history-section" aria-labelledby="history-title">
-            <h2 id="history-title" class="history-section__title">Development History</h2>
-            <div class="history-timeline__viewport" tabindex="0" aria-label="WAFU Brothers development history; scroll horizontally to explore">
-                <div class="history-timeline">
-                    <article class="history-timeline__item">
-                        <div class="history-timeline__year">2009</div>
-                        <div class="history-timeline__node" aria-hidden="true"></div>
-                        <img class="history-timeline__image" src="./images/about/team-collaboration.jpg" alt="WAFU Brothers founding team" loading="lazy" width="800" height="500">
-                        <h3 class="history-timeline__label">Founded <svg class="history-timeline__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></h3>
-                        <p class="history-timeline__text">The company was registered and the founding team was established.</p>
-                    </article>
-
-                    <article class="history-timeline__item">
-                        <div class="history-timeline__year">2010</div>
-                        <div class="history-timeline__node" aria-hidden="true"></div>
-                        <img class="history-timeline__image history-timeline__image--subject-centered" src="./images/products/WF/max/product-2.png" alt="WAFU Brothers direct-pressure leak tester" loading="lazy" width="800" height="500">
-                        <h3 class="history-timeline__label">Growth <svg class="history-timeline__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></h3>
-                        <p class="history-timeline__text">Benchmarking advanced international technology, WAFU launched its first direct-pressure leak tester.</p>
-                    </article>
-
-                    <article class="history-timeline__item">
-                        <div class="history-timeline__year">2013</div>
-                        <div class="history-timeline__node" aria-hidden="true"></div>
-                        <div class="history-timeline__image-wrap">
-                            <img class="history-timeline__image--contraction" src="./images/products/custom/filter/front.jpg" alt="A new cabinet leak tester developed by WAFU Brothers" loading="lazy" width="800" height="500">
+                    <div class="wafu-about__col">
+                        <p class="wafu-about__eyebrow">ABOUT WAFU BROTHERS</p>
+                        <div class="wafu-about__copy">
+                            <h3><a href="./about.html">Focused on leak testing, committed to reliable quality</a></h3>
+                            <p>WAFU Brothers (Shenzhen) Automation Technology Co., Ltd. is a manufacturer of <a href="./products.html"><strong class="core-keyword">air leak testers</strong></a> and equipment for <a href="./products.html"><strong class="core-keyword">waterproof testing</strong></a>, with patented technologies and more than 8,000 customers worldwide, including Audi, BYD, Xiaomi and General Motors.</p>
+                            <p>From automotive components and medical devices to consumer electronics and appliances, we offer <a href="./products.html"><strong class="core-keyword">air, flow and vacuum leak testing equipment</strong></a> supported by in-house algorithms and filtering technology.</p>
+                            <p>We design solutions around your workflows, materials and throughput requirements, with technical support from implementation through ongoing production. <a class="wafu-about__text-link" href="./about.html">Discover WAFU Brothers &rarr;</a></p>
                         </div>
-                        <h3 class="history-timeline__label">Breakthrough <svg class="history-timeline__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></h3>
-                        <p class="history-timeline__text">The second-generation leak tester solved high-pressure solenoid valve instability and drove a breakthrough year in sales.</p>
-                    </article>
-
-                    <article class="history-timeline__item">
-                        <div class="history-timeline__year">2016</div>
-                        <div class="history-timeline__node" aria-hidden="true"></div>
-                        <img class="history-timeline__image" src="./images/timeline-1.png" alt="WAFU Brothers digital transformation and technology upgrade" loading="lazy" width="800" height="500">
-                        <h3 class="history-timeline__label">Transformation <svg class="history-timeline__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></h3>
-                        <p class="history-timeline__text">WAFU implemented ISO 9001, filed nearly 20 technology patents, expanded nationwide, and diversified its business.</p>
-                    </article>
-
-                    <article class="history-timeline__item">
-                        <div class="history-timeline__year">2019</div>
-                        <div class="history-timeline__node" aria-hidden="true"></div>
-                        <img class="history-timeline__image" src="./images/news/info/n11/index.webp" alt="WAFU Brothers expanding into overseas markets" loading="lazy" width="800" height="500">
-                        <h3 class="history-timeline__label">Expansion <svg class="history-timeline__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></h3>
-                        <p class="history-timeline__text">Global group operations were established as overseas market share reached a new high and ranked among the industry's leaders.</p>
-                    </article>
-
-                    <article class="history-timeline__item">
-                        <div class="history-timeline__year">2025</div>
-                        <div class="history-timeline__node" aria-hidden="true"></div>
-                        <img class="history-timeline__image" src="./images/about/client-meeting.jpg" alt="WAFU Brothers standardized and systematic operations" loading="lazy" width="800" height="500">
-                        <h3 class="history-timeline__label">Advancement <svg class="history-timeline__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></h3>
-                        <p class="history-timeline__text">Institutionalized processes and systematic operations enabled healthy, orderly, and rapid group development.</p>
-                    </article>
+                        <a class="wafu-about__media" href="./about.html" aria-label="Learn about WAFU Brothers">
+                            <img src="./images/about/about-us.webp" alt="WAFU Brothers company reception" width="800" height="570" loading="lazy">
+                        </a>
+                        <div class="wafu-about__actions">
+                            <a href="./about.html" class="inline-flex items-center justify-center bg-primary hover:bg-secondary text-white font-medium py-3 px-8 rounded-full transition-colors duration-300 shadow-sm hover:shadow-md">Learn More</a>
+                            <a href="./contact.html" class="inline-flex items-center justify-center bg-white border border-primary text-primary hover:bg-primary/5 font-medium py-3 px-8 rounded-full transition-colors duration-300">Contact Us</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1204,9 +1188,9 @@
                         <div class="product-card__body">
                             <div>
                                 <a href="./products/fangle.html" class="product-card__heading-link"><h3 class="product-card__heading">Latest Premium Leak Tester</h3></a>
-                                <p class="product-card__copy">Industry-leading precision. The tenth-generation premium leak tester uses 24-bit A/D conversion, with sensitivity down to 0.02 Pa, 0.1 Pa measurement accuracy, and repeatability within 1 Pa. It can identify micron-scale leak paths for demanding applications from consumer electronics to new-energy vehicle components.</p>
+                                <p class="product-card__copy">Industry-leading precision. The tenth-generation premium <a href="./products.html"><strong class="core-keyword">leak tester</strong></a> uses 24-bit A/D conversion, with sensitivity down to 0.02 Pa, 0.1 Pa measurement accuracy, and repeatability within 1 Pa. It can identify micron-scale leak paths for demanding applications from consumer electronics to new-energy vehicle components.</p>
                                 <p class="product-card__copy">Temperature compensation and advanced filtering suppress workshop temperature drift, air-source pulsation, and electromagnetic noise. The result is stable pass/fail judgment near presses and welders and across large day-to-night temperature changes, reducing false rejects and unnecessary rework.</p>
-                                <p class="product-card__copy">Direct-pressure, differential-pressure, flow, and vacuum methods can be configured for different products and standards. Positive-pressure testing suits products that must remain dry, while vacuum testing supports faster production cycles.</p>
+                                <p class="product-card__copy"><a href="./faq/T-art-32.html"><strong class="core-keyword">Direct-pressure</strong></a>, <a href="./faq/T-art-32.html"><strong class="core-keyword">differential-pressure</strong></a>, <a href="./faq/T-art-6.html"><strong class="core-keyword">flow</strong></a>, and <a href="./faq/T-art-31.html"><strong class="core-keyword">vacuum</strong></a> methods can be configured for different products and standards. Positive-pressure testing suits products that must remain dry, while vacuum testing supports faster production cycles.</p>
                             </div>
                             <div class="product-card__footer">
                                 <div class="product-card__features">
@@ -1235,7 +1219,7 @@
                         <div class="product-card__body">
                             <div>
                                 <a href="./products/electric-four-wheeler-tail-light.html" class="product-card__heading-link"><h3 class="product-card__heading">Custom Leak Testing Cabinet</h3></a>
-                                <p class="product-card__copy">This highly integrated custom system combines the leak tester, dedicated fixture, and control system in one compact platform. Noise suppression and temperature compensation deliver 0.1 Pa resolution, repeatability within 1 Pa, and cycle times as fast as three seconds.</p>
+                                <p class="product-card__copy">This highly integrated custom system combines the <a href="./products.html"><strong class="core-keyword">leak tester</strong></a>, dedicated fixture, and control system in one compact platform. Noise suppression and temperature compensation deliver 0.1 Pa resolution, repeatability within 1 Pa, and cycle times as fast as three seconds.</p>
                                 <p class="product-card__copy">The process and fixture can be tailored to product dimensions, seal locations, process requirements, and line takt time. Automatic clamping, recipe control, pass/fail judgment, and data recording support standardized, traceable quality control.</p>
                                 <p class="product-card__copy">The cabinet can integrate loading, testing, sorting, and data upload with automated lines. Its precision, speed, and customization suit automotive components, medical devices, consumer electronics, home appliances, aerospace, and other demanding high-volume applications.</p>
                             </div>
@@ -1267,9 +1251,9 @@
                         <div class="product-card__body">
                             <div>
                                 <a href="./products/water-leaktest.html" class="product-card__heading-link"><h3 class="product-card__heading">Water Immersion Leak Point Detector</h3></a>
-                                <p class="product-card__copy">This high-precision immersion tester checks sealing and pinpoints the exact leak location. It pressurizes the part and submerges it so escaping bubbles reveal minute defects quickly and directly.</p>
+                                <p class="product-card__copy">This high-precision <a href="./products.html"><strong class="core-keyword">immersion tester</strong></a> checks sealing and pinpoints the exact leak location. It pressurizes the part and submerges it so escaping bubbles reveal minute defects quickly and directly.</p>
                                 <p class="product-card__copy">The fixture seals and fills the workpiece before lowering it smoothly into the tank. Pressure, hold time, and sequence can be adjusted for different structures so operators obtain clear, reliable results.</p>
-                                <p class="product-card__copy">Unlike pass/fail-only methods, bubble testing identifies whether the defect is at a seal, weld, housing, or connector. It supports sample validation, production sampling, and failed-part diagnosis and can complement an automated leak tester.</p>
+                                <p class="product-card__copy">Unlike pass/fail-only methods, bubble testing identifies whether the defect is at a seal, weld, housing, or connector. It supports sample validation, production sampling, and failed-part diagnosis and can complement an automated <a href="./products.html"><strong class="core-keyword">leak tester</strong></a>.</p>
                             </div>
                             <div class="product-card__footer">
                                 <div class="product-card__features">
@@ -1293,495 +1277,72 @@
             </div>
         </section>
 
-        <!-- 为什么选择华府兄弟 -->
-        <section id="anchorage" class="pb-12 pt-12 bg-primary">
-            <div class="container mx-auto px-4 flex items-center
-            grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        
-                <!-- 图片 -->
-                <div>
-                    <img src="/images/services/faq/faq_21.jpg" class="rounded-lg mr-16" alt="WAFU Brothers Staff Commissioning a Leak Tester
-                    " loading="lazy">
+        <!-- Buying and testing knowledge -->
+        <section id="buying-guide" class="buying-guide" aria-labelledby="home-knowledge-title">
+            <div class="buying-guide__inner">
+                <div class="buying-guide__header">
+                    <p class="buying-guide__eyebrow">BUYING &amp; TESTING GUIDE</p>
+                    <h2 id="home-knowledge-title">What should you know before choosing a leak tester?</h2>
+                    <p>Find practical answers about testing methods, equipment selection and real-world applications.</p>
                 </div>
-        
-                <!-- 右侧文字 -->
-                <div>
-                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-white">
-                        10 Reasons to Choose WAFU Brothers
-                    </h2>
-        
-                    <ul class="text-white mt-4 grid grid-cols-2 gap-y-3 gap-x-10 text-sm lg:text-base xl:text-xl">
-        
-                        <li class="flex items-center gap-2">
-                            <svg class="svg-icon text-2xl" data-icon="circle-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
-                            <span>Free Solution Consultation</span>
-                        </li>
-        
-                        <li class="flex items-center gap-2">
-                            <svg class="svg-icon text-2xl" data-icon="circle-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
-                            <span>Free Trial Experience</span>
-                        </li>
-        
-                        <li class="flex items-center gap-2">
-                            <svg class="svg-icon text-2xl" data-icon="circle-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
-                            <span>Lifetime After-Sales Support</span>
-                        </li>
-        
-                        <li class="flex items-center gap-2">
-                            <svg class="svg-icon text-2xl" data-icon="circle-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
-                            <span>Accurate Test Data</span>
-                        </li>
-        
-                        <li class="flex items-center gap-2">
-                            <svg class="svg-icon text-2xl" data-icon="circle-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
-                            <span><span class="tracking-widest">MES</span> Data Integration</span>
-                        </li>
-        
-                        <li class="flex items-center gap-2">
-                            <svg class="svg-icon text-2xl" data-icon="circle-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
-                            <span>Multi-Channel Customization</span>
-                        </li>
-        
-                        <li class="flex items-center gap-2">
-                            <svg class="svg-icon text-2xl" data-icon="circle-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
-                            <span>Free Software Upgrades</span>
-                        </li>
-        
-                        <li class="flex items-center gap-2">
-                            <svg class="svg-icon text-2xl" data-icon="circle-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
-                            <span>Free Returns & Replacements</span>
-                        </li>
-        
-                        <li class="flex items-center gap-2">
-                            <svg class="svg-icon text-2xl" data-icon="circle-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
-                            <span><span class="tracking-widest">17</span> Years of Manufacturing Experience</span>
-                        </li>
-        
-                        <li class="flex items-center gap-2">
-                            <svg class="svg-icon text-2xl" data-icon="circle-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
-                            <span>Excellent Cost Performance</span>
-                        </li>
-        
-                    </ul>
-        
-                    <a href="javascript:void(0)" id="copyPhoneBtn"
-                        class="inline-flex items-center justify-center gap-2 bg-white text-primary px-5 py-2 rounded-full shadow-sm border border-gray-200 transition-all duration-500 w-60 mt-10">
-        
-                        <svg class="svg-icon" data-icon="phone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.7 19.7 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9z"/></svg>
-                        <span id="phoneText" class="transition-opacity duration-500" style="white-space: nowrap;">+86 17376311087</span>
-                    </a>
+                <nav class="buying-guide__grid" aria-label="Leak testing questions and technical articles">
+                    <a href="./faq/T-art-21.html" class="buying-guide__card"><span><span class="buying-guide__category">Fundamentals</span><span class="buying-guide__title">What is an <strong class="core-keyword">air leak tester</strong>?</span><span class="buying-guide__summary">Learn how pressure, differential pressure or flow changes reveal leaks without damaging the product.</span></span><span class="buying-guide__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                    <a href="./faq/T-art-24.html" class="buying-guide__card"><span><span class="buying-guide__category">Equipment Selection</span><span class="buying-guide__title">How do you choose an <strong class="core-keyword">air leak tester</strong>?</span><span class="buying-guide__summary">Consider the allowable leak rate, test pressure, cycle time, fixture and data requirements.</span></span><span class="buying-guide__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                    <a href="./faq/T-art-32.html" class="buying-guide__card"><span><span class="buying-guide__category">Test Principles</span><span class="buying-guide__title">Direct pressure or differential pressure?</span><span class="buying-guide__summary">Compare two common test methods and their respective applications.</span></span><span class="buying-guide__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                    <a href="./faq/T-art-13.html" class="buying-guide__card"><span><span class="buying-guide__category">Method Comparison</span><span class="buying-guide__title">Water testing or air testing?</span><span class="buying-guide__summary">Water testing helps locate leaks; air testing supports fast, measurable production inspection.</span></span><span class="buying-guide__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                    <a href="./faq/T-art-30.html" class="buying-guide__card"><span><span class="buying-guide__category">Waterproof Testing</span><span class="buying-guide__title">How are waterproof products tested?</span><span class="buying-guide__summary">Explore common seal testing methods, equipment and production workflows.</span></span><span class="buying-guide__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                    <a href="./faq/T-art-29.html" class="buying-guide__card"><span><span class="buying-guide__category">Applications</span><span class="buying-guide__title">Which industries need leak testing?</span><span class="buying-guide__summary">Automotive parts, batteries, medical devices and electronics all depend on reliable seals.</span></span><span class="buying-guide__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                    <a href="./faq/T-art-18.html" class="buying-guide__card"><span><span class="buying-guide__category">Buying Guide</span><span class="buying-guide__title">What should you avoid when buying a tester?</span><span class="buying-guide__summary">Look beyond price alone to repeatability, cycle time, fixtures and long-term support.</span></span><span class="buying-guide__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                    <a href="./faq/T-art-23.html" class="buying-guide__card"><span><span class="buying-guide__category">Working Principle</span><span class="buying-guide__title">How does a leak tester work?</span><span class="buying-guide__summary">Discover the fill, stabilization, test and exhaust stages of a typical test cycle.</span></span><span class="buying-guide__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                    <a href="./faq/T-art-31.html" class="buying-guide__card"><span><span class="buying-guide__category">Vacuum Testing</span><span class="buying-guide__title">Can an <strong class="core-keyword">air leak tester</strong> perform vacuum testing?</span><span class="buying-guide__summary">See how pressure rise after evacuation can reveal a leak in a sealed part.</span></span><span class="buying-guide__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                    <a href="./faq/T-art-4.html" class="buying-guide__card"><span><span class="buying-guide__category">Accuracy</span><span class="buying-guide__title">How does the environment affect test accuracy?</span><span class="buying-guide__summary">Temperature, vibration and air-supply changes can influence pressure readings.</span></span><span class="buying-guide__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                    <a href="./faq/T-art-17.html" class="buying-guide__card"><span><span class="buying-guide__category">IP Protection</span><span class="buying-guide__title">How are products tested for IP67 and IP68?</span><span class="buying-guide__summary">Understand the role of <strong class="core-keyword">air leak testing</strong> when assessing waterproof products.</span></span><span class="buying-guide__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                    <a href="./faq/T-art-25.html" class="buying-guide__card"><span><span class="buying-guide__category">EV Batteries</span><span class="buying-guide__title">What matters in battery pack leak testing?</span><span class="buying-guide__summary">Balance large part volumes, small leaks, test time and production safety.</span></span><span class="buying-guide__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                </nav>
+                <div class="buying-guide__more"><a href="./resource.html" class="inline-flex items-center justify-center bg-primary hover:bg-secondary text-white font-medium py-3 px-8 rounded-full transition-colors duration-300 shadow-sm hover:shadow-md">Explore More Technical Answers</a></div>
+            </div>
+        </section>
+
+        <!-- Company figures -->
+        <section class="wafu-stats" aria-label="WAFU Brothers at a glance">
+            <div class="wafu-stats__inner">
+                <div class="wafu-stats__item"><span class="wafu-stats__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="m9 12-1 9 4-2 4 2-1-9"/></svg></span><strong>18</strong><span>Years of Experience</span></div>
+                <div class="wafu-stats__item"><span class="wafu-stats__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span><strong>30+</strong><span>Countries Served</span></div>
+                <div class="wafu-stats__item"><span class="wafu-stats__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 21V5l8-3v19M12 8h8v13M2 21h20M7 8h2M7 12h2M7 16h2M15 12h2M15 16h2"/></svg></span><strong>8,000+</strong><span>Customer Cases</span></div>
+                <div class="wafu-stats__item"><span class="wafu-stats__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h4"/></svg></span><strong>20,000+</strong><span>Instruments Sold</span></div>
+                <div class="wafu-stats__item"><span class="wafu-stats__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><strong>50+</strong><span>Patents</span></div>
+            </div>
+        </section>
+
+        <!-- Why choose WAFU Brothers -->
+        <section id="anchorage" class="wafu-reasons" aria-labelledby="reasons-title">
+            <div class="wafu-reasons__inner">
+                <div class="wafu-reasons__intro">
+                    <p class="wafu-reasons__eyebrow">WHY CHOOSE WAFU</p>
+                    <h2 id="reasons-title">10 Reasons to Choose WAFU Brothers</h2>
+                    <p class="wafu-reasons__lead">Professional support for your leak testing needs, from development to after-sales service.</p>
+                </div>
+                <div class="wafu-reasons__body">
+                    <div class="wafu-reasons__media"><img src="./images/services/faq/faq_21.jpg" alt="WAFU Brothers staff commissioning a leak tester" loading="lazy"></div>
+                    <div class="wafu-reasons__details">
+                        <ol class="wafu-reasons__list">
+                            <li><span class="wafu-reasons__number">01</span><span>18 years of technical experience</span></li>
+                            <li><span class="wafu-reasons__number">02</span><span>Repeatability up to 1 Pa</span></li>
+                            <li><span class="wafu-reasons__number">03</span><span>Dedicated engineers for MES integration and changing requirements</span></li>
+                            <li><span class="wafu-reasons__number">04</span><span>In-house microcontroller development and optimized algorithms</span></li>
+                            <li><span class="wafu-reasons__number">05</span><span>Remote software upgrades</span></li>
+                            <li><span class="wafu-reasons__number">06</span><span>Free same-day solution proposals</span></li>
+                            <li><span class="wafu-reasons__number">07</span><span>Free trial experience</span></li>
+                            <li><span class="wafu-reasons__number">08</span><span>Affordable after-sales service with a response within 24 hours</span></li>
+                            <li><span class="wafu-reasons__number">09</span><span>Excellent cost performance</span></li>
+                            <li><span class="wafu-reasons__number">10</span><span>Free returns and replacements</span></li>
+                        </ol>
+                        <button type="button" id="copyPhoneBtn" class="wafu-reasons__phone" aria-label="Copy phone number +86 17376311087"><svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.7 19.7 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9-.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9z"/></svg><span id="phoneText" aria-live="polite">+86 17376311087</span></button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 技术优势和证书 -->
-        <section class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-900 mb-4">
-                        Technical <span class="text-primary">Advantages</span>
-                    </h2>
-                    <div class="bg-primary text-white">
-                        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold pb-4 pt-4">17 Years of Technical Expertise, a Trusted Industry Brand</h2>
-                        <p class="text-white">Your most reliable provider of leak testing solutions</p>
-                        <h2 class="text-[clamp(1.5rem,3vw,2.6rem)] pb-4">Strong Capability, Guaranteed Quality</h2>
-                    </div>
-                </div>
-        
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Advantage 1 -->
-                    <div
-                        class="bg-gray-50 rounded-xl p-6 border border-gray-100 transition-all duration-300 hover:border-primary hover:shadow-md">
-                        <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
-                            <svg class="svg-icon text-2xl" data-icon="gem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9l4-6z"/><path d="M2 9h20M6 3l6 18 6-18M6 3l-4 6M18 3l4 6"/></svg>
-                        </div>
-                        <h3 class="font-bold text-xl text-gray-900 mb-3">High Precision</h3>
-                        <p class="text-gray-600">
-                            Our leak testers deliver industry-leading precision up to 0.01 Pa, ensuring consistent and
-                            reliable results even in the most demanding applications.
-                        </p>
-                    </div>
-        
-                    <!-- Advantage 2 -->
-                    <div
-                        class="bg-gray-50 rounded-xl p-6 border border-gray-100 transition-all duration-300 hover:border-primary hover:shadow-md">
-                        <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
-                            <svg class="svg-icon text-2xl" data-icon="cogs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>
-                        </div>
-                        <h3 class="font-bold text-xl text-gray-900 mb-3">Advanced Technology</h3>
-                        <p class="text-gray-600">
-                            Continuous R&D investment ensures our products are equipped with the latest technologies,
-                            providing cutting-edge leak testing solutions.
-                        </p>
-                    </div>
-        
-                    <!-- Advantage 3 -->
-                    <div
-                        class="bg-gray-50 rounded-xl p-6 border border-gray-100 transition-all duration-300 hover:border-primary hover:shadow-md">
-                        <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
-                            <svg class="svg-icon text-2xl" data-icon="shield" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        </div>
-                        <h3 class="font-bold text-xl text-gray-900 mb-3">High Reliability</h3>
-                        <p class="text-gray-600">
-                            Built with durable structures and premium components, our equipment ensures long-term
-                            stability and low maintenance costs.
-                        </p>
-                    </div>
-        
-                    <!-- Advantage 4 -->
-                    <div
-                        class="bg-gray-50 rounded-xl p-6 border border-gray-100 transition-all duration-300 hover:border-primary hover:shadow-md">
-                        <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
-                            <svg class="svg-icon text-2xl" data-icon="headphones" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14h3v6H5a1 1 0 0 1-1-1v-5zM20 14h-3v6h2a1 1 0 0 0 1-1v-5z"/></svg>
-                        </div>
-                        <h3 class="font-bold text-xl text-gray-900 mb-3">Exceptional Support</h3>
-                        <p class="text-gray-600">
-                            Our technical team provides comprehensive support, including installation training,
-                            maintenance, and consultation to ensure a worry-free user experience.
-                        </p>
-                    </div>
-        
-                    <!-- Advantage 5 -->
-                    <div
-                        class="bg-gray-50 rounded-xl p-6 border border-gray-100 transition-all duration-300 hover:border-primary hover:shadow-md">
-                        <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
-                            <svg class="svg-icon text-2xl" data-icon="lightbulb-o" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 22h4M8.5 14.5A6 6 0 1 1 15.5 14c-.9.7-1.5 1.9-1.5 3h-4c0-1-.5-1.9-1.5-2.5z"/></svg>
-                        </div>
-                        <h3 class="font-bold text-xl text-gray-900 mb-3">Customized Solutions</h3>
-                        <p class="text-gray-600">
-                            We specialize in customizing leak testing solutions tailored to the specific needs
-                            of each customer and industry, helping optimize production efficiency.
-                        </p>
-                    </div>
-        
-                    <!-- Advantage 6 -->
-                    <div
-                        class="bg-gray-50 rounded-xl p-6 border border-gray-100 transition-all duration-300 hover:border-primary hover:shadow-md">
-                        <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
-                            <svg class="svg-icon text-2xl" data-icon="globe" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
-                        </div>
-                        <h3 class="font-bold text-xl text-gray-900 mb-3">Global Service</h3>
-                        <p class="text-gray-600">
-                            With a global sales and service network, we provide timely technical support and after-sales
-                            service to customers worldwide.
-                        </p>
-                    </div>
-                </div>
-        
-                <!-- 证书轮播图 -->
-                <div class="honorary-carousel">
-        
-                    <!-- 标题区域 -->
-                    <div class="text-center mb-10">
-                        <h2 class="text-4xl font-bold text-gray-800 mb-1">Our Certifications & Patents</h2>
-                    </div>
-        
-                    <!-- 轮播包裹层 -->
-                    <div class="relative w-full h-[500px] flex items-center justify-center overflow-hidden">
-        
-                        <!-- 左侧导航按钮 -->
-                        <button id="prevBtn" class="nav-btn absolute left-4 md:left-10 z-50">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
-                                stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                            </svg>
-                        </button>
-        
-                        <!-- 右侧导航按钮 -->
-                        <button id="nextBtn" class="nav-btn absolute right-4 md:right-10 z-50">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
-                                stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                            </svg>
-                        </button>
-        
-                        <!-- 图片列表容器 -->
-                        <div class="relative w-full h-full flex items-center justify-center">
-                            <!-- 图片将在这里动态渲染 -->
-                            <div id="carouselItems" class="relative w-full h-full flex items-center justify-center">
-                                <!-- Example nodes below. Images will be dynamically rendered by JavaScript. -->
-                            </div>
-                        </div>
-                    </div>
-        
-                    <!-- 当前选中图片底部文字展示区域 -->
-                    <div id="textDisplay" class="text-center mt-6 text-gray-700 font-medium text-base sm:text-lg px-4">
-                        <!-- Text content will be dynamically populated by JavaScript -->
-                    </div>
-        
-                </div>
-            </div>
-        </section>
-
-        <!-- 实景图展示   印象 -->
-        <section class="py-12 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-10">
-                    <!-- 标题 -->
-                    <h2 class="text-center mb-12">
-                        <h2 class="text-4xl font-extrabold">WAFU Impression</h2>
-                        <p class="mt-4 text-white pb-4 pt-4 bg-primary font-bold text-xl">
-                            <strong>WAFU Brothers</strong> (Shenzhen) Automation Technology Co., Ltd. — a real on-site overview. You are welcome to visit us in person for discussions,<br/>
-                            and we will provide on-site <strong>leak testing</strong> solutions for your products.
-                        </p>
-                    </h2>
-                </div>
-                <!-- 图片 -->
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-6 w-full">
-                    <div>
-                        <div class="mb-2 lg:mb-6 break-inside-avoid overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
-                            onclick="openImageModal('./images/impress/out-long.png', 'WAFU Brothers Company Exterior')">
-                            <img src="./images/impress/out-long.png" alt="WAFU Brothers Company Exterior" class="w-full h-auto">
-                        </div>
-                        <div class="mb-2 lg:mb-6 break-inside-avoid overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
-                            onclick="openImageModal('./images/impress/img2.png', 'WAFU Brothers Production Line')">
-                            <img src="./images/impress/img4.png" alt="WAFU Brothers Production Line" class="w-full h-auto">
-                        </div>
-                    </div>
-                    <div>
-                        <div class="mb-2 lg:mb-6 break-inside-avoid overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
-                            onclick="openImageModal('./images/impress/workshopD.jpg', 'WAFU Brothers Reception')">
-                            <img src="./images/impress/reception.png" alt="WAFU Brothers Reception" class="w-full h-auto">
-                        </div>
-                        <div class="mb-2 lg:mb-6 break-inside-avoid overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
-                            onclick="openImageModal('./images/impress/img3.png', 'WAFU Brothers Workshop')">
-                            <img src="./images/impress/img5.png" alt="WAFU Brothers Workshop" class="w-full h-auto">
-                        </div>
-                    </div>
-                    <div>
-                        <div class="mb-2 lg:mb-6 break-inside-avoid overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
-                            onclick="openImageModal('./images/impress/img4.png', 'Leak Tester Showroom')">
-                            <img src="./images/impress/img2.png" alt="Leak Tester Showroom" class="w-full h-auto">
-                        </div>
-                        <div class="mb-6 break-inside-avoid overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
-                            onclick="openImageModal('./images/impress/workshopD.jpg', 'WAFU Brothers Office Area')">
-                            <img src="./images/impress/workshopD.jpg" alt="WAFU Brothers Office Entrance" class="w-full h-auto">
-                        </div>
-                    </div>
-                    <div>
-                        <div class="mb-2 lg:mb-6 break-inside-avoid overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
-                            onclick="openImageModal('./images/impress/out-long.png', 'WAFU Brothers Office Area')">
-                            <img src="./images/impress/office.png" alt="WAFU Brothers Office Area" class="w-full h-auto">
-                        </div>
-                        <div class="mb-2 lg:mb-6 break-inside-avoid overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
-                            onclick="openImageModal('./images/impress/img5.png', 'Production Workshop')">
-                            <img src="./images/impress/img3.png" alt="WAFU Brothers Workshop Corridor" class="w-full h-auto">
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- 图片模态框 -->
-                <div id="imageModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 p-4">
-                    <div class="relative max-w-4xl w-full max-h-[90vh]">
-                        <button onclick="closeImageModal()"
-                            class="absolute -top-10 right-0 text-white hover:text-primary text-3xl">
-                            <svg class="svg-icon" data-icon="times" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-                        </button>
-                        <img id="modalImage" src="" alt="" class="w-full h-full object-contain max-h-[80vh]">
-                        <p id="modalCaption" class="text-white text-center mt-4 text-lg"></p>
-                    </div>
-                </div>
-        
-                <!-- 时间轴容器 -->
-                <div class="relative"></div>
-            </div>
-        </section>
-
-        
-        
-        <!-- 合作案例 -->
-        <section class="py-12 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-10">
-                    <!-- 标题 -->
-                    <h2 class="text-center mb-12">
-                        <h2 class="text-4xl font-extrabold">Cooperation Cases</h2>
-                        <p class="mt-4 text-white bg-primary pb-4 pt-4 font-bold text-xl">
-                            A leading enterprise in the leak testing industry,<br/>
-                            the preferred partner of over 600 publicly listed companies.
-                        </p>
-                    </h2>
-                </div>
-                <!-- 图片 -->
-                <div class="grid lg:grid-cols-2 gap-6 gap-2 lg:gap-6">
-                    <!-- 第一组 -->
-                    <div
-                        class="p-5 lg:p-10 pb-2 lg:pb-4 shadow-md rounded-lg text-center border border-gray-100 hover:border-primary/30">
-                        <div class="flex">
-                            <div class="mb-2 lg:mb-6 break-inside-avoid overflow-hidden rounded-l border-l-4 border-l-primary">
-                                <img src="./images/cooperation/audi-logo.png" alt="Audi Logo"
-                                    class="w-full h-auto transition-all duration-300 hover:scale-105">
-                            </div>
-                            <a href="./products/product-nine.html" target="_blank">
-                                <div class="mb-2 lg:mb-6 break-inside-avoid overflow-hidden rounded-r">
-                                    <img src="./images/cooperation/audi-machine.png"
-                                        alt="WAFU Brothers Custom Leak Tester for Audi Group"
-                                        class="w-full h-auto transition-all duration-300 hover:scale-105">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="font-bold">Audi Group Cooperation Model</div>
-                    </div>
-                    <!-- 第二组 -->
-                    <div
-                        class="p-5 lg:p-10 pb-2 lg:pb-5 shadow-md rounded-lg text-center border border-gray-100 hover:border-primary/30">
-                        <div class="flex">
-                            <div class="mb-2 lg:mb-6 break-inside-avoid overflow-hidden rounded-l border-l-4 border-l-primary">
-                                <img src="./images/cooperation/byd.png" alt="BYD Logo"
-                                    class="w-full h-auto transition-all duration-300 hover:scale-105">
-                            </div>
-                            <a href="./products/product-nine.html" target="_blank">
-                                <div class="mb-2 lg:mb-6 break-inside-avoid overflow-hidden rounded-r">
-                                    <img src="./images/cooperation/byd-machine.png"
-                                        alt="WAFU Brothers Custom Leak Tester for BYD"
-                                        class="w-full h-auto transition-all duration-300 hover:scale-105">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="font-bold">BYD Cooperation Model</div>
-                    </div>
-                    <!-- 第三组 -->
-                    <div
-                        class="p-5 lg:p-10 pb-2 lg:pb-5 shadow-md rounded-lg text-center border border-gray-100 hover:border-primary/30">
-                        <div class="flex">
-                            <div class="mb-2 lg:mb-6 break-inside-avoid overflow-hidden rounded-l border-l-4 border-l-primary">
-                                <img src="./images/cooperation/guangQi.png" alt="GAC Group Logo"
-                                    class="w-full h-auto transition-all duration-300 hover:scale-105">
-                            </div>
-                            <a href="./products/product-nine.html" target="_blank">
-                                <div class="mb-2 lg:mb-6 break-inside-avoid overflow-hidden rounded-r">
-                                    <img src="./images/cooperation/guangQi-mechine.png"
-                                        alt="WAFU Brothers Custom Leak Tester for GAC Group"
-                                        class="w-full h-auto transition-all duration-300 hover:scale-105">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="font-bold">GAC Group Cooperation Model</div>
-                    </div>
-                    <!-- 第四组 -->
-                    <div
-                        class="p-5 lg:p-10 pb-2 lg:pb-5 shadow-md rounded-lg text-center border border-gray-100 hover:border-primary/30">
-                        <div class="flex">
-                            <div class="mb-2 lg:mb-6 break-inside-avoid overflow-hidden rounded-l border-l-4 border-l-primary">
-                                <img src="./images/cooperation/GM.png" alt="General Motors Logo"
-                                    class="w-full h-auto transition-all duration-300 hover:scale-105">
-                            </div>
-                            <a href="./products/product-nine.html" target="_blank">
-                                <div class="mb-2 lg:mb-6 break-inside-avoid overflow-hidden rounded-r">
-                                    <img src="./images/cooperation/GM-mechine.png"
-                                        alt="WAFU Brothers Custom Leak Tester for General Motors"
-                                        class="w-full h-auto transition-all duration-300 hover:scale-105">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="font-bold">General Motors Cooperation Model</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- 客户评价 -->
-        <section id="anchorage" class="bg-gray-50 pb-8">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-10">
-                    <!-- 标题 -->
-                    <h2 class="text-center mb-12">
-                        <h2 class="text-4xl font-extrabold">Customer Testimonials</h2>
-                        <p class="mt-4 text-white bg-primary pb-8 pt-8 font-bold text-xl">
-                            Real feedback from industry clients
-                        </p>
-                    </h2>
-                </div>
-        
-                <!-- 图片 -->
-                <div class="grid lg:grid-cols-3 gap-6 gap-2 lg:gap-6">
-        
-                    <!-- 第一组 -->
-                    <div class="p-5 lg:p-10 pb-2 lg:pb-4 shadow-md rounded-lg border border-gray-100 hover:border-primary/30 transition-all duration-300 flex flex-col justify-between h-full">
-                        <div>
-                            <!-- 星星 -->
-                            <div class="flex">
-                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
-                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
-                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
-                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
-                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
-                            </div>
-
-                            <!-- 文字 -->
-                            <p class="mt-4">
-                                We are a manufacturer of new energy vehicle batteries. After adopting WAFU Brothers leak
-                                testers, the sealing inspection of our battery packs became much more stable, and even micro
-                                leaks can now be detected accurately. The equipment offers fast cycle times and reliable data,
-                                fully meeting the requirements of our production line.
-                            </p>
-                        </div>
-        
-                        <div class="font-bold flex items-center mt-6 pb-6">
-                            <div class="w-18 flex-shrink-0" ><img src="/images/conment/EV.jpg" alt="New energy vehicle customer testimonial avatar" class="h-16  w-16 mr-4" loading="lazy"></div>
-                            <div>Mr. Zhang <br /> (Product Manager, Leading New Energy Vehicle Company)</div>
-                        </div>
-                    </div>
-        
-                    <!-- 第二组 -->
-                    <div class="p-5 lg:p-10 pb-2 lg:pb-4 shadow-md rounded-lg border border-gray-100 hover:border-primary/30 transition-all duration-300 flex flex-col justify-between h-full">
-                        <div>
-                            <!-- 星星 -->
-                            <div class="flex">
-                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
-                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
-                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
-                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
-                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
-                            </div>
-        
-                            <!-- 文字 -->
-                            <p class="mt-4">
-                                In medical device manufacturing, sealing reliability is a critical requirement. WAFU Brothers
-                                leak testers have demonstrated excellent stability and consistency in practical applications,
-                                effectively identifying even tiny leaks and helping us maintain higher product quality
-                                standards.
-                            </p>
-                        </div>
-        
-                        <div class="font-bold flex items-center mt-6 pb-6">
-                            <div class=" flex-shrink-0"><img src="/images/conment/medical.jpg" alt="Medical device customer testimonial avatar" class="h-16 mr-4" loading="lazy"></div>
-                            <div>Mr. Zhao <br /> (R&D Engineer, Publicly Listed Medical Device Company)</div>
-                        </div>
-                    </div>
-        
-                    <!-- 第三组 -->
-                    <div class="p-5 lg:p-10 pb-2 lg:pb-4 shadow-md rounded-lg border border-gray-100 hover:border-primary/30 transition-all duration-300 flex flex-col justify-between h-full">
-                        <div>
-                            <!-- 星星 -->
-                            <div class="flex">
-                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
-                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
-                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
-                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
-                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
-                            </div>
-        
-                            <!-- 文字 -->
-                            <p class="mt-4">
-                                We are a foreign-invested audio equipment manufacturer with strict requirements for supply chain
-                                quality and testing equipment. Compliance with IEC international standards and the quality
-                                specifications of European and American customers is essential. After introducing WAFU Brothers
-                                leak testers for 100% sealing inspection of our high-end audio components, the overall
-                                performance exceeded our expectations.
-                            </p>
-                        </div>
-        
-                        <div class="font-bold flex items-center mt-6 pb-6">
-                            <div class=" flex-shrink-0"><img src="/images/conment/buyer.jpg" alt="Purchasing manager customer testimonial avatar" class="h-16 mr-4" loading="lazy"></div>
-                            <div>Mr. Sun <br /> (Purchasing Manager, Well-Known Foreign-Invested Enterprise)</div>
-                        </div>
-                    </div>
-        
-                </div>
-            </div>
-        </section>
-        
         <!-- Air Tightness Testing Solutions -->
         <section class="py-16 bg-white">
             <div class="container mx-auto px-4">
@@ -1794,10 +1355,10 @@
                     <!-- Transportation Components -->
                     <div
                         class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-primary/30 group">
-                        <div class="relative h-60 overflow-hidden">
+                        <a href="solu/solu-carparts.html" class="relative block h-60 overflow-hidden">
                             <picture>
                                 <source srcset="./images/webp/Automotive.webp" type="image/webp">
-                                <source srcset="./images/solu/Automotive parts.jpg" type="image/jpeg">
+                                <source srcset="./images/solu/Automotive%20parts.jpg" type="image/jpeg">
                                 <img src="./images/solu/Automotive parts.jpg" alt="Transportation Components"
                                     width="800" height="800"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -1809,7 +1370,7 @@
                                     <h3 class="text-xl font-bold text-white">Transportation Components</h3>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
                                 Transportation Components
@@ -1828,10 +1389,10 @@
                     <!-- Electronic Devices -->
                     <div
                         class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-primary/30 group">
-                        <div class="relative h-60 overflow-hidden">
+                        <a href="solu/solu-electronic.html" class="relative block h-60 overflow-hidden">
                             <picture>
                                 <source srcset="./images/webp/Electronic.webp" type="image/webp">
-                                <source srcset="./images/solu/Electronic devices.jpg" type="image/jpeg">
+                                <source srcset="./images/solu/Electronic%20devices.jpg" type="image/jpeg">
                                 <img src="./images/solu/Electronic devices.jpg" alt="Electronic Devices" width="800"
                                     height="800"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -1843,7 +1404,7 @@
                                     <h3 class="text-xl font-bold text-white">Electronic Devices</h3>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
                                 Electronic Devices
@@ -1862,10 +1423,10 @@
                     <!-- Medical Equipment -->
                     <div
                         class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-primary/30 group">
-                        <div class="relative h-60 overflow-hidden">
+                        <a href="solu/solu-medical.html" class="relative block h-60 overflow-hidden">
                             <picture>
                                 <source srcset="./images/webp/medical.webp" type="image/webp">
-                                <source srcset="./images/solu/medical equipment.jpg" type="image/jpeg">
+                                <source srcset="./images/solu/medical%20equipment.jpg" type="image/jpeg">
                                 <img src="./images/solu/medical equipment.jpg" alt="Medical Equipment" width="800"
                                     height="800"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -1877,7 +1438,7 @@
                                     <h3 class="text-xl font-bold text-white">Medical Equipment</h3>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
                                 Medical Equipment
@@ -1896,10 +1457,10 @@
                     <!-- Security & Lighting -->
                     <div
                         class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-primary/30 group">
-                        <div class="relative h-60 overflow-hidden">
+                        <a href="solu/solu-lighting.html" class="relative block h-60 overflow-hidden">
                             <picture>
                                 <source srcset="./images/webp/Security.webp" type="image/webp">
-                                <source srcset="./images/solu/Security lighting.jpg" type="image/jpeg">
+                                <source srcset="./images/solu/Security%20lighting.jpg" type="image/jpeg">
                                 <img src="./images/solu/Security lighting.jpg" alt="Security & Lighting" width="800"
                                     height="800"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -1911,7 +1472,7 @@
                                     <h3 class="text-xl font-bold text-white">Security & Lighting</h3>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
                                 Security & Lighting
@@ -1930,10 +1491,10 @@
                     <!-- Hardware & Die Casting -->
                     <div
                         class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-primary/30 group">
-                        <div class="relative h-60 overflow-hidden">
+                        <a href="solu/solu-hardware.html" class="relative block h-60 overflow-hidden">
                             <picture>
                                 <source srcset="./images/webp/Hardware.webp" type="image/webp">
-                                <source srcset="./images/solu/Hardware mold.jpg" type="image/jpeg">
+                                <source srcset="./images/solu/Hardware%20mold.jpg" type="image/jpeg">
                                 <img src="./images/solu/Hardware mold.jpg" alt="Hardware Die Casting" width="800"
                                     height="800"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -1945,7 +1506,7 @@
                                     <h3 class="text-xl font-bold text-white">Hardware Die Casting</h3>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
                                 Hardware Die Casting
@@ -1964,10 +1525,10 @@
                     <!-- Smart Home Appliances -->
                     <div
                         class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-primary/30 group">
-                        <div class="relative h-60 overflow-hidden">
+                        <a href="solu/solu-kitchen.html" class="relative block h-60 overflow-hidden">
                             <picture>
                                 <source srcset="./images/webp/smart.webp" type="image/webp">
-                                <source srcset="./images/solu/smart furniture.jpg" type="image/jpeg">
+                                <source srcset="./images/solu/smart%20furniture.jpg" type="image/jpeg">
                                 <img src="./images/solu/smart furniture.jpg" alt="Smart Home" width="800" height="800"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                     loading="lazy" decoding="async">
@@ -1978,7 +1539,7 @@
                                     <h3 class="text-xl font-bold text-white">Smart Home</h3>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
                                 Smart Home
@@ -2004,13 +1565,197 @@
                 </div>
             </div>
         </section>
+        <!-- 发展历程 时间轴 -->
+        <section class="history-section" aria-labelledby="history-title">
+            <h2 id="history-title" class="history-section__title">Development History</h2>
+            <div class="history-timeline__viewport" tabindex="0" aria-label="WAFU Brothers development history; scroll horizontally to explore">
+                <div class="history-timeline">
+                    <article class="history-timeline__item">
+                        <div class="history-timeline__year">2009</div>
+                        <div class="history-timeline__node" aria-hidden="true"></div>
+                        <a class="history-timeline__image-link" href="./about.html#development" aria-label="Explore WAFU Brothers' development history"><img class="history-timeline__image" src="./images/about/team-collaboration.jpg" alt="WAFU Brothers founding team" loading="lazy" width="800" height="500"></a>
+                        <h3 class="history-timeline__label">Founded <svg class="history-timeline__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></h3>
+                        <p class="history-timeline__text">The company was registered and the founding team was established.</p>
+                    </article>
+
+                    <article class="history-timeline__item">
+                        <div class="history-timeline__year">2010</div>
+                        <div class="history-timeline__node" aria-hidden="true"></div>
+                        <a class="history-timeline__image-link" href="./about.html#development" aria-label="Explore WAFU Brothers' development history"><img class="history-timeline__image history-timeline__image--subject-centered" src="./images/products/WF/max/product-2.png" alt="WAFU Brothers direct-pressure leak tester" loading="lazy" width="800" height="500"></a>
+                        <h3 class="history-timeline__label">Growth <svg class="history-timeline__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></h3>
+                        <p class="history-timeline__text">Benchmarking advanced international technology, WAFU launched its first direct-pressure leak tester.</p>
+                    </article>
+
+                    <article class="history-timeline__item">
+                        <div class="history-timeline__year">2013</div>
+                        <div class="history-timeline__node" aria-hidden="true"></div>
+                        <a class="history-timeline__image-link history-timeline__image-wrap" href="./about.html#development" aria-label="Explore WAFU Brothers' development history">
+                            <img class="history-timeline__image--contraction" src="./images/products/custom/filter/front.jpg" alt="A new cabinet leak tester developed by WAFU Brothers" loading="lazy" width="800" height="500">
+                        </a>
+                        <h3 class="history-timeline__label">Breakthrough <svg class="history-timeline__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></h3>
+                        <p class="history-timeline__text">The second-generation leak tester solved high-pressure solenoid valve instability and drove a breakthrough year in sales.</p>
+                    </article>
+
+                    <article class="history-timeline__item">
+                        <div class="history-timeline__year">2016</div>
+                        <div class="history-timeline__node" aria-hidden="true"></div>
+                        <a class="history-timeline__image-link" href="./about.html#development" aria-label="Explore WAFU Brothers' development history"><img class="history-timeline__image history-timeline__image--certificate" src="./images/about/certificate/wf-gert_15.jpg" alt="WAFU Brothers CE certificate" loading="lazy" width="800" height="500"></a>
+                        <h3 class="history-timeline__label">Transformation <svg class="history-timeline__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></h3>
+                        <p class="history-timeline__text">WAFU implemented ISO 9001, filed nearly 20 technology patents, expanded nationwide, and diversified its business.</p>
+                    </article>
+
+                    <article class="history-timeline__item">
+                        <div class="history-timeline__year">2019</div>
+                        <div class="history-timeline__node" aria-hidden="true"></div>
+                        <a class="history-timeline__image-link" href="./about.html#development" aria-label="Explore WAFU Brothers' development history"><img class="history-timeline__image" src="./images/news/info/n11/index.webp" alt="WAFU Brothers expanding into overseas markets" loading="lazy" width="800" height="500"></a>
+                        <h3 class="history-timeline__label">Expansion <svg class="history-timeline__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></h3>
+                        <p class="history-timeline__text">Global group operations were established as overseas market share reached a new high and ranked among the industry's leaders.</p>
+                    </article>
+
+                    <article class="history-timeline__item">
+                        <div class="history-timeline__year">2026</div>
+                        <div class="history-timeline__node" aria-hidden="true"></div>
+                        <a class="history-timeline__image-link" href="./about.html#development" aria-label="Explore WAFU Brothers' development history"><img class="history-timeline__image" src="./images/about/client-meeting.jpg" alt="WAFU Brothers standardized and systematic operations" loading="lazy" width="800" height="500"></a>
+                        <h3 class="history-timeline__label">Advancement <svg class="history-timeline__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></h3>
+                        <p class="history-timeline__text">Institutionalized processes and systematic operations enabled healthy, orderly, and rapid group development.</p>
+                    </article>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="./about.html" class="inline-flex items-center justify-center bg-primary hover:bg-secondary text-white font-medium py-3 px-8 rounded-full transition-colors duration-300">Learn More</a>
+            </div>
+        </section>
+
+        <!-- Our strength -->
+        <section id="our-strength" class="wafu-strength" aria-labelledby="strength-title">
+            <div class="wafu-strength__inner">
+                <div class="wafu-strength__header">
+                    <p class="wafu-strength__eyebrow">OUR STRENGTH</p>
+                    <h2 id="strength-title"><a href="./about.html">Our Strength</a></h2>
+                    <p>From research and production to customer acceptance and equipment delivery, discover the technology and service behind WAFU Brothers.</p>
+                </div>
+                <div class="wafu-strength__grid">
+                    <a class="wafu-strength__card" href="./about/company.html"><span class="wafu-strength__image"><img src="./images/impress/out-long.png" alt="Company exterior at WAFU Brothers" loading="lazy"></span><span class="wafu-strength__caption"><span>Company Exterior</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                    <a class="wafu-strength__card" href="./about/company.html"><span class="wafu-strength__image"><img src="./images/news/info/n22/conduct.jpg" alt="Customer inspecting leak testing equipment during an on-site acceptance visit" loading="lazy"></span><span class="wafu-strength__caption"><span>Customer Acceptance Visit</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                    <a class="wafu-strength__card" href="./about/company.html"><span class="wafu-strength__image"><img src="./images/news/info/n21/device.jpg" alt="Leak testing equipment delivered to a customer's factory" loading="lazy"></span><span class="wafu-strength__caption"><span>Equipment Delivery</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                    <a class="wafu-strength__card" href="./about/company.html"><span class="wafu-strength__image"><img src="./images/impress/office.png" alt="R&amp;D office at WAFU Brothers" loading="lazy"></span><span class="wafu-strength__caption"><span>R&amp;D Office</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                    <a class="wafu-strength__card" href="./about/company.html"><span class="wafu-strength__image"><img src="./images/impress/reception.png" alt="Reception at WAFU Brothers" loading="lazy"></span><span class="wafu-strength__caption"><span>Reception</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                    <a class="wafu-strength__card" href="./about/company.html"><span class="wafu-strength__image"><img src="./images/impress/img4.png" alt="Production workshop at WAFU Brothers" loading="lazy"></span><span class="wafu-strength__caption"><span>Production Workshop</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                    <a class="wafu-strength__card" href="./about/company.html"><span class="wafu-strength__image"><img src="./images/impress/workshopD.jpg" alt="Testing Laboratory at WAFU Brothers" loading="lazy"></span><span class="wafu-strength__caption"><span>Testing Laboratory</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                    <a class="wafu-strength__card" href="./about/company.html"><span class="wafu-strength__image wafu-strength__image--certificate"><img src="./images/timeline-1.png" alt="Certifications &amp; Patents at WAFU Brothers" loading="lazy"></span><span class="wafu-strength__caption"><span>Certifications &amp; Patents</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 客户评价 -->
+        <section id="testimonials" class="bg-gray-50 pb-8">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-10">
+                    <!-- 标题 -->
+                    <h2 class="text-center mb-12">
+                        <h2 class="text-4xl font-extrabold">Customer Testimonials</h2>
+                        <p class="mt-4 text-white bg-primary pb-8 pt-8 font-bold text-xl">
+                            Real feedback from industry clients
+                        </p>
+                    </h2>
+                </div>
+
+                <!-- 图片 -->
+                <div class="grid lg:grid-cols-3 gap-6 gap-2 lg:gap-6">
+
+                    <!-- 第一组 -->
+                    <div class="p-5 lg:p-10 pb-2 lg:pb-4 shadow-md rounded-lg border border-gray-100 hover:border-primary/30 transition-all duration-300 flex flex-col justify-between h-full">
+                        <div>
+                            <!-- 星星 -->
+                            <div class="flex">
+                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
+                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
+                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
+                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
+                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
+                            </div>
+
+                            <!-- 文字 -->
+                            <p class="mt-4">
+                                We are a manufacturer of new energy vehicle batteries. After adopting WAFU Brothers <strong class="core-keyword">leak
+                                testers</strong>, the sealing inspection of our battery packs became much more stable, and even micro
+                                leaks can now be detected accurately. The equipment offers fast cycle times and reliable data,
+                                fully meeting the requirements of our production line.
+                            </p>
+                        </div>
+
+                        <div class="font-bold flex items-center mt-6 pb-6">
+                            <div class="w-18 flex-shrink-0" ><img src="/images/conment/EV.jpg" alt="New energy vehicle customer testimonial avatar" class="h-16  w-16 mr-4" loading="lazy"></div>
+                            <div>Mr. Zhang <br /> (Product Manager, Leading New Energy Vehicle Company)</div>
+                        </div>
+                    </div>
+
+                    <!-- 第二组 -->
+                    <div class="p-5 lg:p-10 pb-2 lg:pb-4 shadow-md rounded-lg border border-gray-100 hover:border-primary/30 transition-all duration-300 flex flex-col justify-between h-full">
+                        <div>
+                            <!-- 星星 -->
+                            <div class="flex">
+                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
+                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
+                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
+                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
+                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
+                            </div>
+
+                            <!-- 文字 -->
+                            <p class="mt-4">
+                                In medical device manufacturing, sealing reliability is a critical requirement. WAFU Brothers
+                                <strong class="core-keyword">leak testers</strong> have demonstrated excellent stability and consistency in practical applications,
+                                effectively identifying even tiny leaks and helping us maintain higher product quality
+                                standards.
+                            </p>
+                        </div>
+
+                        <div class="font-bold flex items-center mt-6 pb-6">
+                            <div class=" flex-shrink-0"><img src="/images/conment/medical.jpg" alt="Medical device customer testimonial avatar" class="h-16 mr-4" loading="lazy"></div>
+                            <div>Mr. Zhao <br /> (R&D Engineer, Publicly Listed Medical Device Company)</div>
+                        </div>
+                    </div>
+
+                    <!-- 第三组 -->
+                    <div class="p-5 lg:p-10 pb-2 lg:pb-4 shadow-md rounded-lg border border-gray-100 hover:border-primary/30 transition-all duration-300 flex flex-col justify-between h-full">
+                        <div>
+                            <!-- 星星 -->
+                            <div class="flex">
+                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
+                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
+                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
+                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
+                                <img src="/images/icon/star.png" alt="star" loading="lazy" class="h-5 w-5">
+                            </div>
+
+                            <!-- 文字 -->
+                            <p class="mt-4">
+                                We are a foreign-invested audio equipment manufacturer with strict requirements for supply chain
+                                quality and testing equipment. Compliance with IEC international standards and the quality
+                                specifications of European and American customers is essential. After introducing WAFU Brothers
+                                <strong class="core-keyword">leak testers</strong> for 100% sealing inspection of our high-end audio components, the overall
+                                performance exceeded our expectations.
+                            </p>
+                        </div>
+
+                        <div class="font-bold flex items-center mt-6 pb-6">
+                            <div class=" flex-shrink-0"><img src="/images/conment/buyer.jpg" alt="Purchasing manager customer testimonial avatar" class="h-16 mr-4" loading="lazy"></div>
+                            <div>Mr. Sun <br /> (Purchasing Manager, Well-Known Foreign-Invested Enterprise)</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <section class="py-16 bg-white">
             <div class="container mx-auto px-4">
                 <!-- Title Area -->
                 <div class="text-center mb-12">
                     <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary">Industry Insights</h2>
                     <p class="text-white bg-primary pb-4 pt-4 mt-2 font-bold text-xl">
-                        WAFU Brothers has been deeply engaged in the leak testing industry for 17 years and is a leading provider of sealing solutions in the field,<br />
+                        WAFU Brothers has been deeply engaged in the leak testing industry for 18 years and is a leading provider of sealing solutions in the field,<br />
                         and has become a well-known brand of leak testing instruments both in China and internationally.
                     </p>
                 </div>
@@ -2022,9 +1767,9 @@
                             <div>
                                 <span class="tech-library__eyebrow">TECHNICAL GUIDE</span>
                                 <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Seal Integrity Testing Guide</h3>
-                                <p class="tech-library__intro">Air leak tester selection and practical answers.<br />Move from basic principles to equipment selection, pricing, and after-sales support based on the decision you need to make now.</p>
+                                <p class="tech-library__intro"><strong class="core-keyword">Air leak tester</strong> selection and practical answers.<br />Move from basic principles to equipment selection, pricing, and after-sales support based on the decision you need to make now.</p>
                             </div>
-                            <a href="/resource.html" class="tech-library__all">View All Technical Articles <svg class="svg-icon" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+                            <a href="./resource.html#articles" class="tech-library__all">View All Technical Articles <svg class="svg-icon" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
                         </div>
 
                         <div class="tech-library__grid">
@@ -2037,7 +1782,7 @@
                                 <div class="tech-article__body">
                                     <span class="tech-article__category"><svg class="svg-icon" data-icon="lightbulb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 22h4"/><path d="M15.1 14c.2-.2.3-.5.5-.7A6 6 0 1 0 8.4 13.3c.2.2.3.5.5.7.6.7 1.1 1.3 1.1 2h4c0-.7.5-1.3 1.1-2Z"/></svg> Fundamentals</span>
                                     <h4 class="tech-article__title"><a href="./faq/T-art-30.html">How Are Waterproof Products Tested for Sealing Performance?</a></h4>
-                                    <p class="tech-article__summary">Understand water immersion and air leak testing, from protection ratings and basic methods to the complete test process.</p>
+                                    <p class="tech-article__summary">Understand water immersion and <strong class="core-keyword">air leak testing</strong>, from protection ratings and basic methods to the complete test process.</p>
                                     <div class="tech-article__footer"><a class="tech-article__link" href="./faq/T-art-30.html">Learn the Basics <svg class="svg-icon ml-1" data-icon="chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></div>
                                 </div>
                             </article>
@@ -2050,7 +1795,7 @@
                                 </a>
                                 <div class="tech-article__body">
                                     <span class="tech-article__category"><svg class="svg-icon" data-icon="circle-help" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 1 1 5.8 1c0 2-2.9 2-2.9 4M12 18h.01"/></svg> Common Questions</span>
-                                    <h4 class="tech-article__title"><a href="./faq/T-art-31.html">Can an Air Leak Tester Perform Vacuum Testing?</a></h4>
+                                    <h4 class="tech-article__title"><a href="./faq/T-art-31.html">Can an <strong class="core-keyword">Air Leak Tester</strong> Perform Vacuum Testing?</a></h4>
                                     <p class="tech-article__summary">Learn how positive and negative pressure differ, which products suit vacuum testing, and how the method works.</p>
                                     <div class="tech-article__footer"><a class="tech-article__link" href="./faq/T-art-31.html">See the Answers <svg class="svg-icon ml-1" data-icon="chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></div>
                                 </div>
@@ -2064,206 +1809,59 @@
                                 </a>
                                 <div class="tech-article__body">
                                     <span class="tech-article__category"><svg class="svg-icon" data-icon="sliders-horizontal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4h-7M10 4H3M21 12h-9M8 12H3M21 20h-5M12 20H3"/><path d="M14 2v4M8 10v4M16 18v4"/></svg> Equipment Selection</span>
-                                    <h4 class="tech-article__title"><a href="./faq/T-art-34.html">How to Choose an Air Leak Tester: Test Principles and Selection Guide</a></h4>
-                                    <p class="tech-article__summary">Learn how direct pressure, differential pressure, and flow methods work, then choose the right air leak tester based on IPX rating, leak rate, part volume, and cycle time.</p>
+                                    <h4 class="tech-article__title"><a href="./faq/T-art-34.html">How to Choose an <strong class="core-keyword">Air Leak Tester</strong>: Test Principles and Selection Guide</a></h4>
+                                    <p class="tech-article__summary">Learn how direct pressure, differential pressure, and flow methods work, then choose the right <strong class="core-keyword">air leak tester</strong> based on IPX rating, leak rate, part volume, and cycle time.</p>
                                     <div class="tech-article__footer"><a class="tech-article__link" href="./faq/T-art-34.html">Choose a Method <svg class="svg-icon ml-1" data-icon="chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></div>
                                 </div>
                             </article>
 
                             <!-- Price and service -->
                             <article class="tech-article tech-article--service">
-                                <a class="tech-article__media" href="./faq/T-art-33.html" aria-label="Read the air leak tester price and after-sales guide">
+                                <a class="tech-article__media" href="./faq/T-art-33%20.html" aria-label="Read the air leak tester price and after-sales guide">
                                     <img loading="lazy" src="./images/services/faq/faq_3.jpg" alt="WAFU Brothers air leak tester production and technical service">
                                     <span class="tech-article__step">04 · EVALUATE THE PURCHASE</span>
                                 </a>
                                 <div class="tech-article__body">
                                     <span class="tech-article__category"><svg class="svg-icon" data-icon="shield-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3v8Z"/><path d="m9 12 2 2 4-4"/></svg> Price and Service</span>
-                                    <h4 class="tech-article__title"><a href="./faq/T-art-33.html">How Much Does an Air Leak Tester Cost, and What Support Matters?</a></h4>
+                                    <h4 class="tech-article__title"><a href="./faq/T-art-33%20.html">How Much Does an <strong class="core-keyword">Air Leak Tester</strong> Cost, and What Support Matters?</a></h4>
                                     <p class="tech-article__summary">The quote is only one part of the purchase. Solution capability, test stability, delivery, and long-term support also matter.</p>
-                                    <div class="tech-article__footer"><a class="tech-article__link" href="./faq/T-art-33.html">Review Buying Factors <svg class="svg-icon ml-1" data-icon="chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></div>
+                                    <div class="tech-article__footer"><a class="tech-article__link" href="./faq/T-art-33%20.html">Review Buying Factors <svg class="svg-icon ml-1" data-icon="chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></div>
                                 </div>
                             </article>
                         </div>
                     </div>
-                    <!-- 检测案例 -->
-                    <div class="lg:col-span-12 mt-12">
-                        <h3 class="text-lg font-bold text-gray-900 pl-3 border-l-4 border-primary mb-6">
-                            Testing Cases
-                        </h3>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <!-- 案例 1 -->
-                            <div class="bg-gray-50 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                                <a href="./solulist/kitchen/gas-stove-die-cast-component.html">
-                                    <img src="./images/solu/kitchen/gasStoveDieCastcomponent/Gas-Cooker-Die-Cast Leak-Tester-product1.jpg"
-                                        alt="Model of the gas stove die-cast component under test" loading="lazy"
-                                        class="w-full h-48 object-cover rounded-t-xl transition-transform duration-700 hover:scale-105">
-                                </a>
-                                <div class="p-6">
-                                    <h4 class="font-bold text-xl text-gray-900 mb-3" style="min-height: 5.625rem;">
-                                        <a href="./solulist/kitchen/gas-stove-die-cast-component.html"
-                                            class="hover:text-primary transition-colors line-clamp-3"
-                                            title="Four-Column Pneumatic Leak Tester for Gas Stove Die-Cast Components">
-                                            Four-Column Pneumatic <strong class="text-blue-600">Leak Tester</strong> for <strong class="text-blue-600">Gas Stove Die-Cast Components</strong>
-                                        </a>
-                                    </h4>
-                                    <p class="text-gray-500 text-sm mb-3">November 05, 2026
-                                    </p>
-                                    <p class="text-gray-600 mb-4 line-clamp-3">
-                                        Die casting can leave hidden shrinkage cavities, pinholes and cracks that lead to dangerous gas leaks. A four-column pneumatic leak tester with a custom contour fixture seals the cavity and both ports for a dry, repeatable 100 kPa test.
-                                    </p>
-                                    <a href="./solulist/kitchen/gas-stove-die-cast-component.html"
-                                        class="inline-flex items-center px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
-                                        View Case <svg class="svg-icon ml-2" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                                    </a>
-                                </div>
+                    <!-- Company news -->
+                    <section class="company-news" aria-labelledby="company-news-title">
+                        <div class="company-news__inner">
+                            <h3 id="company-news-title" class="company-news__heading">Company News</h3>
+                            <p class="company-news__intro">Recent customer visits and industry events at WAFU Brothers.</p>
+                            <div class="company-news__grid">
+                                <article class="company-news__card">
+                                    <a class="company-news__image" href="./news/new-44.html" aria-label="Read about the oral irrigator manufacturer's visit"><img src="./images/news/info/n44/presentation-sort.jpg" alt="WAFU Brothers introduces leak testing equipment to a visiting customer" width="1000" height="690" loading="lazy"></a>
+                                    <div class="company-news__body">
+                                        <h4><a href="./news/new-44.html">Oral Irrigator Manufacturer Visits WAFU Brothers</a></h4>
+                                        <time datetime="2026-09-22">September 22, 2026</time>
+                                        <p>The customer's R&amp;D and quality teams visited WAFU Brothers to learn about leak testing equipment and applications.</p>
+                                        <a class="company-news__link" href="./news/new-44.html">Read article <span aria-hidden="true">&rarr;</span></a>
+                                    </div>
+                                </article>
+                                <article class="company-news__card">
+                                    <a class="company-news__image" href="./news/new-41.html" aria-label="Read about WAFU Brothers at the Shenzhen Industrial Materials Exhibition"><img src="./images/news/info/n41/exhibition.jpg" alt="Exhibition hall at the Shenzhen Industrial Materials Exhibition" width="1000" height="749" loading="lazy"></a>
+                                    <div class="company-news__body">
+                                        <h4><a href="./news/new-41.html">WAFU Brothers at the Shenzhen Industrial Materials Exhibition</a></h4>
+                                        <time datetime="2026-08-29">August 29, 2026</time>
+                                        <p>WAFU Brothers presented leak testing equipment and discussed industry applications with customers and partners.</p>
+                                        <a class="company-news__link" href="./news/new-41.html">Read article <span aria-hidden="true">&rarr;</span></a>
+                                    </div>
+                                </article>
                             </div>
-                            <!-- 案例 2 -->
-                            <div class="bg-gray-50 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                                <!-- 图片 -->
-                                 <!-- 链接 -->
-                                <a href="./solulist/kitchen/smart-toilet-float-ball.html">
-                                    <img src="images/solu/kitchen/smartToiletFloatBall/smart-toilet-float-ball.jpg" alt="Smart toilet float ball"
-                                        class="w-full h-48 object-cover rounded-t-xl transition-transform duration-700 hover:scale-105" loading="lazy">
-                                </a>
-                                <div class="p-6">
-                                    <!-- 标题 -->
-                                    <h4 class="font-bold text-xl text-gray-900 mb-3" style="min-height: 5.625rem;">
-                                        <a href="./solulist/kitchen/smart-toilet-float-ball.html"
-                                            class="hover:text-primary transition-colors line-clamp-3"
-                                            title="How Do You Leak Test a Smart Toilet Float Ball?">
-                                            How Do You <strong class="text-blue-600">Leak Test a Smart Toilet Float Ball</strong>?
-                                        </a>
-                                    </h4>
-                                    <!-- 日期 -->
-                                    <p class="text-gray-500 text-sm mb-3">October 24, 2026
-                                    </p>
-                                    <!-- 简介 -->
-                                    <p class="text-gray-600 mb-4 line-clamp-3">
-                                        If a smart toilet float ball is not properly sealed, moisture can enter the part, alter
-                                        its buoyancy and movement, and ultimately disrupt inlet-water control. This case uses
-                                        interchangeable fixtures and a direct-pressure test at 100 kPa for two product models.
-                                    </p>
-                                    <a href="./solulist/kitchen/smart-toilet-float-ball.html"
-                                        class="inline-flex items-center px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
-                                        View Case <svg class="svg-icon ml-2" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- 案例 3 -->
-                            <div class="bg-gray-50 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md
-                            flex flex-col h-[505px]">
-                               <a href="./solulist/tubing/pet-bird-water-valve.html">
-                                   <img src="./images/solu/valve/petBirdWaterValve/pet-bird-water-valve.jpg" alt="Pet bird water valve leak testing"
-                                       class="w-full h-48 object-cover rounded-t-xl transition-transform duration-700 hover:scale-105" loading="lazy">
-                               </a>
-                               <div class="p-6 flex flex-col justify-between flex-1">
-                                   <div>
-                                       <h4 class="font-bold text-xl text-gray-900 mb-3">
-                                           <a href="./solulist/tubing/pet-bird-water-valve.html" class="hover:text-primary transition-colors line-clamp-3" title="Slow Drips or Seepage from Pet Bird Water Valves? Reliable Leak Testing Is the Key">
-                                               <!-- 标题 -->
-                                               Slow Drips or Seepage from <strong class="text-blue-600">Pet Bird Water Valves</strong>? Reliable <strong class="text-blue-600">Leak Testing</strong> Is the Key
-                                           </a>
-                                       </h4>
-                                   </div>
-                                   <div>
-                                       <p class="text-gray-500 text-sm mb-3">
-                                        October 16, 2026
-                                       </p>
-                                       <p class="text-gray-600 mb-4 line-clamp-3">
-                                        Test the valve core, seals, and connections to identify minute leaks quickly and reduce slow dripping,
-                                        transport leakage, and quality risks after high-volume delivery.
-                                       </p>
-                                       <a href="./solulist/tubing/pet-bird-water-valve.html"
-                                           class="inline-flex items-center px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors">
-                                           View Case <svg class="svg-icon ml-2" data-icon="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                                       </a>
-                                   </div>
-
-                               </div>
-                           </div>
-                            
+                            <div class="company-news__more"><a href="./news.html">More news <span aria-hidden="true">&rarr;</span></a></div>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
         </section>
-        
-        <!-- Partners Section -->
-        <section class="py-12 bg-light text-center">
-            <div class="container mx-auto px-4">
-                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary">Our Partners</h2>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    <!-- Partner Item -->
-                    <div class="group">
-                        <a href="https://www.byd.com" target="_blank" rel="noopener"
-                            aria-label="Official Website of BYD"
-                            class="block rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                            <img src="images/webp/BYD.webp" alt="BYD Partner Logo" title="BYD"
-                                class="w-full h-48 object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                                loading="lazy">
-                        </a>
-                        <p class="sr-only">BYD Partner Logo</p>
-                    </div>
-
-                    <div class="group">
-                        <a href="https://www.catlbattery.com" target="_blank" rel="noopener"
-                            aria-label="Official Website of CATL"
-                            class="block rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                            <img src="images/webp/catl.webp" alt="CATL Partner Logo" title="CATL"
-                                class="w-full h-48 object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                                loading="lazy">
-                        </a>
-                        <p class="sr-only">CATL Partner Logo</p>
-                    </div>
-
-                    <div class="group">
-                        <a href="https://www.hanslaser.com" target="_blank" rel="noopener"
-                            aria-label="Official Website of Hanslaser"
-                            class="block rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                            <img src="images/webp/hanslaser.webp" alt="Hanslaser Partner Logo" title="Hanslaser"
-                                class="w-full h-48 object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                                loading="lazy">
-                        </a>
-                        <p class="sr-only">Hanslaser Partner Logo</p>
-                    </div>
-
-                    <!-- Second Row -->
-                    <div class="group">
-                        <a href="https://www.huawei.com" target="_blank" rel="noopener"
-                            aria-label="Official Website of Huawei"
-                            class="block rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                            <img src="images/webp/huawei.webp" alt="Huawei Partner Logo" title="Huawei"
-                                class="w-full h-48 object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                                loading="lazy">
-                        </a>
-                        <p class="sr-only">Huawei Partner Logo</p>
-                    </div>
-
-                    <div class="group">
-                        <a href="https://www.mi.com" target="_blank" rel="noopener"
-                            aria-label="Official Website of Xiaomi"
-                            class="block rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                            <img src="images/webp/xiaomi.webp" alt="Xiaomi Partner Logo" title="Xiaomi"
-                                class="w-full h-48 object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                                loading="lazy">
-                        </a>
-                        <p class="sr-only">Xiaomi Partner Logo</p>
-                    </div>
-
-                    <div class="group">
-                        <a href="https://www.audi.com" target="_blank" rel="noopener"
-                            aria-label="Official Website of Audi"
-                            class="block rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                            <img src="images/webp/audi.webp" alt="Audi Partner Logo" title="Audi"
-                                class="w-full h-48 object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                                loading="lazy">
-                        </a>
-                        <p class="sr-only">Audi Partner Logo</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Contact Section -->
         <section id="contact"
@@ -2276,6 +1874,12 @@
             </div>
 
             <div class="container mx-auto px-4 relative z-10">
+                <nav class="contact-quick-nav" aria-label="Quick navigation">
+                    <a href="./index.html">Home</a>
+                    <a href="./products.html">Products</a>
+                    <a href="./about.html">About Us</a>
+                    <a href="./contact.html">Contact Us</a>
+                </nav>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="space-y-8">
                         <div>
@@ -2472,7 +2076,7 @@
                     <p class="text-gray-600 mb-6 text-balance max-w-md">
                         WAFU Brothers (Shenzhen) Automation Technology Co., Ltd., established in 2009, serves over 8,000
                         domestic and international clients including Audi. As a global leader in leak tester
-                        manufacturing and solution provision, we have accumulated 16 years of experience in non-standard
+                        manufacturing and solution provision, we have accumulated 18 years of experience in non-standard
                         automation and sealing detection. With a spirit of innovation and bold breakthroughs, we guide
                         clients with forward-thinking designs and deliver internationally competitive product solutions.
                     </p>
@@ -2605,12 +2209,9 @@
                         <li class="flex items-start"><svg class="svg-icon text-primary mt-1 mr-3 w-4 text-center" data-icon="clock-o" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span
                                 class="text-gray-600">Monday to Friday: 9:00 - 18:00</span></li>
                     </ul>
-                    <br />
-                    <h3 class="font-semibold text-lg mb-4 text-dark flex items-center">
-                        <svg class="svg-icon text-primary mr-2" data-icon="handshake-o" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12l2.5 2.5a2 2 0 0 0 2.8 0L16 12"/><path d="M2 12l4-4h4l2 2 2-2h4l4 4"/><path d="M6 8l-4 5 5 5h3M18 8l4 5-5 5h-3"/></svg>Friendly Links
-                    </h3>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="http://www.west.cn/" title="虚拟主机-域名注册-云主机-VPS主机-服务器租用" target="_blank">云主机</a>
+                    <div class="mt-6">
+                        <h3 class="font-semibold text-lg mb-3 text-dark flex items-center"><svg class="svg-icon text-primary mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.1 0l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1"/><path d="M14 11a5 5 0 0 0-7.1 0l-2 2A5 5 0 0 0 12 20.1l1.1-1.1"/></svg>Friendly Links</h3>
+                        <a href="https://www.west.cn/cloudhost/" target="_blank" rel="noopener noreferrer" lang="zh-CN" class="text-gray-600 hover:text-primary transition-colors">云主机</a>
                     </div>
                 </div>
             </div>
@@ -2619,10 +2220,10 @@
             <div class="border-t border-gray-200 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <p class="text-gray-500 text-sm mb-4 md:mb-0">
-                        &copy; 2025 WAFU Brothers (Shenzhen) Automation Technology Co., Ltd. All rights reserved
+                        &copy; 2026 WAFU Brothers (Shenzhen) Automation Technology Co., Ltd. All rights reserved
                     </p>
                     <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
-                        <a href="/sitemap.html"
+                        <a href="/sitemap.xml"
                             class="text-gray-500 hover:text-primary text-sm transition-colors">Sitemap</a>
                         <a href="/contact.html"
                             class="text-gray-500 hover:text-primary text-sm transition-colors">Technical Support</a>
@@ -2638,7 +2239,7 @@
         class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
         <svg class="svg-icon" data-icon="arrow-up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
     </button>
-    <script src="./js/index.js?v=20261016"></script>
+    <script src="./js/index.js?v=20261113b"></script>
     <script src="./js/carousel.js"></script>
 </body>
 

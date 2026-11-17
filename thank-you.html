@@ -9,6 +9,11 @@
     <link href="./css/tailwindcss.css" rel="stylesheet">
     <link href="./font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="./css/font.css" rel="stylesheet">
+    <link href="/css/footer-theme.css" rel="stylesheet">
+    <style>
+        .system-breadcrumb { max-width: 1352px; margin: 0 auto; padding: 1rem 1.5rem; }
+        .system-breadcrumb ol, .bottom-breadcrumb ol { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0; padding: 0; list-style: none; }
+    </style>
     <script>
         gtag('event', 'conversion', {
           'send_to': 'AW-17263391868/grcGCJ_J08sbEPzo6adA'
@@ -39,6 +44,13 @@
     <!-- End Google Tag Manager (noscript) -->
 </head>
 <body class="font-inter text-dark bg-light-gray">
+    <nav class="system-breadcrumb" aria-label="Breadcrumb">
+        <ol>
+            <li><a href="/index.html">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li><a href="/thank-you.html" aria-current="page">Thank You</a></li>
+        </ol>
+    </nav>
 
     <!-- 主内容区 -->
     <section class="pt-28 pb-16 md:pt-36 md:pb-24">
@@ -113,6 +125,15 @@
             </div>
         </div>
     </section>
+    <nav class="bottom-breadcrumb" aria-label="Breadcrumb">
+        <div class="bottom-breadcrumb__inner">
+            <ol>
+                <li><a href="/index.html">Home</a></li>
+                <li aria-hidden="true">/</li>
+                <li><a href="/thank-you.html" aria-current="page">Thank You</a></li>
+            </ol>
+        </div>
+    </nav>
     <script src="./js/tailwind.config.js"></script>
     <script src="./js/script.js"></script>
 

@@ -44,14 +44,12 @@
 .mobile-menu-toggle{display:block;flex:0 0 auto}
 #mobile-menu{max-height:calc(100dvh - 90px);overflow-y:auto;overscroll-behavior:contain}
 @media (max-width:1179px){
-  .navbar-container{max-width:none}
   .navbar-row{height:72px}
   .navbar-logo{width:62px;height:62px}
   #mobile-menu:not(.hidden){display:block}
   #mobile-menu{max-height:calc(100dvh - 72px)}
 }
 @media (min-width:1180px){
-  .navbar-container{max-width:none;padding-left:24px;padding-right:24px}
   .desktop-nav{display:flex}
   .mobile-menu-toggle,#mobile-menu{display:none!important}
 }
@@ -140,6 +138,10 @@
 }
 .history-timeline__image {
   object-fit: cover;
+}
+.history-timeline__image--certificate {
+  object-fit: contain;
+  background: #fff;
 }
 .history-timeline__image-wrap {
   overflow: hidden;

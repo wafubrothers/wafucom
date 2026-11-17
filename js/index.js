@@ -244,6 +244,7 @@ function initMobileMenu() {
       if (!content) return;
 
       content.classList.toggle('hidden');
+      this.setAttribute('aria-expanded', String(!content.classList.contains('hidden')));
       if (!icon) return;
 
       if (content.classList.contains('hidden')) {
@@ -253,6 +254,15 @@ function initMobileMenu() {
         setInlineSvgIcon(icon, 'minus');
         icon.classList.add('rotate-45');
       }
+    });
+  });
+
+  mobileMenu.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuIcon.classList.remove('rotate-90');
+      setInlineSvgIcon(menuIcon, 'bars');
     });
   });
 }
@@ -463,8 +473,9 @@ function initContactForm() {
     clearErrors();
     let isValid = true;
 
-    if (!formData.namecompany.trim() || !/^[\p{L}\p{M}\s]{2,50}$/u.test(formData.namecompany)) {
-      setError('namecompany', 'Please enter a valid name or company name (2-50 characters, letters and spaces only, no numbers or symbols).');
+    const namecompany = formData.namecompany.trim();
+    if (namecompany.length < 2 || namecompany.length > 100) {
+      setError('namecompany', 'Please enter a name or company name between 2 and 100 characters.');
       isValid = false;
     }
 
@@ -496,8 +507,9 @@ function initContactForm() {
     return isValid;
   }
 
-  contactForm.addEventListener('pointerenter', loadEmailJs, { once: true, passive: true });
-  contactForm.addEventListener('focusin', loadEmailJs, { once: true });
+  const preloadEmailJs = () => { loadEmailJs().catch(() => {}); };
+  contactForm.addEventListener('pointerenter', preloadEmailJs, { once: true, passive: true });
+  contactForm.addEventListener('focusin', preloadEmailJs, { once: true });
 
   contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -512,10 +524,12 @@ function initContactForm() {
     const formData = {
       namecompany: nameInput ? nameInput.value : '',
       name: nameInput ? nameInput.value : '',
+      company: nameInput ? nameInput.value : '',
       phone: phoneInput ? phoneInput.value : '',
       email: emailInput ? emailInput.value : '',
       product: productInput ? productInput.value : '',
       application: applicationInput ? applicationInput.value : '',
+      need: applicationInput ? applicationInput.value : '',
       message: messageInput ? messageInput.value : ''
     };
 
@@ -590,6 +604,51 @@ function initPhoneCopy() {
   });
 }
 
+function initImageGallery() {
+  const modal = document.getElementById('imageModal');
+  const image = document.getElementById('modalImage');
+  const caption = document.getElementById('modalCaption');
+  const closeButton = modal && modal.querySelector('button');
+  if (!modal || !image || !caption || !closeButton) return;
+
+  let trigger = null;
+
+  window.openImageModal = (src, description) => {
+    trigger = document.activeElement;
+    image.src = src;
+    image.alt = description;
+    caption.textContent = description;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    closeButton.focus();
+  };
+
+  window.closeImageModal = () => {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    if (trigger && typeof trigger.focus === 'function') trigger.focus();
+  };
+
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) window.closeImageModal();
+  });
+  modal.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') window.closeImageModal();
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      closeButton.focus();
+    }
+  });
+  document.querySelectorAll('[role="button"][onclick^="openImageModal"]').forEach((item) => {
+    item.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        item.click();
+      }
+    });
+  });
+}
+
 function initStickyNavbar() {
   const navbar = document.getElementById('navbar');
   if (!navbar) return;
@@ -624,4 +683,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initPhoneCopy();
   initCertificateCarousel();
+  initImageGallery();
 });

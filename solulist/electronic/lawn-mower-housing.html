@@ -207,9 +207,16 @@
             </div>
           </div>
 
-          <a href=" /about.html"
-            class="text-gray-800 font-medium hover:text-primary transition-colors tracking-wide px-2 py-1">About
-            Us</a>
+          <div class="relative group">
+              <a href="/about/about.html" class="text-gray-800 font-medium hover:text-primary transition-colors flex items-center tracking-wide px-2 py-1">About Us <i class="fa fa-angle-down ml-1 text-xs transition-transform group-hover:rotate-180 duration-300"></i></a>
+              <div class="absolute left-0 mt-1 w-56 rounded-lg shadow-xl bg-white ring-1 ring-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50">
+                  <div class="py-2">
+                      <a href="/about/about.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">About Us</a>
+                      <a href="/about/company.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Company Strength</a>
+                      <a href="/about/about-us.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary/5 hover:text-primary transition-all">Partners</a>
+                  </div>
+              </div>
+          </div>
 
           <!-- Service Support Dropdown -->
           <div class="relative group">
@@ -342,9 +349,14 @@
             </div>
           </div>
 
-          <a href=" /about.html"
-            class="block py-3 px-4 text-gray-800 hover:text-primary hover:bg-gray-50 rounded-md transition-colors">About
-            Us</a>
+          <div class="mobile-dropdown">
+              <button type="button" aria-expanded="false" class="w-full flex justify-between items-center text-gray-800 font-medium hover:text-primary py-3 px-4 text-left focus:outline-none">About Us <svg class="svg-icon text-xs transition-transform duration-300" data-icon="plus" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+              <div class="mobile-dropdown-content hidden pl-6 mt-0 border-l-2 border-gray-100">
+                  <a href="/about/about.html" class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">About Us</a>
+                  <a href="/about/company.html" class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Company Strength</a>
+                  <a href="/about/about-us.html" class="block py-2.5 px-4 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-r-md">Partners</a>
+              </div>
+          </div>
 
           <!-- Service Support Mobile -->
           <div class="mobile-dropdown">
@@ -401,20 +413,20 @@
     <div class="container mx-auto px-4">
       <ul class="flex flex-wrap items-center text-sm text-gray-500">
         <li>
-          <a href=" /index.html" class="hover:text-primary transition duration-200">Home</a>
+          <a href="/index.html" class="hover:text-primary transition duration-200">Home</a>
         </li>
         <li class="mx-2 text-gray-400"> &gt; </li>
         <li>
-          <a href=" /application.html" class="hover:text-primary transition duration-200">Testing Cases</a>
+          <a href="/application.html" class="hover:text-primary transition duration-200">Testing Cases</a>
         </li>
         <li class="mx-2 text-gray-400"> &gt; </li>
         <li>
-          <a href=" /solu/solu-electronic.html" class="hover:text-primary">Electronics Industry</a>
+          <a href="/solu/solu-electronic.html" class="hover:text-primary">Electronics Industry</a>
         </li>
         <li class="mx-2 text-gray-400"> &gt; </li>
         <!-- 面包屑标题 -->
         <li class="text-primary">
-          Lawn Mower Housing Leak Testing Case
+          <a href="./lawn-mower-housing.html" aria-current="page">Lawn Mower Housing Leak Testing Case</a>
         </li>
       </ul>
     </div>
@@ -466,7 +478,7 @@
             Based on the structural characteristics of the lawn mower housing and the customer's daily production requirements,
             WAFU Brothers designed a solution featuring two test stations and a dual-channel <a href="/faq/T-art-23.html#direct"
               target="_blank" class="text-indigo-600 font-bold hover:text-indigo-800 hover:underline transition">direct pressure</a>
-            air leak tester.
+            <strong class="core-keyword">air leak tester</strong>.
           </p>
           <p style="text-indent: 2em;" class="mb-4">
             Because the housing is large and must be easy to remove after loading, <strong
@@ -503,19 +515,19 @@
           <!-- 4. Results -->
           <h2 class="text-xl font-semibold mt-8 mb-4">4. Results</h2>
           <p style="text-indent: 2em;" class="mb-2">
-            By combining a dual-station fixture with a dual-channel air leak tester, the manufacturer can inspect two lawn mower
+            By combining a dual-station fixture with a dual-channel <strong class="core-keyword">air leak tester</strong>, the manufacturer can inspect two lawn mower
             housings at the same time, improving production efficiency while maintaining stable test performance.
           </p>
           <p style="text-indent: 2em;">
             Because the test area contains electronic components, immersion testing is not suitable. A <strong
               style="background: linear-gradient(transparent 50%, #bfedfa 50%); border-radius: 4px;">dedicated lawn mower housing
-              air leak tester</strong> helps the customer identify sealing problems promptly without exposing the product to water.
+              <span class="core-keyword">air leak tester</span></strong> helps the customer identify sealing problems promptly without exposing the product to water.
           </p>
           <div class="rounded-lg overflow-hidden mt-6">
             <img src="/images/solu/electronic/lawnMowerHousing/lawn-mower-housing-leak-tester.jpg"
               class="h-auto rounded shadow mx-auto" alt="Dedicated air leak tester for lawn mower housings" loading="lazy">
             <small class="text-gray-500 inline-block text-muted text-center w-full mt-2">
-              Figure 4: Dedicated air leak tester for lawn mower housings
+              Figure 4: Dedicated <strong class="core-keyword">air leak tester</strong> for lawn mower housings
             </small>
           </div>
         </div>
@@ -595,6 +607,7 @@
       </aside>
     </div>
   </main>
+  <nav class="bottom-breadcrumb" aria-label="Breadcrumb"><div class="bottom-breadcrumb__inner"><a href="/index.html">Home</a> / <a href="/application.html">Testing Cases</a> / <a href="/solu/solu-electronic.html">Electronics Industry</a> / <a href="./lawn-mower-housing.html" aria-current="page">Lawn Mower Housing Leak Testing Case</a></div></nav>
   <footer class="site-footer bg-white text-gray-800 pt-4 pb-8">
         <div class="footer-overlay" aria-hidden="true"></div>
         <div class="container mx-auto px-4">
@@ -608,7 +621,7 @@
                     <p class="text-gray-600 mb-6 text-balance max-w-md">
                         WAFU Brothers (Shenzhen) Automation Technology Co., Ltd., established in 2009, serves over 8,000
                         domestic and international clients including Audi. As a global leader in leak tester
-                        manufacturing and solution provision, we have accumulated 16 years of experience in non-standard
+                        manufacturing and solution provision, we have accumulated experience since 2009 in non-standard
                         automation and sealing detection. With a spirit of innovation and bold breakthroughs, we guide
                         clients with forward-thinking designs and deliver internationally competitive product solutions.
                     </p>
@@ -741,13 +754,6 @@
                         <li class="flex items-start"><svg class="svg-icon text-primary mt-1 mr-3 w-4 text-center" data-icon="clock-o" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span
                                 class="text-gray-600">Monday to Friday: 9:00 - 18:00</span></li>
                     </ul>
-                    <br />
-                    <h3 class="font-semibold text-lg mb-4 text-dark flex items-center">
-                        <svg class="svg-icon text-primary mr-2" data-icon="handshake-o" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12l2.5 2.5a2 2 0 0 0 2.8 0L16 12"/><path d="M2 12l4-4h4l2 2 2-2h4l4 4"/><path d="M6 8l-4 5 5 5h3M18 8l4 5-5 5h-3"/></svg>Friendly Links
-                    </h3>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="http://www.west.cn/" title="虚拟主机-域名注册-云主机-VPS主机-服务器租用" target="_blank">云主机</a>
-                    </div>
                 </div>
             </div>
 
